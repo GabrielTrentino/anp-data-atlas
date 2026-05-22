@@ -16,10 +16,12 @@ A ideia é servir de base para outros projetos — quem for construir análises,
 
 ```
 anp-data-atlas/
-├── docs/           # Explorações, notas e guias em Markdown
-├── pipelines/      # Scripts de ingestão (download e organização dos brutos)
+├── docs/
+│   ├── dados-abertos.md   # Catálogo oficial (índice dos 42 conjuntos)
+│   └── conjuntos/         # Exploração por conjunto (metadados, contexto)
+├── pipelines/             # Scripts de ingestão (download e organização dos brutos)
 └── data/
-    └── raw/        # Dados brutos como baixados da ANP (não versionados)
+    └── raw/{slug}/        # Dados brutos por conjunto (não versionados)
 ```
 
 Os arquivos em `data/raw/` ficam no `.gitignore`. O repositório versiona a **lógica** (pipelines) e o **conhecimento** (docs), não os datasets.
@@ -44,11 +46,16 @@ Ao publicar análises ou derivados, cite a fonte oficial da ANP e consulte as co
 
 Sem um arquivo `LICENSE`, o padrão legal é “todos os direitos reservados”. Este projeto usa **MIT** para permitir cópia e reutilização do código e da documentação com atribuição.
 
+## Documentação
+
+O catálogo completo dos conjuntos publicados pela ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)** (42 conjuntos, documentos relacionados e índice de exploração).
+
 ## Como usar
 
 1. Clone o repositório.
-2. Execute os pipelines em `pipelines/` para baixar os dados brutos em `data/raw/`.
-3. Leia as explorações em `docs/` — metadados, contexto e notas de cada conjunto — antes de iniciar um novo projeto que consuma dados da ANP.
+2. Consulte [docs/dados-abertos.md](docs/dados-abertos.md) e escolha um conjunto.
+3. Execute os pipelines em `pipelines/` para baixar os dados brutos em `data/raw/{slug}/`.
+4. Leia ou escreva a exploração em `docs/conjuntos/` — metadados, contexto e notas — antes de iniciar um novo projeto que consuma dados da ANP.
 
 > Os pipelines e a documentação serão expandidos conforme cada conjunto de dados da ANP for explorado.
 
