@@ -217,7 +217,5 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Dados locais — não versionar (ver README)
+# Dados brutos locais — não versionar (ver README)
 data/raw/
-data/true/
-data/ref/
