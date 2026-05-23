@@ -165,7 +165,11 @@ data/raw/tancagem-abastecimento/
 └── {ano}/{periodo}.csv         # espelhar estrutura do portal ao baixar
 ```
 
-**Status da exploração:** página oficial, [metadados-tancagem.pdf](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/arquivos-tancagem-do-abastecimento-nacional-de-combustiveis/metadados-tancagem.pdf) (dicionário de colunas integrado abaixo), schema CSV (`2026/janeiro.csv`) e sugestões de análise. Pendente: perfil de categorias (valores únicos), pipeline de download e série histórica consolidada.
+**Status da exploração:** página oficial, metadados PDF, schema CSV e matriz de arquivos documentados abaixo.
+
+**Exploração ativa:** notebooks em [anp-fuel-analytics — tancagem-abastecimento](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/tancagem-abastecimento/notebooks) (perfil, qualidade, piloto temporal). Descobertas estáveis devem ser refletidas neste arquivo.
+
+**Integração histórica (este atlas):** pipeline em `pipelines/` para consolidar jun/2022→hoje — harmonizar blocos, lacunas e série 2022. Pendente de implementação.
 
 ## Conjuntos relacionados
 

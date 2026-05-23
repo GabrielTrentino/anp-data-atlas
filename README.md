@@ -1,16 +1,21 @@
 # anp-data-atlas
 
-Atlas de exploração dos dados abertos da ANP: documentação em Markdown e pipelines de ingestão para reutilização em outros projetos.
+Atlas de referência dos dados abertos da ANP: documentação em Markdown e **integração histórica** dos conjuntos (série consolidada no tempo).
 
 ## Objetivo
 
-Este repositório é uma **referência exploratória** dos dados publicados pela [Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)](https://www.gov.br/anp/pt-br). Ele reúne:
+Este repositório é a **fonte de verdade** sobre cada conjunto publicado pela [ANP](https://www.gov.br/anp/pt-br). Ele reúne:
 
-- **Documentação** em Markdown com metadados, contexto, dicionários de campos, qualidade dos dados e exemplos de uso;
-- **Pipelines** reproduzíveis para baixar e organizar os dados brutos localmente;
-- **Dados brutos** (`raw`) mantidos fora do Git, apenas para análise local de metadados e contexto.
+- **Documentação** em Markdown — metadados, contexto, dicionário de colunas, matriz de arquivos e lacunas;
+- **Pipelines de integração** — baixar brutos, harmonizar meses/blocos e produzir série histórica utilizável (`data/raw/` → processamento documentado);
+- **Descobertas** incorporadas a partir de explorações no [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics) (notebooks exploratórios).
 
-A ideia é servir de base para outros projetos — quem for construir análises, dashboards ou modelos pode consultar este atlas antes de reimplementar explorações do zero.
+| Repositório | Papel |
+|-------------|--------|
+| **anp-data-atlas** | Referência + **integração histórica** por assunto |
+| [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics) | **Análises exploratórias** (perfil, qualidade, pilotos) que validam o que entra no atlas |
+
+A ideia é que quem for analisar ou integrar dados da ANP consulte o atlas — sem repetir exploração do zero.
 
 ## Estrutura prevista
 
@@ -19,7 +24,7 @@ anp-data-atlas/
 ├── docs/
 │   ├── dados-abertos.md   # Catálogo oficial (índice dos 42 conjuntos)
 │   └── conjuntos/         # Exploração por conjunto (metadados, contexto)
-├── pipelines/             # Scripts de ingestão (download e organização dos brutos)
+├── pipelines/             # Integração histórica por conjunto (série consolidada)
 └── data/
     └── raw/{slug}/        # Dados brutos por conjunto (não versionados)
 ```
