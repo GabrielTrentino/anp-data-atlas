@@ -4,7 +4,7 @@ Atlas de referência dos dados abertos da ANP: documentação em Markdown e **in
 
 ## Objetivo
 
-Este repositório é a **fonte de verdade** sobre cada conjunto publicado pela [ANP](https://www.gov.br/anp/pt-br). Ele reúne:
+Este repositório é uma **referência exploratória** dos dados publicados pela [Agência Nacional do Petróleo, Gás Natural e Biocombustíveis (ANP)](https://www.gov.br/anp/pt-br). Ele reúne:
 
 - **Documentação** em Markdown — metadados, contexto, dicionário de colunas, matriz de arquivos e lacunas;
 - **Pipelines de integração** — baixar brutos, harmonizar meses/blocos e produzir série histórica utilizável (`data/raw/` → processamento documentado);
@@ -15,7 +15,27 @@ Este repositório é a **fonte de verdade** sobre cada conjunto publicado pela [
 | **anp-data-atlas** | Referência + **integração histórica** por assunto |
 | [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics) | **Análises exploratórias** (perfil, qualidade, pilotos) que validam o que entra no atlas |
 
-A ideia é que quem for analisar ou integrar dados da ANP consulte o atlas — sem repetir exploração do zero.
+A ideia é servir de base para outros projetos — quem for construir análises, dashboards ou modelos pode consultar este atlas antes de reimplementar explorações do zero.
+
+## O que cada repositório guarda
+
+Divisão de responsabilidades entre este atlas e o [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics):
+
+| Conteúdo | **anp-data-atlas** (este repo) | **anp-fuel-analytics** |
+|----------|-------------------------------|-------------------------|
+| Metadados oficiais ANP | Sim — `docs/conjuntos/` | Link para o atlas |
+| Matriz de URLs e lacunas do portal | Sim | Usa o atlas como referência |
+| Inventário empírico dos brutos (linhas, m³, `Data` por arquivo) | Sim — quando estabilizado | Notebooks geram e validam |
+| Schema confirmado na prática | Sim — resumo em Markdown | Código + tabelas completas |
+| Chave candidata, regras de agregação | Sim | Prova nos notebooks |
+| Anomalias documentadas (ex.: nov/dez 2022) | Sim — seção de qualidade | Investigação ativa (`TODO.md`) |
+| Gráficos, `describe()`, experimentos | Não | Sim — notebooks |
+| Camadas trusted / refined | Não | Sim — pipelines na raiz |
+| Pipelines de integração histórica | Sim — `pipelines/` (planejado) | Protótipos por estudo |
+
+**Promover para o atlas** quando a informação for reproduzível, útil para integração (ETL, chaves, lacunas) e relativamente estável. **Manter no fuel-analytics** gráficos exploratórios, comparações analíticas e hipóteses ainda em aberto.
+
+No atlas, cada conjunto tem um `.md` em `docs/conjuntos/` com seções como: estrutura oficial, inventário empírico, qualidade/chaves e link para a exploração ativa nos notebooks — sem duplicar o notebook inteiro.
 
 ## Estrutura prevista
 
