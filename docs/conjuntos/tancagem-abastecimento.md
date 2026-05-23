@@ -103,17 +103,59 @@ Base dos links: `.../arquivos/arquivos-tancagem-do-abastecimento-nacional-de-com
 
 ## Inventário empírico dos brutos
 
-> **Status:** esboço — preencher a partir do notebook [01_perfil_exploratorio](https://github.com/GabrielTrentino/anp-fuel-analytics/blob/main/estudos/tancagem-abastecimento/notebooks/01_perfil_exploratorio.ipynb) (seção 3, piloto temporal) ou do trusted local.
+> **Status:** preenchido — medição local em **22/05/2026** (CSVs em `anp-fuel-analytics/data/raw/tancagem-abastecimento/`).
 
-Complementa a [matriz do portal](#arquivos-disponíveis-no-portal) com o que foi **medido** após download (não apenas o que a ANP publicou).
+Complementa a [matriz do portal](#arquivos-disponíveis-no-portal) com o que foi **medido** após download. **36 arquivos CSV** · **492.412 linhas** no total empilhado · soma bruta ~**1.972 M m³** (soma por snapshot — **não** é série mensal deduplicada).
 
-| Arquivo local (`data/raw/...`) | Linhas | Soma `TancagemM3` | `Data` (min – max) | Notas |
-|--------------------------------|-------:|------------------:|--------------------|-------|
-| _a preencher_ | | | | |
+| Arquivo local | Linhas | Soma m³ | `Data` (min – max) | Notas |
+|---------------|-------:|--------:|--------------------|-------|
+| `2022/tancagem_terminais_dados_abertos_2022_09_01.csv` | 13.468 | 57.99 M | 2022-09-01 – 2022-09-01 | encoding latin-1; nome set/2022 |
+| `2022/tancagem_terminais_dados_abertos_dezembro_2022.csv` | 10.302 | 32.15 M | 2022-12-01 – 2022-12-01 | anomalia ~−44% m³ vs jun–out/2022 |
+| `2022/tancagem_terminais_dados_abertos_julho_2022.csv` | 13.442 | 57.95 M | 2022-07-01 – 2022-07-01 | |
+| `2022/tancagem_terminais_dados_abertos_junho_2022.csv` | 13.362 | 57.78 M | 2022-06-01 – 2022-06-01 | |
+| `2022/tancagem_terminais_dados_abertos_novembro_2022.csv` | 10.352 | 32.27 M | 2022-11-01 – 2022-11-01 | anomalia ~−44% m³ vs jun–out/2022 |
+| `2022/tancagem_terminais_dados_abertos_outubro_2022-csv.csv` | 13.468 | 58.07 M | 2022-10-03 – 2022-10-03 | derivado de XLSX (`raw_prepare`) |
+| `2022/tancagem_terminais_dados_abertos_v1.csv` | 13.473 | 58.07 M | 2022-08-01 – 2022-08-01 | |
+| `2023/abril.csv` | 13.474 | 55.91 M | 2023-04-01 – 2023-04-01 | |
+| `2023/agosto.csv` | 13.558 | 56.22 M | 2023-08-01 – 2023-08-01 | |
+| `2023/dezembro.csv` | 13.705 | 56.66 M | 2023-12-04 – 2023-12-04 | |
+| `2023/fevereiro.csv` | 13.434 | 56.11 M | 2023-02-01 – 2023-02-01 | |
+| `2023/janeiro.csv` | 13.571 | 55.97 M | 2023-01-02 – 2023-01-02 | |
+| `2023/junho.csv` | 13.478 | 55.89 M | 2023-06-01 – 2023-06-01 | |
+| `2023/maio.csv` | 13.500 | 55.97 M | 2023-05-01 – 2023-05-01 | |
+| `2023/marco.csv` | 13.419 | 55.86 M | 2023-03-01 – 2023-03-01 | |
+| `2023/novembro.csv` | 13.705 | 56.66 M | 2023-12-04 – 2023-12-04 | idêntico a dez/2023 |
+| `2023/outubro.csv` | 13.705 | 56.66 M | 2023-12-04 – 2023-12-04 | idêntico a dez/2023 |
+| `2023/setembro.csv` | 13.600 | 56.38 M | 2023-09-01 – 2023-09-01 | |
+| `2024/agosto.csv` | 13.809 | 57.75 M | 2024-09-04 – 2024-09-04 | |
+| `2024/dezembro.csv` | 14.060 | 58.52 M | 2025-01-06 – 2025-01-06 | |
+| `2024/fevereiro.csv` | 13.769 | 57.09 M | 2024-03-27 – 2024-03-27 | |
+| `2024/janeiro.csv` | 13.748 | 56.69 M | 2024-01-02 – 2024-01-02 | |
+| `2024/marco-julho.csv` | 13.825 | 57.56 M | 2024-07-10 – 2024-07-10 | bloco multi-mês |
+| `2024/novembro.csv` | 13.979 | 58.26 M | 2024-11-04 – 2024-11-04 | |
+| `2024/setembro-outubro.csv` | 13.979 | 58.26 M | 2024-11-04 – 2024-11-04 | bloco multi-mês; idêntico a nov/2024 |
+| `2025/dezembro.csv` | 14.448 | 59.59 M | 2025-12-31 – 2025-12-31 | |
+| `2025/fevereiro.csv` | 14.192 | 58.81 M | 2025-03-24 – 2025-03-24 | |
+| `2025/janeiro.csv` | 14.114 | 58.59 M | 2025-01-27 – 2025-01-27 | |
+| `2025/julho-agosto.csv` | 14.393 | 59.38 M | 2025-08-26 – 2025-08-26 | bloco multi-mês |
+| `2025/maio-junho.csv` | 14.251 | 59.07 M | 2025-06-06 – 2025-06-06 | bloco multi-mês |
+| `2025/marco.csv` | 14.210 | 58.98 M | 2025-05-09 – 2025-05-09 | |
+| `2025/setembro-a-novembro.csv` | 14.448 | 59.66 M | 2025-11-07 – 2025-11-07 | bloco multi-mês |
+| `2026/abril.csv` | 14.556 | 59.96 M | 2026-04-30 – 2026-04-30 | snapshot mais recente |
+| `2026/fevereiro.csv` | 14.545 | 59.98 M | 2026-02-27 – 2026-02-27 | |
+| `2026/janeiro.csv` | 14.517 | 59.86 M | 2026-01-31 – 2026-01-31 | |
+| `2026/marco.csv` | 14.553 | 59.96 M | 2026-03-31 – 2026-03-31 | |
 
-**Como atualizar:** executar o inventário no fuel-analytics; promover linha a linha quando os números estiverem estáveis. Indicar data da medição no rodapé da tabela.
+**Leituras rápidas:**
 
-_Última atualização do inventário: pendente._
+- **Jun–out/2022:** ~13,4 mil linhas e ~58 M m³ por mês; **nov/dez/2022** caem para ~10,3 mil linhas e ~32 M m³.
+- **2023→2026:** patamar ~56–60 M m³ por snapshot; crescimento gradual de linhas (~13,7k → ~14,5k).
+- **`Data` única por arquivo** na maioria dos casos — confirma que é data de publicação do snapshot, não série intra-arquivo.
+- **Arquivos duplicados:** `2023/outubro` e `2023/novembro` iguais a `dez/2023`; `2024/setembro-outubro` igual a `nov/2024`.
+
+**Como atualizar:** reexecutar `py estudos/tancagem-abastecimento/export_inventario_raw.py --md inventario.md` no fuel-analytics e promover a tabela para este arquivo.
+
+_Última atualização do inventário: 22/05/2026._
 
 ## Qualidade e chaves
 
@@ -174,6 +216,8 @@ Regras implementadas em SQL no repositório fuel-analytics; promover aqui quando
 | **abr/2025** | Sem arquivo no portal | Lacuna na série mensal |
 | **jul/2023** | Citado na página, sem hyperlink | Lacuna / validar download manual |
 | **Blocos multi-mês** | ex. `marco-julho.csv`, `setembro-a-novembro.csv` | Um arquivo → vários meses; não duplicar ao harmonizar |
+| **out/nov 2023** | Mesmas linhas, m³ e `Data` que dez/2023 | Possível republicação do mesmo snapshot; validar download |
+| **set/out 2024** | `setembro-outubro.csv` idêntico a `novembro.csv` | Idem |
 
 **Hipóteses em aberto (não promovidas):** série 2022 com prefixo `tancagem_terminais_*` pode representar universo parcial (terminais) até a padronização `janeiro.csv` em 2023.
 
@@ -241,7 +285,7 @@ data/raw/tancagem-abastecimento/
 └── {ano}/{periodo}.csv         # espelhar estrutura do portal ao baixar
 ```
 
-**Status da exploração:** página oficial, metadados PDF, schema CSV, matriz de arquivos e seções de [inventário empírico](#inventário-empírico-dos-brutos), [qualidade](#qualidade-e-chaves) e [anomalias](#anomalias-conhecidas) (estrutura pronta; inventário completo pendente).
+**Status da exploração:** página oficial, metadados PDF, schema CSV, matriz de arquivos, [inventário empírico](#inventário-empírico-dos-brutos) (36 CSVs medidos), [qualidade](#qualidade-e-chaves) e [anomalias](#anomalias-conhecidas).
 
 **Exploração ativa:** notebooks em [anp-fuel-analytics — tancagem-abastecimento](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/tancagem-abastecimento/notebooks) (perfil, qualidade, piloto temporal). Descobertas estáveis devem ser refletidas nas seções acima — ver critérios nos [READMEs](https://github.com/GabrielTrentino/anp-data-atlas#o-que-promover-para-o-atlas-e-o-que-não) de cada repositório.
 
