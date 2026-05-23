@@ -37,6 +37,79 @@ Divisão de responsabilidades entre este atlas e o [anp-fuel-analytics](https://
 
 No atlas, cada conjunto tem um `.md` em `docs/conjuntos/` com seções como: estrutura oficial, inventário empírico, qualidade/chaves e link para a exploração ativa nos notebooks — sem duplicar o notebook inteiro.
 
+## Fluxo de processamento
+
+Visão geral de como os dados circulam entre portal, repositórios e documentação:
+
+```mermaid
+flowchart TB
+  ANP[Portal ANP — CSV/PDF]
+  Raw[data/raw no atlas ou fuel]
+  Docs[docs/conjuntos — referência]
+  FuelExplore[anp-fuel-analytics — notebooks]
+  FuelETL[anp-fuel-analytics — trusted/refined]
+  AtlasETL[anp-data-atlas — integração histórica]
+  Promote[Promover findings estáveis]
+
+  ANP --> Raw
+  Raw --> Docs
+  Raw --> FuelExplore
+  FuelExplore --> Promote
+  Promote --> Docs
+  Raw --> FuelETL
+  FuelETL -.->|regras documentadas| Docs
+  Raw --> AtlasETL
+  AtlasETL --> Docs
+```
+
+| Etapa | Onde | O que acontece |
+|-------|------|----------------|
+| 1. Fonte | Portal ANP | Publicação mensal ou em blocos; metadados em PDF |
+| 2. Raw local | `data/raw/{slug}/` | Cópia fiel dos arquivos (não versionada no Git) |
+| 3. Exploração | [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics) | Perfil, qualidade, inventário por arquivo nos notebooks |
+| 4. Documentação | `docs/conjuntos/{slug}.md` | Metadados oficiais + inventário empírico + regras de integração |
+| 5. Integração histórica | `pipelines/` (atlas, planejado) | Harmonizar lacunas/blocos e série consolidada documentada |
+| 6. Camadas analíticas | fuel-analytics (`trusted` / `refined`) | Protótipos ETL; regras estáveis voltam para o atlas |
+
+Neste repositório, o foco do processamento é **documentar** o caminho raw → série utilizável. A implementação pesada de trusted/refined fica no fuel-analytics até a integração histórica do atlas estar madura.
+
+## O que promover para o atlas (e o que não)
+
+### Promover (sim)
+
+| Tipo | Exemplo | Onde no atlas |
+|------|---------|---------------|
+| Schema confirmado em amostras reais | `Cnpj` como texto; 12 colunas de negócio | Estrutura dos arquivos |
+| Domínios categóricos estáveis | 4 valores de `GrupoDeProdutos` | Estrutura / qualidade |
+| Chave lógica validada | `Data` + `CodInstalacao` + `Tag` + `GrupoDeProdutos` sem duplicatas | Qualidade e chaves |
+| Inventário por arquivo baixado | linhas, soma m³, faixa de `Data` | Inventário empírico |
+| Lacunas e blocos do portal | abr/2025 ausente; `marco-julho.csv` | Matriz / periodicidade |
+| Anomalia confirmada | queda nov/dez 2022 com evidência | Anomalias conhecidas |
+| Regra de agregação | somar `TancagemM3` no nível da chave; não duplicar `Tag` | Qualidade e chaves |
+| Decisão de ETL | descartar linhas 100% nulas na trusted | Qualidade (quando validado) |
+
+### Não promover (ficar no fuel-analytics)
+
+| Tipo | Exemplo | Onde ficar |
+|------|---------|------------|
+| Outputs de célula | `df.describe()`, tabelas gigantes | Notebook |
+| Gráficos exploratórios | ranking UF, GO vs SP | Notebook |
+| Hipótese em aberto | “será corte parcial em 2022?” | `TODO.md` do estudo |
+| Código de pipeline | SQL DuckDB, `run.py` | `pipelines/` |
+| Análise de negócio | HHI, participação de mercado | Notebook ou projeto derivado |
+| Números de uma execução só | contagem exata sem data de referência | Reexecutar e documentar com snapshot |
+
+### Critérios (checklist)
+
+Promova quando **todas** forem verdadeiras:
+
+1. **Reproduzível** — outra pessoa com os mesmos CSVs deve chegar à mesma conclusão.
+2. **Útil para integração** — ajuda ETL, chaves, harmonização temporal ou leitura do dicionário.
+3. **Estável** — não depende de um notebook em edição; vale após revisão.
+4. **Referenciável** — indique fonte (arquivo, notebook, data da medição).
+
+Se falhar em (3) ou (4), mantenha no fuel-analytics até fechar a investigação.
+
 ## Estrutura prevista
 
 ```

@@ -101,6 +101,82 @@ Base dos links: `.../arquivos/arquivos-tancagem-do-abastecimento-nacional-de-com
 - **2026:** publicação até abril; demais meses ainda sem arquivo no portal.
 - Validar schema dos arquivos de 2022 (especialmente outubro em `.xlsx`) antes de concatenar séries históricas.
 
+## Inventário empírico dos brutos
+
+> **Status:** esboço — preencher a partir do notebook [01_perfil_exploratorio](https://github.com/GabrielTrentino/anp-fuel-analytics/blob/main/estudos/tancagem-abastecimento/notebooks/01_perfil_exploratorio.ipynb) (seção 3, piloto temporal) ou do trusted local.
+
+Complementa a [matriz do portal](#arquivos-disponíveis-no-portal) com o que foi **medido** após download (não apenas o que a ANP publicou).
+
+| Arquivo local (`data/raw/...`) | Linhas | Soma `TancagemM3` | `Data` (min – max) | Notas |
+|--------------------------------|-------:|------------------:|--------------------|-------|
+| _a preencher_ | | | | |
+
+**Como atualizar:** executar o inventário no fuel-analytics; promover linha a linha quando os números estiverem estáveis. Indicar data da medição no rodapé da tabela.
+
+_Última atualização do inventário: pendente._
+
+## Qualidade e chaves
+
+> **Status:** parcialmente documentado — validado em snapshot `2026/janeiro.csv` (exploração fuel-analytics).
+
+### Chave lógica candidata
+
+Granularidade da fonte: **uma linha por** `Data` × `CodInstalacao` × `Tag` × `GrupoDeProdutos`.
+
+| Campo | Papel |
+|-------|--------|
+| `Data` | Data de disponibilização do snapshot na página ANP (não “mês de estoque”) |
+| `CodInstalacao` | Instalação i-SIMP (7 dígitos) |
+| `Tag` | Unidade de armazenagem na instalação |
+| `GrupoDeProdutos` | DERIVADOS E BIOCOMBUSTÍVEIS, GLP, PETRÓLEO, OUTROS |
+
+**Validação (jan/2026):** 14.517 linhas; **0 duplicatas** na chave acima.
+
+### Tipos e identificadores
+
+| Coluna | Tratamento recomendado no ETL |
+|--------|-------------------------------|
+| `Cnpj` | Ler como **texto** (evitar float / notação científica) |
+| `CodInstalacao` | Texto ou inteiro consistente; normalizar `.0` se vier de Excel |
+| `TancagemM3` | Numérico; soma apenas após agregar na granularidade da chave |
+
+### Domínios observados (snapshot jan/2026)
+
+| Coluna | Cardinalidade | Valores principais |
+|--------|---------------|-------------------|
+| `GrupoDeProdutos` | 4 | DERIVADOS E BIOCOMBUSTÍVEIS (~77%), GLP, PETRÓLEO, OUTROS |
+| `Segmento` | 11 | ex.: BASES DO RAMO DE TRR, DISTRIBUIDORES, etc. |
+| `TipoDaUnidade` | 3 | TANQUE, VASO DE PRESSÃO, ESFERA |
+
+Confirmar domínios em outros meses antes de assumir série histórica fechada.
+
+### Regras de agregação
+
+- Métrica base: **soma de `TancagemM3`** no recorte desejado.
+- Não somar a mesma `Tag` duas vezes no mesmo snapshot.
+- Para totais por empresa, UF ou município: agregar **explicitamente** a partir da chave, não usar média de `TancagemM3` entre tanques.
+
+### Trusted (fuel-analytics)
+
+Regras implementadas em SQL no repositório fuel-analytics; promover aqui quando validadas:
+
+- [ ] Linhas 100% nulas nas 12 colunas de negócio — política de descarte na trusted
+- [ ] Colunas de rastreio: `_source_file`, `_source_year`, `_source_period`
+
+## Anomalias conhecidas
+
+> **Status:** em investigação no [TODO do estudo](https://github.com/GabrielTrentino/anp-fuel-analytics/blob/main/estudos/tancagem-abastecimento/TODO.md).
+
+| Período | Observação | Impacto na integração |
+|---------|------------|------------------------|
+| **nov/dez 2022** | ~44% menos m³ e ~23% menos linhas que jun–out/2022 | Não tratar como queda real de capacidade até confirmar escopo dos arquivos `tancagem_terminais_*` |
+| **out/2022** | Publicado como `.xlsx` no portal | Converter para CSV antes do ETL (`raw_prepare`) |
+| **abr/2025** | Sem arquivo no portal | Lacuna na série mensal |
+| **jul/2023** | Citado na página, sem hyperlink | Lacuna / validar download manual |
+| **Blocos multi-mês** | ex. `marco-julho.csv`, `setembro-a-novembro.csv` | Um arquivo → vários meses; não duplicar ao harmonizar |
+
+**Hipóteses em aberto (não promovidas):** série 2022 com prefixo `tancagem_terminais_*` pode representar universo parcial (terminais) até a padronização `janeiro.csv` em 2023.
+
 ## Sugestões de análises
 
 Métrica base recomendada: **soma de `TancagemM3`** no recorte desejado. A granularidade da fonte é **unidade (`Tag`) × instalação × grupo de produto** — evitar somar a mesma `Tag` duas vezes no mesmo snapshot; para totais por instalação, empresa ou município, agregar explicitamente nesse nível.
@@ -165,9 +241,9 @@ data/raw/tancagem-abastecimento/
 └── {ano}/{periodo}.csv         # espelhar estrutura do portal ao baixar
 ```
 
-**Status da exploração:** página oficial, metadados PDF, schema CSV e matriz de arquivos documentados abaixo.
+**Status da exploração:** página oficial, metadados PDF, schema CSV, matriz de arquivos e seções de [inventário empírico](#inventário-empírico-dos-brutos), [qualidade](#qualidade-e-chaves) e [anomalias](#anomalias-conhecidas) (estrutura pronta; inventário completo pendente).
 
-**Exploração ativa:** notebooks em [anp-fuel-analytics — tancagem-abastecimento](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/tancagem-abastecimento/notebooks) (perfil, qualidade, piloto temporal). Descobertas estáveis devem ser refletidas neste arquivo.
+**Exploração ativa:** notebooks em [anp-fuel-analytics — tancagem-abastecimento](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/tancagem-abastecimento/notebooks) (perfil, qualidade, piloto temporal). Descobertas estáveis devem ser refletidas nas seções acima — ver critérios nos [READMEs](https://github.com/GabrielTrentino/anp-data-atlas#o-que-promover-para-o-atlas-e-o-que-não) de cada repositório.
 
 **Integração histórica (este atlas):** pipeline em `pipelines/` para consolidar jun/2022→hoje — harmonizar blocos, lacunas e série 2022. Pendente de implementação.
 
