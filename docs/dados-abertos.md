@@ -73,7 +73,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 30 | Prestadores de serviço de apoio administrativo | `prestadores-apoio-administrativo` | |
 | 31 | Previsão de Atividades e Investimentos Exploratórios | `previsao-atividades-investimentos` | |
 | 32 | Processamento de petróleo e produção de derivados | `processamento-petroleo-derivados` | [doc](conjuntos/processamento-petroleo-derivados.md) |
-| 33 | Produção de biocombustíveis | `producao-biocombustiveis` | |
+| 33 | Produção de biocombustíveis | `producao-biocombustiveis` | [doc](conjuntos/producao-biocombustiveis.md) |
 | 34 | Produção de petróleo e gás natural por estado e localização | `producao-por-estado` | |
 | 35 | Produção de Petróleo e Gás Natural por Poço | `producao-por-poco` | |
 | 36 | Relação de Concessionários | `relacao-concessionarios` | |
