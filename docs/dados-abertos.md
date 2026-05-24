@@ -49,7 +49,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 6 | Aquisição, Processamento e Estudo de Dados | `aquisicao-processamento-estudo-dados` | |
 | 7 | Autorizações de gás natural | `autorizacoes-gas-natural` | |
 | 8 | Blocos com Fase Exploratória Encerrada | `blocos-fase-exploratoria-encerrada` | |
-| 9 | Capacidade de Armazenagem de Terminais | `capacidade-armazenagem-terminais` | |
+| 9 | Capacidade de Armazenagem de Terminais | `capacidade-armazenagem-terminais` | [doc](conjuntos/capacidade-armazenagem-terminais.md) |
 | 10 | Comercialização de Gás Natural | `comercializacao-gas-natural` | |
 | 11 | Dados Cadastrais das Revendas de Gás Liquefeito de Petróleo (GLP) | `cadastro-revendas-glp` | [doc](conjuntos/cadastro-revendas-glp.md) |
 | 12 | Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos | `cadastro-revendas-combustiveis` | [doc](conjuntos/cadastro-revendas-combustiveis.md) |

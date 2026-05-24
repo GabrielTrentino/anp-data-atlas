@@ -44,7 +44,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | 40 | `serie-historica-precos` | Série Histórica de Preços de Combustíveis | ✓ | — | — | — | — |
 | 42 | `vendas-derivados` | Vendas de derivados e biocombustíveis | ✓ | — | — | — | — |
 | 2 | `fiscalizacao-abastecimento` | Ações de Fiscalização do Abastecimento | ✓ | — | — | — | — |
-| 9 | `capacidade-armazenagem-terminais` | Capacidade de Armazenagem de Terminais | — | — | — | — | — |
+| 9 | `capacidade-armazenagem-terminais` | Capacidade de Armazenagem de Terminais | ✓ | — | — | — | — |
 | 22 | `movimentacao-terminais-aquaviarios` | Movimentação Terminais Aquaviários | — | — | — | — | — |
 | 37 | `registro-lubrificantes` | Registro de Óleos e Graxas Lubrificantes | — | — | — | — | — |
 
