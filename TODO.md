@@ -38,7 +38,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | 12 | `cadastro-revendas-combustiveis` | Cadastro revendedores varejistas (postos) | ✓ | — | — | — | — |
 | 11 | `cadastro-revendas-glp` | Cadastro revendas GLP | ✓ | — | — | — | — |
 | 27 | `pontos-abastecimento` | Pontos de Abastecimento Autorizados | ✓ | — | — | — | — |
-| 15 | `distribuidores-combustiveis-liquidos` | Distribuidores de combustíveis líquidos | — | — | — | — | — |
+| 15 | `distribuidores-combustiveis-liquidos` | Distribuidores de combustíveis líquidos | ✓ | — | — | — | — |
 | 28 | `pmqc` | PMQC — Qualidade dos Combustíveis | — | — | — | — | — |
 | 29 | `pml` | PML — Monitoramento dos Lubrificantes | — | — | — | — | — |
 | 40 | `serie-historica-precos` | Série Histórica de Preços de Combustíveis | — | — | — | — | — |

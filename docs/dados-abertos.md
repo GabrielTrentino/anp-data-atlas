@@ -55,7 +55,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 12 | Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos | `cadastro-revendas-combustiveis` | [doc](conjuntos/cadastro-revendas-combustiveis.md) |
 | 13 | Dados de E&P | `dados-ep` | |
 | 14 | Dados Georreferenciados das Bacias Sedimentares Brasileiras | `bacias-sedimentares` | |
-| 15 | Distribuidores de combustíveis líquidos | `distribuidores-combustiveis-liquidos` | |
+| 15 | Distribuidores de combustíveis líquidos | `distribuidores-combustiveis-liquidos` | [doc](conjuntos/distribuidores-combustiveis-liquidos.md) |
 | 16 | Fase de Exploração | `fase-exploracao` | |
 | 17 | Fase de Desenvolvimento e Produção | `fase-desenvolvimento-producao` | |
 | 18 | Fiscalização de Conteúdo Local | `fiscalizacao-conteudo-local` | |
