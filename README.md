@@ -26,7 +26,7 @@ Síntese dos **42 conjuntos** da [página de dados abertos](docs/dados-abertos.m
 | # | Slug | Métrica | Variáveis-chave | Liga com |
 |---|------|---------|-----------------|----------|
 | 41 | [`tancagem-abastecimento`](docs/conjuntos/tancagem-abastecimento.md) | Capacidade m³ | `Data`, `Cnpj`, `CodInstalacao`, `Uf`, `Municipio`, `GrupoDeProdutos`, `TancagemM3` ✓ | movimentação, cadastros, preços |
-| 21 | [`movimentacao-derivados`](docs/conjuntos/movimentacao-derivados.md) | Volume m³ | `Periodo`, `Cnpj`, `CodInstalacao`, `Produto`, `Operacao` ~ | tancagem, vendas, cadastros |
+| 21 | [`movimentacao-derivados`](docs/conjuntos/movimentacao-derivados.md) | Volume mil m³ | `Ano`, `Mês`, `Agente Regulado`, `Código do Produto`, UF origem/destino ✓ | tancagem (nome), vendas, cadastros |
 | 12 | [`cadastro-revendas-combustiveis`](docs/conjuntos/cadastro-revendas-combustiveis.md) | Cadastro postos | `Cnpj`, `Uf`, `Municipio`, `Bandeira`, `Situacao` ~ | tancagem, preços, movimentação |
 | 11 | [`cadastro-revendas-glp`](docs/conjuntos/cadastro-revendas-glp.md) | Cadastro GLP | `Cnpj`, `Uf`, `Municipio`, modalidade ~ | movimentação GLP, tancagem |
 | 27 | [`pontos-abastecimento`](docs/conjuntos/pontos-abastecimento.md) | Instalações | `CodInstalacao`, `Cnpj`, `Uf`, `Municipio` ~ | cadastros, fiscalização |

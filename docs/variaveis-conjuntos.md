@@ -32,7 +32,7 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 | # | Slug | Métrica principal | Variáveis principais | Chaves de ligação | Cruzamentos |
 |---|------|-------------------|----------------------|-------------------|-------------|
 | 41 | [`tancagem-abastecimento`](conjuntos/tancagem-abastecimento.md) | Capacidade m³ (`TancagemM3`) | `Data`, `Cnpj`, `CodInstalacao`, `Uf`, `Municipio`, `Segmento`, `Tag`, `GrupoDeProdutos` **✓** | `CodInstalacao`+`Tag`+`GrupoDeProdutos`; `Cnpj`; geo | movimentação, cadastros, preços |
-| 21 | [`movimentacao-derivados`](conjuntos/movimentacao-derivados.md) | Volume movimentado m³ | `Periodo`, `Cnpj`, `CodInstalacao`, `Segmento`, `Produto`, `Operacao`, `Volume` **~** | `CodInstalacao`, `Cnpj`, `Produto`+mês | tancagem, vendas, cadastros |
+| 21 | [`movimentacao-derivados`](conjuntos/movimentacao-derivados.md) | Volume movimentado | `Ano`, `Mês`, `Agente Regulado`, `Código do Produto`, `UF Origem/Destino`, volume **✓** | nome agente→tancagem; geo→vendas |
 | 12 | [`cadastro-revendas-combustiveis`](conjuntos/cadastro-revendas-combustiveis.md) | Cadastro de postos | `Cnpj`, `Uf`, `Municipio`, `Bandeira`, `Situacao`, endereço **~** | `Cnpj`; `Uf`+`Municipio` | tancagem, preços, movimentação |
 | 11 | [`cadastro-revendas-glp`](conjuntos/cadastro-revendas-glp.md) | Cadastro revendas GLP | `Cnpj`, `Uf`, `Municipio`, modalidade botijão/granel, `Situacao` **~** | `Cnpj`; geo | movimentação GLP, tancagem (GLP) |
 | 27 | [`pontos-abastecimento`](conjuntos/pontos-abastecimento.md) | Instalações autorizadas | `CodInstalacao`, `Cnpj`, `Uf`, `Municipio`, `Segmento`, `Situacao` **~** | `CodInstalacao`, `Cnpj` | cadastro revendas, fiscalização |
