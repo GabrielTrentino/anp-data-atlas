@@ -42,7 +42,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | # | Conjunto | Slug | Explorado |
 |---|----------|------|-----------|
 | 1 | Acervo de Dados Técnicos | `acervo-dados-tecnicos` | |
-| 2 | Ações de Fiscalização do Abastecimento | `fiscalizacao-abastecimento` | |
+| 2 | Ações de Fiscalização do Abastecimento | `fiscalizacao-abastecimento` | [doc](conjuntos/fiscalizacao-abastecimento.md) |
 | 3 | Aditamento de conteúdo local | `aditamento-conteudo-local` | |
 | 4 | Amostras de Rochas e Fluidos | `amostras-rochas-fluidos` | |
 | 5 | Anuário Estatístico | `anuario-estatistico` | |
