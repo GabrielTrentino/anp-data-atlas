@@ -77,7 +77,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 34 | Produção de petróleo e gás natural por estado e localização | `producao-por-estado` | |
 | 35 | Produção de Petróleo e Gás Natural por Poço | `producao-por-poco` | |
 | 36 | Relação de Concessionários | `relacao-concessionarios` | |
-| 37 | Registro de Óleos e Graxas Lubrificantes | `registro-lubrificantes` | |
+| 37 | Registro de Óleos e Graxas Lubrificantes | `registro-lubrificantes` | [doc](conjuntos/registro-lubrificantes.md) |
 | 38 | Resultado de poço | `resultado-poco` | |
 | 39 | Rodadas de Licitações de Petróleo e Gás Natural | `rodadas-licitacoes` | |
 | 40 | Série Histórica de Preços de Combustíveis | `serie-historica-precos` | [doc](conjuntos/serie-historica-precos.md) |
