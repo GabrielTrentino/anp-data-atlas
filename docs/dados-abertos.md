@@ -80,7 +80,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 37 | Registro de Óleos e Graxas Lubrificantes | `registro-lubrificantes` | |
 | 38 | Resultado de poço | `resultado-poco` | |
 | 39 | Rodadas de Licitações de Petróleo e Gás Natural | `rodadas-licitacoes` | |
-| 40 | Série Histórica de Preços de Combustíveis | `serie-historica-precos` | |
+| 40 | Série Histórica de Preços de Combustíveis | `serie-historica-precos` | [doc](conjuntos/serie-historica-precos.md) |
 | 41 | Tancagem do Abastecimento Nacional de Combustíveis | `tancagem-abastecimento` | [sim](conjuntos/tancagem-abastecimento.md) |
 | 42 | Vendas de derivados de petróleo e biocombustíveis | `vendas-derivados` | |
 
