@@ -54,7 +54,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 32 | `processamento-petroleo-derivados` | Processamento de petróleo e produção de derivados | — | — | — | — | — |
+| 32 | `processamento-petroleo-derivados` | Processamento de petróleo e produção de derivados | ✓ | — | — | — | — |
 | 33 | `producao-biocombustiveis` | Produção de biocombustíveis | — | — | — | — | — |
 | 34 | `producao-por-estado` | Produção por estado e localização | — | — | — | — | — |
 | 35 | `producao-por-poco` | Produção por Poço | — | — | — | — | — |

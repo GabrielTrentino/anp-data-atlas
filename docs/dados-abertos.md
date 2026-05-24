@@ -72,7 +72,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 29 | Programa de Monitoramento dos Lubrificantes (PML) | `pml` | [doc](conjuntos/pml.md) |
 | 30 | Prestadores de serviço de apoio administrativo | `prestadores-apoio-administrativo` | |
 | 31 | Previsão de Atividades e Investimentos Exploratórios | `previsao-atividades-investimentos` | |
-| 32 | Processamento de petróleo e produção de derivados | `processamento-petroleo-derivados` | |
+| 32 | Processamento de petróleo e produção de derivados | `processamento-petroleo-derivados` | [doc](conjuntos/processamento-petroleo-derivados.md) |
 | 33 | Produção de biocombustíveis | `producao-biocombustiveis` | |
 | 34 | Produção de petróleo e gás natural por estado e localização | `producao-por-estado` | |
 | 35 | Produção de Petróleo e Gás Natural por Poço | `producao-por-poco` | |
