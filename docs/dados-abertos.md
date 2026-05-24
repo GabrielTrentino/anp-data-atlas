@@ -52,7 +52,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 9 | Capacidade de Armazenagem de Terminais | `capacidade-armazenagem-terminais` | |
 | 10 | Comercialização de Gás Natural | `comercializacao-gas-natural` | |
 | 11 | Dados Cadastrais das Revendas de Gás Liquefeito de Petróleo (GLP) | `cadastro-revendas-glp` | |
-| 12 | Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos | `cadastro-revendas-combustiveis` | |
+| 12 | Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos | `cadastro-revendas-combustiveis` | [doc](conjuntos/cadastro-revendas-combustiveis.md) |
 | 13 | Dados de E&P | `dados-ep` | |
 | 14 | Dados Georreferenciados das Bacias Sedimentares Brasileiras | `bacias-sedimentares` | |
 | 15 | Distribuidores de combustíveis líquidos | `distribuidores-combustiveis-liquidos` | |
