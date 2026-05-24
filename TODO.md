@@ -59,7 +59,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | 34 | `producao-por-estado` | Produção por estado e localização | ✓ | — | — | — | — |
 | 35 | `producao-por-poco` | Produção por Poço | ✓ | — | — | — | — |
 | 19 | `importacoes-exportacoes` | Importações e exportações | ✓ | — | — | — | — |
-| 5 | `anuario-estatistico` | Anuário Estatístico | — | — | — | — | — |
+| 5 | `anuario-estatistico` | Anuário Estatístico | ✓ | — | — | — | — |
 
 ---
 

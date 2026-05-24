@@ -45,7 +45,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 2 | Ações de Fiscalização do Abastecimento | `fiscalizacao-abastecimento` | [doc](conjuntos/fiscalizacao-abastecimento.md) |
 | 3 | Aditamento de conteúdo local | `aditamento-conteudo-local` | |
 | 4 | Amostras de Rochas e Fluidos | `amostras-rochas-fluidos` | |
-| 5 | Anuário Estatístico | `anuario-estatistico` | |
+| 5 | Anuário Estatístico | `anuario-estatistico` | [doc](conjuntos/anuario-estatistico.md) |
 | 6 | Aquisição, Processamento e Estudo de Dados | `aquisicao-processamento-estudo-dados` | |
 | 7 | Autorizações de gás natural | `autorizacoes-gas-natural` | |
 | 8 | Blocos com Fase Exploratória Encerrada | `blocos-fase-exploratoria-encerrada` | |
