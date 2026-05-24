@@ -3,6 +3,7 @@
 | Arquivo | Conteúdo |
 |---------|----------|
 | [dados-abertos.md](dados-abertos.md) | Catálogo dos 42 conjuntos e documentos da página oficial da ANP |
+| [variaveis-conjuntos.md](variaveis-conjuntos.md) | Variáveis-chave, chaves de ligação e cruzamentos entre os 42 conjuntos |
 | [inventario-dados.md](inventario-dados.md) | Inventário institucional (240 bases) — contempla os 42 conjuntos do portal e outros canais de acesso |
 ## Conjuntos prioritários fuel-analytics (documentados)
 
