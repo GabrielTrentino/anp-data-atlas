@@ -97,3 +97,4 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 2. Baixar amostras para `data/raw/{slug}/`.
 3. Registrar metadados, formatos, periodicidade e dicionário em `docs/conjuntos/{slug}.md`.
 4. Marcar a coluna **Explorado** neste arquivo quando a exploração estiver documentada.
+5. Acompanhar progresso detalhado em [TODO.md](../TODO.md) (42 conjuntos, etapas doc/raw/fuel).
