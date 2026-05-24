@@ -82,7 +82,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 39 | Rodadas de Licitações de Petróleo e Gás Natural | `rodadas-licitacoes` | |
 | 40 | Série Histórica de Preços de Combustíveis | `serie-historica-precos` | [doc](conjuntos/serie-historica-precos.md) |
 | 41 | Tancagem do Abastecimento Nacional de Combustíveis | `tancagem-abastecimento` | [sim](conjuntos/tancagem-abastecimento.md) |
-| 42 | Vendas de derivados de petróleo e biocombustíveis | `vendas-derivados` | |
+| 42 | Vendas de derivados de petróleo e biocombustíveis | `vendas-derivados` | [doc](conjuntos/vendas-derivados.md) |
 
 ### Notas do portal (resumo)
 
