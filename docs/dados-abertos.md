@@ -68,7 +68,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 25 | Participações Governamentais | `participacoes-governamentais` | |
 | 26 | Pesquisa, Desenvolvimento e Inovação | `pesquisa-desenvolvimento-inovacao` | |
 | 27 | Pontos de Abastecimento Autorizados | `pontos-abastecimento` | [doc](conjuntos/pontos-abastecimento.md) |
-| 28 | Programa de Monitoramento da Qualidade dos Combustíveis (PMQC) | `pmqc` | |
+| 28 | Programa de Monitoramento da Qualidade dos Combustíveis (PMQC) | `pmqc` | [doc](conjuntos/pmqc.md) |
 | 29 | Programa de Monitoramento dos Lubrificantes (PML) | `pml` | |
 | 30 | Prestadores de serviço de apoio administrativo | `prestadores-apoio-administrativo` | |
 | 31 | Previsão de Atividades e Investimentos Exploratórios | `previsao-atividades-investimentos` | |
