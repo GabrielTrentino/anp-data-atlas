@@ -7,6 +7,10 @@ Catálogo da página oficial de dados abertos da ANP. Serve como índice para ex
 
 A ANP disponibiliza dados em formato aberto para transparência — visualização, estudo e reutilização por cidadãos, academia, imprensa e agentes econômicos. Os conjuntos também podem ser consultados no [Portal Brasileiro de Dados Abertos](https://dados.gov.br/).
 
+### Inventário vs. estes 42 conjuntos
+
+A [planilha Inventário de Dados](inventario-dados.md) (**240 bases**) é o **catálogo institucional** que **contempla** o que esta página publica: cada conjunto abaixo costuma corresponder a **várias linhas** do inventário (sub-tabelas, séries por produto/ano). O inventário é mais amplo — inclui bases abertas em **outros canais** (dados.gov.br, CGU, painéis no site ANP) que ainda não têm página entre estes 42 e serão explorados depois. Detalhes em [Relação com o portal](inventario-dados.md#relação-com-o-portal-de-dados-abertos).
+
 ## Página e documentos relacionados
 
 A [página de Dados abertos](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos) lista os conjuntos abaixo e aponta para os documentos de governança. Cada item tem URL própria (não confundir a página índice com o PDF do plano, por exemplo).

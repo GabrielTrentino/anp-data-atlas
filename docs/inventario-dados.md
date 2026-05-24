@@ -1,6 +1,6 @@
 # Inventário de Dados ANP
 
-Análise da planilha oficial **Inventário de Dados** — catálogo institucional das bases mantidas pela ANP. Complementa o [catálogo de 42 conjuntos](dados-abertos.md) da página pública de dados abertos.
+Análise da planilha oficial **Inventário de Dados** — catálogo institucional das bases mantidas pela ANP. **Contempla** o que a [página de 42 conjuntos](dados-abertos.md) publica para download, além de outros canais de acesso a dados que ainda serão explorados neste atlas.
 
 | Item | Valor |
 |------|-------|
@@ -17,7 +17,38 @@ Análise da planilha oficial **Inventário de Dados** — catálogo instituciona
 | Conteúdo | Nome, descrição, unidade, periodicidade, sigilo | URL, formato, contexto de uso | Schema, arquivos medidos, ETL |
 | Uso | Mapear quem mantém cada base e com que frequência | Saber o que baixar e onde | Integrar e documentar armadilhas |
 
-Nem toda base do inventário aparece na página dos 42 conjuntos; nem todo conjunto público tem o mesmo nome no inventário.
+## Relação com o portal de dados abertos
+
+O inventário e a página dos **42 conjuntos** não são listas paralelas — são **níveis diferentes** do mesmo catálogo ANP:
+
+```
+Inventário (240 bases institucionais)
+        ↓ agrupamento / vitrine pública
+Portal — 42 conjuntos (página de download)
+        ↓ outros canais (painéis, dados.gov.br, CGU…)
+Acesso empírico — docs/conjuntos/{slug}.md
+```
+
+| Aspecto | Inventário | Portal (42 conjuntos) |
+|---------|------------|------------------------|
+| **Papel** | Registro interno de cada base | Página de download por tema |
+| **Granularidade** | Fina — sub-tabelas, séries por ano/produto | Grossa — um conjunto agrega várias linhas |
+| **Relação típica** | **N linhas → 1 conjunto** | **1 conjunto → N linhas** |
+| **Nomenclatura** | Nome institucional fixo | Título da vitrine no gov.br |
+
+Na extração **2026-05-24**, **41 dos 42** conjuntos do portal têm correspondência clara no inventário (várias linhas por conjunto). O restante (`dados-ep`) aparece como sub-bases **“Dados de Exploração e Produção — …”** no inventário.
+
+**O inventário também cobre acessos fora da página dos 42**, indicados na coluna *Disponível no Portal Brasileiro de Dados Abertos?* — por exemplo bases **Sim/CGU**, painéis dinâmicos no site ANP (algumas fiscalizações), bases marcadas **Não** (sigilosas ou sem vitrine CSV). Esses canais **não têm slug próprio** no catálogo do portal; serão mapeados depois, quando forem explorados.
+
+### Como usar os dois catálogos neste atlas
+
+| Pergunta | Onde consultar |
+|----------|----------------|
+| Onde baixar e qual slug adotar? | [dados-abertos.md](dados-abertos.md) |
+| Quantas sub-bases existem, quem mantém, periodicidade? | Este inventário |
+| Schema, arquivos medidos, integração histórica | `docs/conjuntos/{slug}.md` |
+
+> **Regra prática:** não criar slugs separados no monorepo para cada linha do inventário quando o portal já unifica o tema (ex.: movimentação SIMP = várias linhas, um conjunto `movimentacao-derivados`).
 
 ## Estrutura da planilha
 

@@ -240,7 +240,7 @@ O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/d
 
 ## Inventário de Dados ANP
 
-Planilha oficial que cataloga **240 bases** mantidas pela ANP — visão institucional complementar ao [catálogo de 42 conjuntos](docs/dados-abertos.md) da página de download.
+Planilha oficial que cataloga **240 bases** mantidas pela ANP. **Contempla** o que a [página de 42 conjuntos](docs/dados-abertos.md) publica (agregando várias linhas por conjunto) e **outros canais de acesso** ainda não mapeados neste atlas — ver [Relação com o portal](docs/inventario-dados.md#relação-com-o-portal-de-dados-abertos).
 
 | Item | Valor |
 |------|-------|

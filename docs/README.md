@@ -3,7 +3,7 @@
 | Arquivo | Conteúdo |
 |---------|----------|
 | [dados-abertos.md](dados-abertos.md) | Catálogo dos 42 conjuntos e documentos da página oficial da ANP |
-| [inventario-dados.md](inventario-dados.md) | Análise da planilha Inventário de Dados ANP (240 bases) |
+| [inventario-dados.md](inventario-dados.md) | Inventário institucional (240 bases) — contempla os 42 conjuntos do portal e outros canais de acesso |
 ## Conjuntos prioritários fuel-analytics (documentados)
 
 Referência rápida — ver [TODO.md](../TODO.md) para status por etapa.
