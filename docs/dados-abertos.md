@@ -59,7 +59,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 16 | Fase de Exploração | `fase-exploracao` | |
 | 17 | Fase de Desenvolvimento e Produção | `fase-desenvolvimento-producao` | |
 | 18 | Fiscalização de Conteúdo Local | `fiscalizacao-conteudo-local` | |
-| 19 | Importações e exportações | `importacoes-exportacoes` | |
+| 19 | Importações e exportações | `importacoes-exportacoes` | [doc](conjuntos/importacoes-exportacoes.md) |
 | 20 | Incidentes de Exploração e Produção de Petróleo e Gás Natural | `incidentes-ep` | |
 | 21 | Movimentação de derivados de petróleo e gás natural e biocombustíveis | `movimentacao-derivados` | [doc](conjuntos/movimentacao-derivados.md) |
 | 22 | Movimentação dos Terminais Aquaviários | `movimentacao-terminais-aquaviarios` | [doc](conjuntos/movimentacao-terminais-aquaviarios.md) |
