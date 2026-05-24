@@ -75,7 +75,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 32 | Processamento de petróleo e produção de derivados | `processamento-petroleo-derivados` | [doc](conjuntos/processamento-petroleo-derivados.md) |
 | 33 | Produção de biocombustíveis | `producao-biocombustiveis` | [doc](conjuntos/producao-biocombustiveis.md) |
 | 34 | Produção de petróleo e gás natural por estado e localização | `producao-por-estado` | [doc](conjuntos/producao-por-estado.md) |
-| 35 | Produção de Petróleo e Gás Natural por Poço | `producao-por-poco` | |
+| 35 | Produção de Petróleo e Gás Natural por Poço | `producao-por-poco` | [doc](conjuntos/producao-por-poco.md) |
 | 36 | Relação de Concessionários | `relacao-concessionarios` | |
 | 37 | Registro de Óleos e Graxas Lubrificantes | `registro-lubrificantes` | [doc](conjuntos/registro-lubrificantes.md) |
 | 38 | Resultado de poço | `resultado-poco` | |
