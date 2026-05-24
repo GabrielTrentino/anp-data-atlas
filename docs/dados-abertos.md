@@ -15,7 +15,7 @@ A [página de Dados abertos](https://www.gov.br/anp/pt-br/centrais-de-conteudo/d
 |-----------|---------|------------|
 | Página de Dados abertos | [dados-abertos](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos) | Índice dos 42 conjuntos |
 | Plano de Dados Abertos da ANP 2024-2026 | [pda-2024-2026.pdf](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/pda-2024-2026.pdf) | Política e metas de abertura |
-| Inventário de Dados | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) | Atualizado em 5/12/2025 |
+| Inventário de Dados | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) | Atualizado em 5/12/2025 · [análise local](inventario-dados.md) · [extração 2026-05-24](../data/catalogo-anp/inventario-dados/2026-05-24/) |
 | Execução Orçamentária e Contratos Administrativos | [nota-explicativa-exclusao-bases-dados-abertos-anp.docx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/nota-explicativa-exclusao-bases-dados-abertos-anp.docx) | Nota sobre exclusão de bases dos dados abertos |
 
 ### Relatórios Anuais de Dados Abertos

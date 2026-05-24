@@ -115,14 +115,17 @@ Se falhar em (3) ou (4), mantenha no fuel-analytics até fechar a investigação
 ```
 anp-data-atlas/
 ├── docs/
-│   ├── dados-abertos.md   # Catálogo oficial (índice dos 42 conjuntos)
-│   └── conjuntos/         # Exploração por conjunto (metadados, contexto)
-├── pipelines/             # Integração histórica por conjunto (série consolidada)
-└── data/
-    └── raw/{slug}/        # Dados brutos por conjunto (não versionados)
+│   ├── dados-abertos.md        # Catálogo oficial (42 conjuntos)
+│   ├── inventario-dados.md     # Análise do inventário institucional (240 bases)
+│   └── conjuntos/              # Exploração por conjunto
+├── data/
+│   ├── catalogo-anp/           # Documentos ANP versionados por data de extração
+│   │   └── inventario-dados/{AAAA-MM-DD}/
+│   └── raw/{slug}/             # Dados brutos por conjunto (não versionados)
+└── pipelines/                  # Integração histórica (planejado)
 ```
 
-Os arquivos em `data/raw/` ficam no `.gitignore`. O repositório versiona a **lógica** (pipelines) e o **conhecimento** (docs), não os datasets.
+Os arquivos em `data/raw/` ficam no `.gitignore`. O **inventário institucional** (`data/catalogo-anp/`) e a documentação em `docs/` são versionados.
 
 ## Dados brutos
 
@@ -146,74 +149,45 @@ Sem um arquivo `LICENSE`, o padrão legal é “todos os direitos reservados”.
 
 ## Documentação
 
-O catálogo completo dos conjuntos publicados pela ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)** (42 conjuntos no portal, documentos relacionados e índice de exploração).
+O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)**. A análise do **Inventário de Dados** (240 bases institucionais) está em **[docs/inventario-dados.md](docs/inventario-dados.md)**.
 
 ## Como usar
 
 1. Clone o repositório.
-2. Consulte [docs/dados-abertos.md](docs/dados-abertos.md) e escolha um conjunto.
-3. Baixe o [Inventário de Dados ANP](#inventário-de-dados-anp) (opcional) para visão institucional das ~240 bases internas.
-4. Execute os pipelines em `pipelines/` para baixar os dados brutos em `data/raw/{slug}/`.
-5. Leia ou escreva a exploração em `docs/conjuntos/` — metadados, inventário empírico e regras de integração.
+2. Consulte [docs/dados-abertos.md](docs/dados-abertos.md) (42 conjuntos) ou [docs/inventario-dados.md](docs/inventario-dados.md) (240 bases).
+3. Execute os pipelines em `pipelines/` para baixar dados brutos em `data/raw/{slug}/`.
+4. Leia ou escreva a exploração em `docs/conjuntos/`.
 
 > Os pipelines e a documentação serão expandidos conforme cada conjunto de dados da ANP for explorado.
 
 ## Inventário de Dados ANP
 
-Planilha oficial que cataloga as bases de dados mantidas pela ANP — distinta do [catálogo de 42 conjuntos](docs/dados-abertos.md) expostos na página de dados abertos, porém útil para cruzar nome institucional, unidade responsável e periodicidade.
+Planilha oficial que cataloga **240 bases** mantidas pela ANP — visão institucional complementar ao [catálogo de 42 conjuntos](docs/dados-abertos.md) da página de download.
 
-| Item | Detalhe |
-|------|---------|
-| **Arquivo** | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) |
+| Item | Valor |
+|------|-------|
+| **Documentação** | [docs/inventario-dados.md](docs/inventario-dados.md) — análise completa |
+| **Extração atual** | [data/catalogo-anp/inventario-dados/2026-05-24/](data/catalogo-anp/inventario-dados/2026-05-24/) |
+| **Arquivo** | `inventario-dados.xlsx` + `extracao.md` (manifesto) |
+| **URL oficial** | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) |
 | **Atualização no portal** | 5/12/2025 |
-| **Cópia local** | `data/raw/_catalogo-anp/inventario-dados.xlsx` (gitignored) |
-| **Planilha** | `Dados ANP` — **240 bases** catalogadas |
-| **Colunas** | Nome da base · Descrição · Unidade responsável · Disponível no dados.gov.br? · Periodicidade · Política pública relacionada · Conteúdo sigiloso? |
 
-### O que há no inventário (análise da cópia local, mai/2026)
+### O que há neste inventário
 
-| Métrica | Valor |
-|---------|------:|
-| Bases catalogadas | 240 |
-| Marcadas como disponíveis no Portal Brasileiro de Dados Abertos | 182 |
-| Sem conteúdo sigiloso (maioria) | ~237 |
+A planilha `Dados ANP` registra, para cada base:
 
-**Unidades responsáveis mais frequentes:** SDC (estatística/conjuntura), SDT (dados técnicos), SEP, SDP, SPL, SDL (distribuição/logística), SPG, SIM (mercado), SCL, SFI (fiscalização), entre outras.
+1. **Nome e descrição** — título institucional e escopo da base.
+2. **Unidade responsável** — sigla da área ANP (SDC, SDT, SDL, SIM, SDP, etc.).
+3. **Disponibilidade no dados.gov.br** — Sim (182) · Sim/CGU (17) · Não (38).
+4. **Periodicidade** — mensal (87), anual (65), diária (28), semestral, conforme demanda, etc.
+5. **Política pública** — vínculo ao PPA quando aplicável.
+6. **Sigilo** — 38 bases com conteúdo sigiloso; 202 sem.
 
-**Periodicidades mais comuns:** Mensal (81) · Anual (65) · Diária (28) · Semestral (22) · Conforme demanda (14) · Rodada (8) · Semanal (6) · Trimestral (4).
+**Temas cobertos:** exploração e produção · acervo técnico · refino e derivados · biocombustíveis · movimentação SIMP · cadastro de revendas/postos · tancagem e terminais · preços (LPC) · vendas · qualidade (PMQC) · fiscalização · licitações · PD&I.
 
-### Relação com este atlas
+**Relacionadas a combustíveis/abastecimento:** ~98 entradas (filtro por palavras-chave na análise) — detalhes e tabelas em [docs/inventario-dados.md](docs/inventario-dados.md).
 
-| Inventário ANP (240 bases) | Catálogo dados abertos (42 conjuntos) | Exploração `docs/conjuntos/` |
-|--------------------------|---------------------------------------|------------------------------|
-| Visão **institucional** — tudo que a ANP registra como base | Visão **pública** — o que está na página de download | Visão **empírica** — schema, arquivos medidos, lacunas e ETL |
-| Nome + unidade + periodicidade | URL + formato + contexto de uso | Inventário por CSV baixado |
-
-Nem toda base do inventário aparece como conjunto baixável na página de 42 itens; nem todo conjunto público está nomeado igual no inventário.
-
-### Entrada de tancagem no inventário
-
-| Campo | Valor |
-|-------|-------|
-| Nome | Tancagem do Abastecimento Nacional de Combustíveis (2022 - 2023 - 2024) |
-| Unidade | SIM |
-| Periodicidade | Mensal |
-| dados.gov.br | Sim |
-
-O rótulo no inventário cita apenas **2022–2024**, mas o portal já publica **2025–2026** — usar a [matriz de arquivos](docs/conjuntos/tancagem-abastecimento.md#arquivos-disponíveis-no-portal) e o [inventário empírico](docs/conjuntos/tancagem-abastecimento.md#inventário-empírico-dos-brutos) como fonte atualizada.
-
-### Outras bases relacionadas a combustíveis (amostra)
-
-| Base (inventário) | Unidade | Periodicidade |
-|-------------------|---------|---------------|
-| Capacidade de armazenamento dos terminais… | SIM | Semestral |
-| Movimentação de Derivados… (combustíveis líquidos, GLP, TRR, etc.) | SDL | Mensal |
-| Dados Cadastrais dos Revendedores Varejistas… | SDL | Diária |
-| Dados Cadastrais de Pontos de Abastecimento Autorizados | SDL | Diário |
-| PMQC — Qualidade dos Combustíveis | SBQ | Mensal |
-| Ações de Fiscalização do Abastecimento | SFI | Mensal |
-
-Conjunto completo: abrir a planilha ou filtrar por palavras-chave (*combust*, *tancagem*, *abastec*, *derivados*) — ~30 entradas no inventário tocam abastecimento/combustíveis de forma direta ou indireta.
+**Nova extração:** criar `data/catalogo-anp/inventario-dados/{AAAA-MM-DD}/`, registrar em `extracao.md` e atualizar a documentação (passo a passo no manifesto).
 
 ## Repositório
 
