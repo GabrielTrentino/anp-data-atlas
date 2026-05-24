@@ -17,6 +17,84 @@ Este repositório é uma **referência exploratória** dos dados publicados pela
 
 A ideia é servir de base para outros projetos — quem for construir análises, dashboards ou modelos pode consultar este atlas antes de reimplementar explorações do zero.
 
+## O que cada conjunto traz
+
+Síntese dos **42 conjuntos** da [página de dados abertos](docs/dados-abertos.md) — o tipo de informação que cada um publica (não substitui o dicionário de colunas em `docs/conjuntos/`). Conjuntos com doc local linkam para exploração detalhada.
+
+### Abastecimento, distribuição e mercado downstream
+
+| # | Slug | Dados que traz |
+|---|------|----------------|
+| 41 | [`tancagem-abastecimento`](docs/conjuntos/tancagem-abastecimento.md) | Capacidade de armazenagem autorizada (m³) por instalação, tanque (`Tag`) e grupo de produto |
+| 21 | [`movimentacao-derivados`](docs/conjuntos/movimentacao-derivados.md) | Volumes movimentados no SIMP por produto (líquidos, GLP, lubrificantes, TRR, aviação, etc.) |
+| 12 | [`cadastro-revendas-combustiveis`](docs/conjuntos/cadastro-revendas-combustiveis.md) | Cadastro diário de postos revendedores (localização, bandeira, situação) |
+| 11 | [`cadastro-revendas-glp`](docs/conjuntos/cadastro-revendas-glp.md) | Cadastro diário de revendas de GLP (botijão e granel) |
+| 27 | [`pontos-abastecimento`](docs/conjuntos/pontos-abastecimento.md) | Instalações de pontos de abastecimento autorizados |
+| 15 | [`distribuidores-combustiveis-liquidos`](docs/conjuntos/distribuidores-combustiveis-liquidos.md) | Distribuidores autorizados, contratos de cessão e agentes GLP |
+| 28 | [`pmqc`](docs/conjuntos/pmqc.md) | Indicadores de qualidade analítica dos combustíveis comercializados |
+| 29 | [`pml`](docs/conjuntos/pml.md) | Monitoramento da qualidade de lubrificantes |
+| 40 | [`serie-historica-precos`](docs/conjuntos/serie-historica-precos.md) | Preços semanais/mensais de revenda (gasolina, etanol, diesel, GNV, GLP) por localidade |
+| 42 | [`vendas-derivados`](docs/conjuntos/vendas-derivados.md) | Volumes vendidos por distribuidoras, segmento, produto e geografia |
+| 2 | [`fiscalizacao-abastecimento`](docs/conjuntos/fiscalizacao-abastecimento.md) | Ações de fiscalização, documentos lavrados e resultados por segmento |
+| 9 | [`capacidade-armazenagem-terminais`](docs/conjuntos/capacidade-armazenagem-terminais.md) | Capacidade de terminais (tipo, empresa, UF, município) |
+| 22 | [`movimentacao-terminais-aquaviarios`](docs/conjuntos/movimentacao-terminais-aquaviarios.md) | Movimentação em terminais aquaviários autorizados |
+| 37 | [`registro-lubrificantes`](docs/conjuntos/registro-lubrificantes.md) | Catálogo de óleos e graxas lubrificantes registrados |
+
+### Produção, refino, comércio exterior e estatística consolidada
+
+| # | Slug | Dados que traz |
+|---|------|----------------|
+| 32 | [`processamento-petroleo-derivados`](docs/conjuntos/processamento-petroleo-derivados.md) | Processamento de petróleo e produção de derivados por refinaria |
+| 33 | [`producao-biocombustiveis`](docs/conjuntos/producao-biocombustiveis.md) | Produção de biodiesel e etanol (séries temporais e regionais) |
+| 34 | [`producao-por-estado`](docs/conjuntos/producao-por-estado.md) | Produção de petróleo, LGN e gás por UF e localização (terra/mar) |
+| 35 | [`producao-por-poco`](docs/conjuntos/producao-por-poco.md) | Produção detalhada por poço (séries recentes e históricas) |
+| 19 | [`importacoes-exportacoes`](docs/conjuntos/importacoes-exportacoes.md) | Comércio exterior de petróleo, derivados e etanol |
+| 5 | [`anuario-estatistico`](docs/conjuntos/anuario-estatistico.md) | Dezenas de tabelas CSV consolidando ~10 anos da indústria e do abastecimento |
+
+### Exploração e produção (E&P)
+
+| # | Slug | Dados que traz |
+|---|------|----------------|
+| 13 | `dados-ep` | Informações agregadas sobre exploração e produção |
+| 16 | `fase-exploracao` | Blocos e atividades na fase exploratória |
+| 17 | `fase-desenvolvimento-producao` | Campos e ativos em desenvolvimento e produção |
+| 8 | `blocos-fase-exploratoria-encerrada` | Blocos que encerraram a fase exploratória |
+| 20 | `incidentes-ep` | Incidentes de segurança operacional em E&P (tipos, feridos, substâncias) |
+| 38 | `resultado-poco` | Resultados e características de poços |
+| 31 | `previsao-atividades-investimentos` | Previsão de investimentos e atividades exploratórias |
+| 36 | `relacao-concessionarios` | Concessionários de blocos e contratos |
+| 39 | `rodadas-licitacoes` | Blocos ofertados, vencedores e cessões de contrato |
+
+### Gás natural
+
+| # | Slug | Dados que traz |
+|---|------|----------------|
+| 7 | `autorizacoes-gas-natural` | Autorizações para atividades com gás natural |
+| 10 | `comercializacao-gas-natural` | Vendas de gás natural a distribuidoras e consumidores livres |
+| 23 | `movimentacao-gas-gasodutos` | Volumes transportados em gasodutos |
+
+### Acervo técnico e geociências
+
+| # | Slug | Dados que traz |
+|---|------|----------------|
+| 1 | `acervo-dados-tecnicos` | Poços, programas geofísicos e geoquímica do acervo ANP |
+| 4 | `amostras-rochas-fluidos` | Declaração de amostras de rochas e fluidos |
+| 6 | `aquisicao-processamento-estudo-dados` | Dados de aquisição sísmica e estudos geológicos |
+| 14 | `bacias-sedimentares` | Limites e dados georreferenciados das bacias sedimentares |
+
+### Regulação, fiscalização e participações
+
+| # | Slug | Dados que traz |
+|---|------|----------------|
+| 3 | `aditamento-conteudo-local` | Aditamentos contratuais de conteúdo local |
+| 18 | `fiscalizacao-conteudo-local` | Fiscalização de metas de conteúdo local por fase/rodada |
+| 24 | `multas-2016` | Multas de fiscalização com vencimento a partir de 2016 |
+| 25 | `participacoes-governamentais` | Participações governamentais e preços de referência do petróleo |
+| 26 | `pesquisa-desenvolvimento-inovacao` | Projetos e investimentos em PD&I do setor |
+| 30 | `prestadores-apoio-administrativo` | Cadastro de prestadores de apoio administrativo |
+
+Catálogo completo com links do portal: [docs/dados-abertos.md](docs/dados-abertos.md) · progresso: [TODO.md](TODO.md) · inventário institucional (240 bases): [docs/inventario-dados.md](docs/inventario-dados.md).
+
 ## O que cada repositório guarda
 
 Divisão de responsabilidades entre este atlas e o [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics):
