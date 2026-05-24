@@ -67,7 +67,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 24 | Multas aplicadas com vencimento a partir de 2016 | `multas-2016` | |
 | 25 | Participações Governamentais | `participacoes-governamentais` | |
 | 26 | Pesquisa, Desenvolvimento e Inovação | `pesquisa-desenvolvimento-inovacao` | |
-| 27 | Pontos de Abastecimento Autorizados | `pontos-abastecimento` | |
+| 27 | Pontos de Abastecimento Autorizados | `pontos-abastecimento` | [doc](conjuntos/pontos-abastecimento.md) |
 | 28 | Programa de Monitoramento da Qualidade dos Combustíveis (PMQC) | `pmqc` | |
 | 29 | Programa de Monitoramento dos Lubrificantes (PML) | `pml` | |
 | 30 | Prestadores de serviço de apoio administrativo | `prestadores-apoio-administrativo` | |
