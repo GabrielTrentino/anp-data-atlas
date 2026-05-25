@@ -7,60 +7,81 @@
 | **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis |
 | **Unidade ANP (inventário)** | SDC |
 | **Periodicidade** | Semanal (LPC) — agregações mensais/semestrais nos arquivos abertos |
-| **Formato** | CSV |
+| **Formato** | CSV (+ ZIP semestral; XLSX em alguns recortes 2026) |
 | **Fonte operacional** | Levantamento de Preços de Combustíveis (LPC) |
 | **Pasta local** | `data/raw/serie-historica-precos/` |
 | **Inventário ANP** | Série Histórica Preços — Combustíveis automotivos / GLP |
 | **Prioridade fuel-analytics** | Sim — [TODO.md](../../TODO.md) |
+| **Estudo ativo** | [anp-fuel-analytics — serie-historica-precos](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/serie-historica-precos/) |
 
 ## Contexto
 
-Preços medios de revenda/distribuição por localidade (gasolina C, etanol, diesel, GNV, GLP P13).
+Preços de revenda por **posto** (`CNPJ da Revenda`), produto e data de coleta. Três famílias no portal (`shpc/`):
 
-## Relevância para anp-fuel-analytics
+| Pasta | Uso |
+|-------|-----|
+| `qus/` | Rolling — últimas 4 semanas |
+| `dsan/YYYY/` | Mensal (gasolina/etanol, diesel/GNV, GLP) |
+| `dsas/ca/`, `dsas/glp/` | Semestral histórico |
 
-Série temporal de preços para cruzar com tancagem regional, movimentação e eventos de mercado.
+Metadados: `metadados-serie-historica-precos-combustiveis-1.pdf`
 
-Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/serie-historica-precos/) (documentação de referência; pipeline pendente).
+## Schema (nível posto — confirmado)
 
-## Estrutura dos arquivos
+Separador **`;`** · UTF-8.
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+| Coluna | Descrição |
+|--------|-----------|
+| `Regiao - Sigla` / `Estado - Sigla` / `Municipio` | Geo |
+| `Revenda` | Nome do posto |
+| **`CNPJ da Revenda`** | Chave de join com cadastro |
+| `Produto` | GASOLINA, ETANOL, DIESEL S10, GLP, GNV, … |
+| `Data da Coleta` | Data da pesquisa |
+| `Valor de Venda` / `Valor de Compra` | Preços (vírgula decimal no CSV) |
+| `Bandeira` | Marca na coleta |
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+## Inventário empírico (MVP fuel-analytics)
 
-## Inventário empírico dos brutos
+| Arquivo | Linhas (aprox.) | CNPJ únicos | Notas |
+|---------|----------------:|------------:|-------|
+| `qus/ultimas-4-semanas-gasolina-etanol.csv` | 45.211 | 6.147 | Abr–mai/2026 |
+| `qus/ultimas-4-semanas-diesel-gnv.csv` | — | — | mesmo layout |
+| `dsan/2025/precos-gasolina-etanol-12.csv` | — | — | dez/2025 |
+| `dsas/ca/*.csv` (ZIP semestral) | — | — | ex.: AUTOMOTIVOS_2025.02 |
 
-> **Status:** pendente — preencher após download em `data/raw/serie-historica-precos/`.
+**Trusted MVP:** `data/trusted/serie-historica-precos/qus_gasolina_etanol.parquet`
 
-| Arquivo local | Linhas | Métrica | Período | Notas |
-|---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+```bash
+py pipelines/run.py serie-historica-precos trusted_qus_gasolina
+```
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
+| Chave | Uso |
+|-------|-----|
+| `cnpj` + `produto` + `data_coleta` | Série por posto e combustível |
+| `uf` + `municipio` | Agregação regional |
 
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+## Cruzamento cadastro revendas (empírico)
 
-## Cruzamentos sugeridos
+Script: [cruzamento_cadastro_revendas.py](https://github.com/GabrielTrentino/anp-fuel-analytics/blob/main/estudos/serie-historica-precos/scripts/cruzamento_cadastro_revendas.py)
 
-- [vendas-derivados](vendas-derivados.md)
-- [cadastro-revendas-combustiveis](cadastro-revendas-combustiveis.md)
-- [tancagem-abastecimento](tancagem-abastecimento.md)
+| Métrica | Valor |
+|---------|------:|
+| CNPJs precos (qus gasolina/etanol) | 6.147 |
+| Interseção com cadastro (46k postos) | **6.008 (97,7% dos CNPJs em preços)** |
+| Cobertura cadastro com preço na janela | ~13% dos postos (esperado: LPC amostra semanal) |
+
+**Join:** `precos.cnpj = cadastro.cnpj` — principal cruzamento útil do monorepo fuel.
 
 ## Conjuntos relacionados
 
-- [Inventário de Dados ANP](../inventario-dados.md) — base institucional #40 (SDC, Semanal (LPC) — agregações mensais/semestrais nos arquivos abertos)
-- [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
+- [cadastro-revendas-combustiveis.md](cadastro-revendas-combustiveis.md)
+- [vendas-derivados.md](vendas-derivados.md)
+- [tancagem-abastecimento.md](tancagem-abastecimento.md)
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (serie-historica-precos). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status:** exploração MVP no fuel (raw qus + trusted + join CNPJ). Expansão dsan/dsas histórico pendente.
 
-**Próximos passos (fuel-analytics):**
-
-1. Download amostra → `data/raw/serie-historica-precos/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+**Próximos passos:** download mensal 2024–2025 · séries por produto · spread compra/venda × bandeira.

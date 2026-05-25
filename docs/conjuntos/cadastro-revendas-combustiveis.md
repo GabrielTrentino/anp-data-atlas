@@ -86,7 +86,7 @@ Script: [cruzamento_tancagem_movimentacao.py](https://github.com/GabrielTrentino
 | [tancagem-abastecimento](tancagem-abastecimento.md) | `codigo_isimp` × `CodInstalacao` | **0%** | Mesma população distinta na amostra |
 | [movimentacao-derivados](movimentacao-derivados.md) | `razao_social` → agente | **~0,5%** | Movimentação = distribuidores; cadastro = varejo |
 
-**Join recomendado:** cadastro ↔ **serie-historica-precos** / **pontos-abastecimento** por CNPJ; movimentação ↔ cadastro apenas quando o agente for de fato um revendedor (caso raro).
+**Join recomendado:** cadastro ↔ **serie-historica-precos** por CNPJ (**~98%** dos CNPJs na janela qus gasolina/etanol); movimentação ↔ cadastro apenas quando o agente for revendedor (caso raro).
 
 ## Conjuntos relacionados
 

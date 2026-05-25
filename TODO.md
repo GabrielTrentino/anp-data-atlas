@@ -41,7 +41,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | 15 | `distribuidores-combustiveis-liquidos` | Distribuidores de combustíveis líquidos | ✓ | — | — | ◐ | — |
 | 28 | `pmqc` | PMQC — Qualidade dos Combustíveis | ✓ | — | — | ◐ | — |
 | 29 | `pml` | PML — Monitoramento dos Lubrificantes | ✓ | — | — | ◐ | — |
-| 40 | `serie-historica-precos` | Série Histórica de Preços de Combustíveis | ✓ | — | — | ◐ | — |
+| 40 | `serie-historica-precos` | Série Histórica de Preços de Combustíveis | ✓ | ✓ | ◐ | ◐ | ◐ |
 | 42 | `vendas-derivados` | Vendas de derivados e biocombustíveis | ✓ | — | — | ◐ | — |
 | 2 | `fiscalizacao-abastecimento` | Ações de Fiscalização do Abastecimento | ✓ | — | — | ◐ | — |
 | 9 | `capacidade-armazenagem-terminais` | Capacidade de Armazenagem de Terminais | ✓ | — | — | ◐ | — |
