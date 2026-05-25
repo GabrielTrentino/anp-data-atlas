@@ -43,7 +43,7 @@ Base dos links: `.../dados-abertos/arquivos/mdpg/{arquivo}`
 | `movimentacaologistica.zip` | `movimentacaologistica/` | Logística agregada (3 CSVs, desde 2022) |
 | `metadado-unificado-logistica.pdf` | raiz | Metadados |
 
-**Encoding:** `latin-1` (confirmado na amostra). Separador: vírgula.
+**Encoding:** `latin-1` (confirmado). **Separador:** `;` (ponto e vírgula) na maioria dos CSVs SIMP — incluindo `Liquidos_Vendas_Atual.csv`.
 
 ### Padrões de tabela SIMP (por produto)
 
@@ -108,6 +108,38 @@ Regenerar inventário:
 py estudos/movimentacao-derivados/export_inventario_raw.py
 ```
 
+### Histórico líquidos sem cabeçalho
+
+`liquidos/Liquidos_Vendas_Historico_2007_a_2017.csv` — 11 campos separados por `;`, **sem linha de cabeçalho**. Versão normalizada no fuel-analytics:
+
+`liquidos/Liquidos_Vendas_Historico_2007_a_2017_normalizado.csv` (UTF-8, vírgula) — gerada por `prepare_movimentacao_raw.py`.
+
+## Cruzamento com tancagem (empírico)
+
+Script: [cruzamento_tancagem.py](https://github.com/GabrielTrentino/anp-fuel-analytics/blob/main/estudos/movimentacao-derivados/scripts/cruzamento_tancagem.py) — amostra `Liquidos_Vendas_Atual` × `tancagem.parquet`.
+
+| Métrica | Valor |
+|---------|------:|
+| Agentes únicos movimentação (nome + UF origem) | 701 |
+| Empresas únicas tancagem (nome + UF instalação) | 1.550 |
+| **Match exato nome + UF** | 213 (**30,4%** dos agentes mov) |
+| Match só por nome (ignora UF) | 122 / 214 nomes (**57%**) |
+
+**Conclusão:** join direto por `CodInstalacao` **não existe** nesta base. Cruzamento operacional provável via **nome normalizado** (fuzzy) ou **cadastro revendas** (CNPJ). UF origem (movimentação) ≠ UF da instalação (tancagem) — explica match moderado.
+
+## Camada trusted (MVP)
+
+No fuel-analytics:
+
+```bash
+py pipelines/run.py movimentacao-derivados raw_prepare
+py pipelines/run.py movimentacao-derivados trusted_liquidos
+```
+
+Saída: `data/trusted/movimentacao-derivados/liquidos_vendas_atual.parquet` (~1M linhas, 2017-01 – 2026-04).
+
+Colunas: `ano`, `mes`, `agente_regulado`, `codigo_produto`, `nome_produto`, `uf_origem`, `uf_destino`, `volume_mil_m3`, `produto_familia`, `tipo_tabela`, `_source_file`.
+
 ## Qualidade e chaves
 
 ### Chaves observadas (≠ tancagem)
@@ -131,7 +163,8 @@ Granularidade da fonte: **uma linha por** `Ano` × `Mês` × `Agente Regulado` �
 
 | Item | Detalhe |
 |------|---------|
-| Histórico 2007–2017 líquidos | Arquivo **sem header** — definir schema na ingestão |
+| Separador `;` | Obrigatório `delim=';'` na leitura (DuckDB/pandas) |
+| Histórico 2007–2017 líquidos | Sem header — usar arquivo `*_normalizado.csv` |
 | Unidades mistas | mil m³ · mil ton · litros — **não somar** entre famílias |
 | Tabelas `_Atual` vs `_Historico` | Overlap em 2023–2024 — evitar dupla contagem |
 | Sigilo SIMP | Volumes agregados; agentes pequenos podem estar suprimidos |
@@ -145,10 +178,10 @@ Granularidade da fonte: **uma linha por** `Ano` × `Mês` × `Agente Regulado` �
 
 ## Uso neste atlas
 
-**Status da exploração:** download raw, inventário empírico (47 CSVs), schema amostral e chaves documentados. Pipeline trusted/refined **pendente** no fuel-analytics.
+**Status da exploração:** download raw, inventário (47 CSVs), schema amostral, **cruzamento com tancagem**, histórico normalizado, trusted MVP (`liquidos_vendas_atual.parquet`). Demais produtos e refined **pendentes**.
 
 **Próximos passos (fuel-analytics):**
 
-1. Validar join `Agente Regulado` ↔ tancagem/cadastro
-2. Tratar histórico sem cabeçalho e unidades
-3. Camada trusted SQL unificada por produto
+1. `cadastro-revendas-combustiveis` — CNPJ para join confiável
+2. Expandir trusted para GLP, TRR, logística
+3. Validar overlap 2017 histórico vs vendas atual

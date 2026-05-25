@@ -34,7 +34,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
 | 41 | `tancagem-abastecimento` | Tancagem do Abastecimento Nacional | ✓ | ◐ | ◐ | ◐ | — |
-| 21 | `movimentacao-derivados` | Movimentação de derivados, GLP e biocombustíveis | ✓ | ◐ | ◐ | ◐ | — |
+| 21 | `movimentacao-derivados` | Movimentação de derivados, GLP e biocombustíveis | ✓ | ◐ | ◐ | ◐ | ◐ |
 | 12 | `cadastro-revendas-combustiveis` | Cadastro revendedores varejistas (postos) | ✓ | — | — | ◐ | — |
 | 11 | `cadastro-revendas-glp` | Cadastro revendas GLP | ✓ | — | — | ◐ | — |
 | 27 | `pontos-abastecimento` | Pontos de Abastecimento Autorizados | ✓ | — | — | ◐ | — |
