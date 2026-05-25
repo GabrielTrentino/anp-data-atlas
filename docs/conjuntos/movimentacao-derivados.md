@@ -138,7 +138,7 @@ py pipelines/run.py movimentacao-derivados trusted_liquidos
 
 Saída: `data/trusted/movimentacao-derivados/liquidos_vendas_atual.parquet` (~1M linhas, 2017-01 – 2026-04).
 
-Colunas: `ano`, `mes`, `agente_regulado`, `codigo_produto`, `nome_produto`, `uf_origem`, `uf_destino`, `volume_mil_m3`, `produto_familia`, `tipo_tabela`, `_source_file`.
+Colunas: `data_referencia` (DATE, dia 01 do mês), `ano`, `mes`, `agente_regulado`, `codigo_produto`, `nome_produto`, `uf_origem`, `uf_destino`, `volume_mil_m3`, `produto_familia`, `tipo_tabela`, `_source_file`.
 
 ## Qualidade e chaves
 
