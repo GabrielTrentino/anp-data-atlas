@@ -14,15 +14,39 @@
 | **Prioridade fuel-analytics** | Sim — [TODO.md](../../TODO.md) |
 | **Estudo ativo** | [anp-fuel-analytics — serie-historica-precos](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/serie-historica-precos/) |
 
+## Estrutura do portal (`shpc/`)
+
+**SHPC** = pasta raiz no servidor da ANP: *Série Histórica de Preços de Combustíveis*  
+(`.../dados-abertos/arquivos/shpc/`). A LPC é **semanal** (microdados por posto); o portal republica o mesmo layout em três recortes:
+
+| Pasta | Seção no portal ANP | Significado | Exemplos de arquivo |
+|-------|---------------------|-------------|---------------------|
+| **`qus/`** | *Quatro últimas semanas* | Janela móvel (~4 semanas), atualizada semanalmente | `ultimas-4-semanas-gasolina-etanol.csv` |
+| **`dsan/YYYY/`** | *Dados semanais agrupados mensalmente* | Todas as coletas do mês, por família de produto | `precos-gasolina-etanol-12.csv`, `precos-diesel-gnv-01.csv` |
+| **`dsas/ca/`** | *Dados semanais agrupados por semestre* — combustíveis automotivos | Histórico longo (semestre a semestre) | `ca-2024-02.csv`, ZIP `AUTOMOTIVOS_2025.02` |
+| **`dsas/glp/`** | Idem — GLP P13 | Histórico semestral GLP | `glp-2024-02.csv` |
+
+> **Nota:** DSAN, DSAS e QUS são **nomes de diretório** no portal (não constam como glossário no metadados PDF). “Agrupados” = reúne as **coletas semanais** do período, não necessariamente médias pré-calculadas por posto.
+
+**Famílias de produto (dsan):** `precos-gasolina-etanol`, `precos-diesel-gnv`, `precos-glp` (12 arquivos por ano).
+
+```
+shpc/
+├── metadados-serie-historica-precos-combustiveis-1.pdf
+├── qus/                          ← últimas 4 semanas (3 CSVs)
+├── dsan/2024|2025/               ← mensal por família
+└── dsas/ca/ | dsas/glp/          ← semestral histórico
+```
+
 ## Contexto
 
-Preços de revenda por **posto** (`CNPJ da Revenda`), produto e data de coleta. Três famílias no portal (`shpc/`):
+Preços de revenda por **posto** (`CNPJ da Revenda`), produto e data de coleta. Resumo das pastas:
 
 | Pasta | Uso |
 |-------|-----|
-| `qus/` | Rolling — últimas 4 semanas |
-| `dsan/YYYY/` | Mensal (gasolina/etanol, diesel/GNV, GLP) |
-| `dsas/ca/`, `dsas/glp/` | Semestral histórico |
+| `qus/` | Análise **recente** (rolling 4 semanas) |
+| `dsan/YYYY/` | Série **mensal** recente (ex.: 2024–2025 no fuel-analytics) |
+| `dsas/ca/`, `dsas/glp/` | Série **semestral** desde ~2004 |
 
 Metadados: `metadados-serie-historica-precos-combustiveis-1.pdf`
 
