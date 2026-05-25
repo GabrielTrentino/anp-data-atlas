@@ -42,18 +42,20 @@ Separador **`;`** · UTF-8.
 
 ## Inventário empírico (MVP fuel-analytics)
 
-| Arquivo | Linhas (aprox.) | CNPJ únicos | Notas |
-|---------|----------------:|------------:|-------|
-| `qus/ultimas-4-semanas-gasolina-etanol.csv` | 45.211 | 6.147 | Abr–mai/2026 |
-| `qus/ultimas-4-semanas-diesel-gnv.csv` | — | — | mesmo layout |
-| `dsan/2025/precos-gasolina-etanol-12.csv` | — | — | dez/2025 |
-| `dsas/ca/*.csv` (ZIP semestral) | — | — | ex.: AUTOMOTIVOS_2025.02 |
+| Recorte | Linhas | CNPJ únicos | Período |
+|---------|-------:|------------:|---------|
+| `qus/ultimas-4-semanas-gasolina-etanol.csv` | 45.211 | 6.147 | abr–mai/2026 |
+| `dsan/2024–2025` gasolina/etanol (24 CSVs) | 1.166.580 | 12.369 | 2024 – 2025 |
+| **Trusted `lpc_posto.parquet`** | 1.244.835 | 15.832 | qus + dsan gasolina |
 
-**Trusted MVP:** `data/trusted/serie-historica-precos/qus_gasolina_etanol.parquet`
+Download mensal:
 
 ```bash
-py pipelines/run.py serie-historica-precos trusted_qus_gasolina
+py pipelines/python/download_serie_historica_precos.py --years 2024,2025
+py pipelines/run.py serie-historica-precos trusted_lpc_posto
 ```
+
+**Arquivos brutos:** 71 CSVs `dsan` (2024–2025 × gasolina, diesel, GLP) + 3 `qus` + metadados PDF.
 
 ## Qualidade e chaves
 
@@ -68,9 +70,9 @@ Script: [cruzamento_cadastro_revendas.py](https://github.com/GabrielTrentino/anp
 
 | Métrica | Valor |
 |---------|------:|
-| CNPJs precos (qus gasolina/etanol) | 6.147 |
-| Interseção com cadastro (46k postos) | **6.008 (97,7% dos CNPJs em preços)** |
-| Cobertura cadastro com preço na janela | ~13% dos postos (esperado: LPC amostra semanal) |
+| CNPJs precos (`lpc_posto`, 2024–2025 + qus) | 15.832 |
+| Interseção com cadastro (46k postos) | **11.472 (~24,9% dos postos)** |
+| Janela `qus` (4 sem recentes) | **~98%** dos CNPJs em preços batem cadastro |
 
 **Join:** `precos.cnpj = cadastro.cnpj` — principal cruzamento útil do monorepo fuel.
 
@@ -82,6 +84,6 @@ Script: [cruzamento_cadastro_revendas.py](https://github.com/GabrielTrentino/anp
 
 ## Uso neste atlas
 
-**Status:** exploração MVP no fuel (raw qus + trusted + join CNPJ). Expansão dsan/dsas histórico pendente.
+**Status:** exploração com download dsan 2024–2025, trusted consolidado e join CNPJ cadastro. Diesel/GLP trusted e notebook pendentes.
 
 **Próximos passos:** download mensal 2024–2025 · séries por produto · spread compra/venda × bandeira.
