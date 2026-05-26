@@ -23,7 +23,10 @@ Complementar ao foco downstream do monorepo. Utilidade principal em cruzamentos 
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** parcial — apenas metadados (PDFs). Página não disponibiliza CSVs diretamente.
+
+- 5 PDFs de metadados (consulta de área, poços exploratórios, indícios de HC, declaração de comercialidade)
+- Dados de produção disponíveis via [fase-desenvolvimento-producao](fase-desenvolvimento-producao.md) e [producao-por-poco](producao-por-poco.md)
 
 ## Cruzamentos sugeridos
 

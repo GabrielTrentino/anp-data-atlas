@@ -23,7 +23,10 @@ Indicador da qualidade exploratória. Poços produtores de óleo/gás eventualme
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** parcial — apenas metadados (PDF). CSV não localizado na página.
+
+- 1 PDF de metadados (`metadados-resultado-poco.pdf`)
+- CSV com resultados de poço não encontrado (possível acesso via BDEP ou canal diferente)
 
 ## Cruzamentos sugeridos
 

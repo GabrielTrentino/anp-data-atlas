@@ -23,7 +23,29 @@ Campos em produção alimentam refinarias e terminais. Útil para entender ofert
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — produção marítima mensal 1994–2026 (15 CSVs).
+
+- **Formato:** CSV
+- **Arquivos:** 15 CSVs de produção marítima (séries históricas segmentadas por período)
+- **Cobertura:** 1994–2026
+
+| Arquivo | Período |
+|---------|---------|
+| producao-mar-2026.csv | 2026 |
+| producao-mar-2025.csv | 2025 |
+| producao-mar-2023.csv | 2023 |
+| producao-mar-2022.csv | 2022 |
+| producao-mar-2021.csv | 2021 |
+| producao-mar-2020.csv | 2020 |
+| producao-mar-2019.csv | 2019 |
+| producao-mar-2016-2018.csv | 2016–2018 |
+| producao-mar-2013-2015.csv | 2013–2015 |
+| producao-mar-2010-2012.csv | 2010–2012 |
+| producao-mar-2005-2009.csv | 2005–2009 |
+| producao-mar-2001-2004.csv | 2001–2004 |
+| producao-mar-1998-2000.csv | 1998–2000 |
+| producao-mar-1994-1997.csv | 1994–1997 |
+| producao_por_poco_2024.csv | 2024 |
 
 ## Cruzamentos sugeridos
 

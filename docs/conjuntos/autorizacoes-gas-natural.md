@@ -23,7 +23,9 @@ Mapa dos agentes autorizados na cadeia do gás. Relevante para entender a estrut
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** indisponível — página não encontrada no portal (404). Possível reestruturação ou descontinuação.
+
+Nenhum arquivo disponível para download na data de prospecção (mai/2026).
 
 ## Cruzamentos sugeridos
 

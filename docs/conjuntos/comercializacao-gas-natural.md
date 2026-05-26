@@ -23,7 +23,13 @@ Gás natural compete com GLP e diesel em alguns segmentos (industrial, geração
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 3 CSVs + 3 PDFs metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- `distribuidoras-consumidores-livres.csv` — vendas a distribuidoras e consumidores livres
+- `vendas-entre-produtores.csv` — transações entre produtores
+- `vendas-aos-comercializadores.csv` — vendas a comercializadores
+- PDFs de metadados correspondentes
 
 ## Cruzamentos sugeridos
 

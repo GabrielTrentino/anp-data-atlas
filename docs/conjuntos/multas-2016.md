@@ -23,7 +23,16 @@ Relevante para cruzamento com fiscalização do abastecimento: postos autuados e
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 9 arquivos de dados (CSV/XLSX) + 1 PDF metadados.
+
+- **Formato:** CSV (sep `;`) e XLSX
+- **CSVs:**
+  - `multas-aplicadas-2016a2019.csv` (2,3 MB) — consolidado 2016–2019
+  - `multas-aplicadas-2020.csv` a `multas-aplicadas-2025.csv` — anuais
+- **XLSX:**
+  - `multas-2021-junho22.xlsx` (721 KB) — versão Excel 2021
+  - `multas-aplicadas-2024-excel.xlsx`, `multas-aplicadas-2025.xlsx`
+- **Metadados:** `metadados-multas-aplicadas-2016a2019.pdf`
 
 ## Cruzamentos sugeridos
 

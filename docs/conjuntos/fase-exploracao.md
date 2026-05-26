@@ -23,7 +23,17 @@ Indicador antecedente de oferta futura: blocos em exploração hoje são campos 
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — CSVs mensais de blocos sob contrato.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- **Arquivos:** 11 CSVs mensais (jan–out 2025, abr 2026) + 1 PDF metadados
+- **Tamanho típico:** ~80 KB/mês
+- **Conteúdo:** blocos exploratórios sob contrato — concessionário, bacia, área, rodada, status
+
+| Arquivo | Período | Tamanho |
+|---------|---------|---------|
+| blocos-sob-contrato-jan.csv a -out.csv | 2025 | ~80 KB cada |
+| blocos-sob-contrato_abr_2026.csv | abr/2026 | 7,5 KB |
 
 ## Cruzamentos sugeridos
 

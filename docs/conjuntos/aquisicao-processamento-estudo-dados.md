@@ -23,7 +23,17 @@ Sem uso direto em análises de abastecimento. Relevante para entender o esforço
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 9 CSVs + 2 ZIPs + 4 PDFs metadados.
+
+- **Formato:** CSV (sep `;`) e ZIP (arquivos históricos)
+- **CSVs recentes:**
+  - `202601-ead-resultado-sismicos.csv` a `202603-ead-resultado-sismicos.csv` — resultados sísmicos 2026
+  - `202501-ead-resultado-sismicos.xlsx` a `202505-ead-resultado-sismicos.csv` — resultados 2025
+  - `2020-autorizacoes-despachos.csv` — autorizações e despachos 2020
+- **ZIPs históricos:**
+  - `2016-2019-autorizacoes-despachos.zip`
+  - `2004-2015-autorizacoes-despachos.zip`
+- **Metadados:** 4 PDFs
 
 ## Cruzamentos sugeridos
 

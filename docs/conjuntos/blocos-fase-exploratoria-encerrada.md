@@ -23,7 +23,10 @@ Histórico de E&P. Útil para estudos de taxa de sucesso exploratório e como co
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** parcial — apenas metadados (PDF). CSV não disponível na página atual.
+
+- 1 PDF de metadados (`metadados-blocos-fase-exploratoria-encerrada-2021.pdf`)
+- CSV com listagem de blocos não encontrado (possível descontinuação ou acesso via outro canal)
 
 ## Cruzamentos sugeridos
 

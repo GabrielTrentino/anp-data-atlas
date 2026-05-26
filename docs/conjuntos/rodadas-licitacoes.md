@@ -23,7 +23,13 @@ Contexto institucional do setor upstream. Blocos arrematados em rodadas se torna
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 3 CSVs + 3 PDFs metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- `blocos-ofertados-rodadas.csv` (150 KB) — blocos ofertados em cada rodada
+- `ofertas-vencedoras-rodadas.csv` (70 KB) — lances e vencedores
+- `processos-cessao-contratos.csv` (354 KB) — cessões de contratos entre operadores
+- PDFs de metadados correspondentes
 
 ## Cruzamentos sugeridos
 

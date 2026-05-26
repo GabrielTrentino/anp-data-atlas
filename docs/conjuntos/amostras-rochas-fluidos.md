@@ -23,7 +23,12 @@ Sem uso direto em análises de abastecimento. Relevante para pesquisa geológica
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 8 ZIPs anuais (2018–2025) + 7 PDFs metadados.
+
+- **Formato:** ZIP contendo CSVs (consolidação anual de amostras)
+- **Arquivos:** `consolidacao-<ano>.zip` (2020–2025), `<ano>-consolidacao.zip` (2018–2019)
+- **Tipos de amostras (por metadados):** calha, células, fluidos, lâminas, laterais, plugues, testemunhos
+- **Metadados:** 7 PDFs (um por tipo de consolidação)
 
 ## Cruzamentos sugeridos
 

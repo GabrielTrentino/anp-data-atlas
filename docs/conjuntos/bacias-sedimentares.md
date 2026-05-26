@@ -23,7 +23,17 @@ Tabela de dimensão geográfica. Pode ser usada para mapas temáticos (produçã
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 6 ZIPs (shapefiles) + 6 PDFs metadados.
+
+- **Formato:** Shapefile (.shp/.dbf/.shx/.prj) empacotados em ZIP
+- **Shapefiles disponíveis:**
+  - `blocos-exploratorios.zip` — polígonos dos blocos exploratórios
+  - `campos-producao.zip` — polígonos dos campos de produção
+  - `shapefiles-rodadas-concluidas.zip` — áreas de rodadas
+  - `shapefile-de-pocos.zip` — pontos dos poços
+  - `shapefile-programas-geofisicos.zip` — linhas sísmicas/geofísicas
+  - `shapefile-levantamentos-geoquimicos.zip` — pontos de geoquímica
+- **Metadados:** 6 PDFs correspondentes
 
 Provável formato shapefile (.shp + .dbf + .shx + .prj) com polígonos das bacias.
 

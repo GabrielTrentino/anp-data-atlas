@@ -23,7 +23,11 @@ Relevância mínima para análises de abastecimento. Base cadastral de caráter 
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 1 XLSX + 1 PDF metadados.
+
+- **Formato:** XLSX
+- `dados-abertos-apoio-adm-rj-df.xlsx` — prestadores habilitados (RJ e DF)
+- `metadados-apoio-adm-rj-df.pdf` — dicionário de dados
 
 ## Cruzamentos sugeridos
 

@@ -23,7 +23,11 @@ Relevância indireta. Aditamentos podem indicar dificuldades da cadeia produtiva
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 1 CSV + 1 PDF metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- `planilha-aditamento-conteudo-local.csv` — registro de aditamentos de conteúdo local
+- `metadados-aditamento.pdf` — dicionário de dados
 
 ## Cruzamentos sugeridos
 

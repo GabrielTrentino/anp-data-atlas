@@ -23,7 +23,18 @@ Regulação industrial. Pode indicar gargalos na cadeia de fornecedores nacionai
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 7 CSVs + 7 PDFs metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- **Segmentação por fase e rodada:**
+  - `fiscalizacao-exploracao-r1-r6-1.csv` — exploração, rodadas 1–6
+  - `fiscalizacao-exploracao-r7-aditados-1.csv` — exploração, rodada 7+
+  - `fiscalizacao-desenvolvimento-mar.csv` — desenvolvimento marítimo
+  - `fiscalizacao-desenvolvimento-terra.csv` — desenvolvimento terrestre
+  - `fiscalizacao-desenvolvimento-r1-r4.csv` — desenvolvimento, rodadas 1–4
+  - `fiscalizacao-desenvolvimento-r5-r6.csv` — desenvolvimento, rodadas 5–6
+  - `fiscalizacao-desenvolvimento-r7.csv` — desenvolvimento, rodada 7
+- **Metadados:** 7 PDFs correspondentes
 
 ## Cruzamentos sugeridos
 

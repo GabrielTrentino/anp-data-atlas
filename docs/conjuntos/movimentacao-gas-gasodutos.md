@@ -23,7 +23,17 @@ Infraestrutura de transporte de gás é gargalo relevante para abastecimento ene
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 14 CSVs mensais + 1 PDF metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- **Arquivos:** movimentação mensal em gasodutos (jan 2024 – dez 2025)
+- **Naming:** `gn_<mes>_<ano>.csv` ou `gn-<mes>.csv`
+- **Metadados:** `metadados-gn-sim.pdf`
+
+| Exemplo | Conteúdo |
+|---------|----------|
+| gn_dezembro_2025.csv | Volumes transportados dez/2025 |
+| gn-janeiro.csv | Volumes transportados jan/2025 |
 
 ## Cruzamentos sugeridos
 

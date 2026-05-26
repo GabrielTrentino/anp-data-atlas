@@ -23,7 +23,17 @@ Indicador de inovação setorial. Pode revelar áreas prioritárias de P&D (tran
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 5 CSVs + 6 PDFs metadados.
+
+- **Formato:** CSV (sep `;`) e XLSX
+- **CSVs:**
+  - `obrigacaopdi.csv` — obrigações de PD&I por concessionário
+  - `investimentos-prh.csv` — investimentos em formação de RH (PRH)
+  - `projetos-rt-3-2015.csv` — projetos RT (regulamento técnico 3/2015)
+  - `projetos-rt-5-2005.csv` — projetos RT (regulamento técnico 5/2005)
+- **XLSX:**
+  - `dados-abertos-unidades-pesquisa-area-tema-subtema.xlsx` — unidades de pesquisa por área
+- **Metadados:** 6 PDFs
 
 ## Cruzamentos sugeridos
 

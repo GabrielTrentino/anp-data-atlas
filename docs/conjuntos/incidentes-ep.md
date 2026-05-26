@@ -23,7 +23,16 @@ Impacto indireto em abastecimento quando incidentes causam parada prolongada de 
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 5 CSVs complementares + 2 PDFs.
+
+- **Formato:** CSV (encoding UTF-8)
+- **Arquivos de dados:**
+  - `incidentes.csv` (16,5 MB) — registro principal de incidentes
+  - `incidentes-classificacao.csv` (1,9 MB) — classificação dos incidentes
+  - `incidentes-tipo.csv` (2,7 MB) — tipologia
+  - `incidentes-substancias.csv` (572 KB) — substâncias envolvidas
+  - `incidentes-feridos.csv` (419 KB) — registro de feridos
+- **Metadados:** `metadados-incidentes.pdf`, manual de comunicação
 
 ## Cruzamentos sugeridos
 

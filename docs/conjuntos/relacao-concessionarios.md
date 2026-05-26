@@ -23,7 +23,12 @@ Tabela de dimensão para cruzamento. Permite enriquecer análises de produção/
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 2 CSVs + 2 PDFs metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- `relacao-concessionarios.csv` — cadastro dos concessionários (CNPJ, razão social, contratos)
+- `relacao-pais-origem-concessionarios.csv` — país de origem de cada concessionário
+- PDFs de metadados correspondentes
 
 ## Cruzamentos sugeridos
 

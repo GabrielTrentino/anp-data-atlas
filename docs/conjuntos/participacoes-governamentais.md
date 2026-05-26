@@ -23,7 +23,13 @@ Indicador econômico do setor. Correlação direta com produção e preço do pe
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 15 CSVs anuais (royalties União 2011–2025).
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- **Naming:** `royalties-uniao-<ano>.csv` (2019+) ou `royalties_uniao_<ano>.csv` (2011–2018)
+- **Tamanho típico:** ~1,3 KB/ano (tabela resumida União)
+- **Cobertura:** 2011–2025 (15 anos)
+- **Nota:** página contém 92 links totais (royalties estados, municípios, participação especial) — amostra limitada a União
 
 ## Cruzamentos sugeridos
 

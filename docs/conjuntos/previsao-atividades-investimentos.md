@@ -23,7 +23,11 @@ Indicador forward-looking de oferta futura de petróleo e gás. Permite antever 
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 1 CSV + 1 PDF metadados.
+
+- **Formato:** CSV
+- `previsao-atividades-investimentos-pte.csv` — previsão de atividades e investimentos exploratórios
+- `metadados-previsao-atividades-investimentos-exploratorios.pdf`
 
 ## Cruzamentos sugeridos
 

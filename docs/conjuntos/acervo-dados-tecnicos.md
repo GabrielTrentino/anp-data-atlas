@@ -23,7 +23,16 @@ Relevância indireta. O acervo é insumo para decisões exploratórias que, no l
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — página ainda não explorada empiricamente.
+> **Status:** validado — 8 CSVs + 7 PDFs metadados.
+
+- **Formato:** CSV (sep `;`, encoding UTF-8)
+- **CSVs disponíveis:**
+  - `tabela-programas-geofisicos.csv` — programas sísmicos/geofísicos
+  - `tabela-dados-geoquimicos.csv` — dados geoquímicos
+  - `tabela-levantamentos-geoquimicos.csv` — levantamentos
+  - `tabela-de-estudos.csv` — estudos técnicos
+  - `pocos-publicos-2020.csv` a `pocos-publicos-2023.csv` — poços públicos por ano
+- **Metadados:** 7 PDFs (um por tipo de tabela)
 
 ## Cruzamentos sugeridos
 
