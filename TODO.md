@@ -34,20 +34,20 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 41 | `tancagem-abastecimento` | Tancagem do Abastecimento Nacional | ✓ | ◐ | ◐ | ◐ | — |
-| 21 | `movimentacao-derivados` | Movimentação de derivados, GLP e biocombustíveis | ✓ | ◐ | ◐ | ◐ | ◐ |
+| 41 | `tancagem-abastecimento` | Tancagem do Abastecimento Nacional | ✓ | ✓ | ◐ | ◐ | — |
+| 21 | `movimentacao-derivados` | Movimentação de derivados, GLP e biocombustíveis | ✓ | ✓ | ◐ | ◐ | ◐ |
 | 12 | `cadastro-revendas-combustiveis` | Cadastro revendedores varejistas (postos) | ✓ | ✓ | ◐ | ◐ | — |
-| 11 | `cadastro-revendas-glp` | Cadastro revendas GLP | ✓ | — | — | ◐ | — |
-| 27 | `pontos-abastecimento` | Pontos de Abastecimento Autorizados | ✓ | — | — | ◐ | — |
-| 15 | `distribuidores-combustiveis-liquidos` | Distribuidores de combustíveis líquidos | ✓ | — | — | ◐ | — |
-| 28 | `pmqc` | PMQC — Qualidade dos Combustíveis | ✓ | — | — | ◐ | — |
-| 29 | `pml` | PML — Monitoramento dos Lubrificantes | ✓ | — | — | ◐ | — |
+| 11 | `cadastro-revendas-glp` | Cadastro revendas GLP | ✓ | ✓ | ✓ | ◐ | — |
+| 27 | `pontos-abastecimento` | Pontos de Abastecimento Autorizados | ✓ | ✓ | ✓ | ◐ | — |
+| 15 | `distribuidores-combustiveis-liquidos` | Distribuidores de combustíveis líquidos | ✓ | ✓ | ✓ | ◐ | — |
+| 28 | `pmqc` | PMQC — Qualidade dos Combustíveis | ✓ | ✓ | ✓ | ◐ | — |
+| 29 | `pml` | PML — Monitoramento dos Lubrificantes | ✓ | ✓ | ✓ | ◐ | — |
 | 40 | `serie-historica-precos` | Série Histórica de Preços de Combustíveis | ✓ | ✓ | ◐ | ◐ | ◐ |
-| 42 | `vendas-derivados` | Vendas de derivados e biocombustíveis | ✓ | — | — | ◐ | — |
-| 2 | `fiscalizacao-abastecimento` | Ações de Fiscalização do Abastecimento | ✓ | — | — | ◐ | — |
-| 9 | `capacidade-armazenagem-terminais` | Capacidade de Armazenagem de Terminais | ✓ | — | — | ◐ | — |
-| 22 | `movimentacao-terminais-aquaviarios` | Movimentação Terminais Aquaviários | ✓ | — | — | ◐ | — |
-| 37 | `registro-lubrificantes` | Registro de Óleos e Graxas Lubrificantes | ✓ | — | — | ◐ | — |
+| 42 | `vendas-derivados` | Vendas de derivados e biocombustíveis | ✓ | ✓ | ✓ | ◐ | — |
+| 2 | `fiscalizacao-abastecimento` | Ações de Fiscalização do Abastecimento | ✓ | ✓ | ✓ | ◐ | — |
+| 9 | `capacidade-armazenagem-terminais` | Capacidade de Armazenagem de Terminais | ✓ | ✓ | ✓ | ◐ | — |
+| 22 | `movimentacao-terminais-aquaviarios` | Movimentação Terminais Aquaviários | ✓ | ✓ | ✓ | ◐ | — |
+| 37 | `registro-lubrificantes` | Registro de Óleos e Graxas Lubrificantes | ✓ | ✓ | ✓ | ◐ | — |
 
 ---
 
@@ -55,12 +55,12 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 32 | `processamento-petroleo-derivados` | Processamento de petróleo e produção de derivados | ✓ | — | — | ◐ | — |
-| 33 | `producao-biocombustiveis` | Produção de biocombustíveis | ✓ | — | — | ◐ | — |
-| 34 | `producao-por-estado` | Produção por estado e localização | ✓ | — | — | ◐ | — |
-| 35 | `producao-por-poco` | Produção por Poço | ✓ | — | — | ◐ | — |
-| 19 | `importacoes-exportacoes` | Importações e exportações | ✓ | — | — | ◐ | — |
-| 5 | `anuario-estatistico` | Anuário Estatístico | ✓ | — | — | ◐ | — |
+| 32 | `processamento-petroleo-derivados` | Processamento de petróleo e produção de derivados | ✓ | ✓ | ✓ | ◐ | — |
+| 33 | `producao-biocombustiveis` | Produção de biocombustíveis | ✓ | ✓ | ✓ | ◐ | — |
+| 34 | `producao-por-estado` | Produção por estado e localização | ✓ | ✓ | ✓ | ◐ | — |
+| 35 | `producao-por-poco` | Produção por Poço | ✓ | ✓ | ✓ | ◐ | — |
+| 19 | `importacoes-exportacoes` | Importações e exportações | ✓ | ✓ | ✓ | ◐ | — |
+| 5 | `anuario-estatistico` | Anuário Estatístico | ✓ | — | — | — | — |
 
 ---
 
