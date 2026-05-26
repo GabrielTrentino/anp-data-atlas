@@ -70,6 +70,28 @@ Atacado/distribuição — elos entre refinaria/terminal e varejo.
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #15 (SDL)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md)
 
+## Sugestões de análises
+
+### Estrutura do mercado de distribuição
+
+- **Ranking de distribuidores** — por situação (ativo/inativo), tipo de autorização, UF.
+- **Concentração geográfica** — HHI por UF baseado no número de autorizações.
+- **Timeline de autorizações** — entrada e saída de distribuidores ao longo do tempo (data_publicacao).
+- **Distribuidores por tipo de ato** — autorização vs. registro vs. comunicação.
+
+### Contratos de cessão (CE/CR)
+
+- **Rede de cessão** — grafo de relações cedente ↔ cessionária; clusters de empresas.
+- **Volume contratado** — distribuição de volumes de cessão; contratos outliers.
+- **Duração média** — tempo entre início e término dos contratos.
+
+### Cruzamentos
+
+- **Distribuidores × movimentação** — volume SIMP movimentado por distribuidor (match por CNPJ/razão social).
+- **Distribuidores × cadastro-revendas** — quantos revendedores cada distribuidor abastece.
+- **Distribuidores × vendas-derivados** — market share implícito por UF (se distribuidores ≈ oferta local).
+- **Distribuidores × fiscalização** — autuações associadas a distribuidores vs. varejistas.
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional no fuel-analytics — trusted AEA completo.

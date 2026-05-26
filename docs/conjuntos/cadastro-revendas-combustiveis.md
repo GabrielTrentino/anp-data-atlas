@@ -96,6 +96,33 @@ Script: [cruzamento_tancagem_movimentacao.py](https://github.com/GabrielTrentino
 - [pontos-abastecimento.md](pontos-abastecimento.md) — infraestrutura de abastecimento
 - [cadastro-revendas-glp.md](cadastro-revendas-glp.md) — cadastro GLP (paralelo)
 
+## Sugestões de análises
+
+### Geografia do varejo
+
+- **Densidade de postos por UF/município** — postos por 10 mil habitantes ou por km² (cruzar IBGE).
+- **Mapa de concentração** — cidades com muitos postos vs. desertos de abastecimento.
+- **Distância entre postos** — geocodificar endereços e calcular nearest-neighbor por município.
+
+### Market share e competição
+
+- **Participação por bandeira** — share nacional e por UF (Branca vs. Ipiranga, Shell, Vibra, Raízen, etc.).
+- **Evolução temporal** — novas autorizações vs. encerramentos por bandeira ao longo dos anos.
+- **Concentração HHI** — índice por município; cidades com monopólio/oligopólio efetivo.
+
+### Cruzamentos operacionais
+
+- **Cadastro × preços** — identificar postos com preço fora da curva (outlier + bandeira branca = risco).
+- **Cadastro × PMQC** — taxa de não-conformidade por bandeira; postos fiscalizados vs não fiscalizados.
+- **Cadastro × fiscalização** — frequência de ações de fiscalização por posto; postos nunca visitados.
+- **Cadastro × tancagem** — postos que também têm instalação SIMP (TRR/distribuidor-varejista).
+
+### Dinâmica cadastral
+
+- **Turnover** — taxa de entrada/saída de postos por ano e região.
+- **Idade média das autorizações** — data_publicacao como proxy para tempo de operação.
+- **Migração de bandeira** — postos que trocam de bandeira ao longo do tempo (se houver série temporal).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline MVP no fuel-analytics (raw + trusted) · cruzamentos documentados · notebook/refined pendentes.

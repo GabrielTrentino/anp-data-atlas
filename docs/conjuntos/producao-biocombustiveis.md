@@ -56,6 +56,28 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #33 (SDC, Mensal)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Produção e tendências
+
+- **Evolução da produção** — biodiesel e etanol (anidro + hidratado) por região/UF, série longa.
+- **Sazonalidade** — entressafra de cana-de-açúcar e impacto na produção de etanol; biodiesel mais estável?
+- **Crescimento por região** — Centro-Oeste ultrapassando Sudeste em biodiesel?
+- **Mix anidro/hidratado** — evolução da proporção; efeito do mandato de mistura (E27) na demanda por anidro.
+
+### Mandato e regulação
+
+- **Produção vs mandato** — biodiesel B15: produção acompanha a obrigação de mistura?
+- **Capacidade ociosa** — produção real vs capacidade instalada (se disponível em anuário/painel).
+- **Exportação de etanol** — volume produzido - consumo doméstico = saldo exportável (join com importacoes-exportacoes).
+
+### Cruzamentos
+
+- **Produção × vendas etanol** — oferta regional vs demanda (join com vendas-derivados por UF/mês).
+- **Produção × preço** — correlação entre produção de etanol (safra) e preço ao consumidor (serie-historica-precos).
+- **Biodiesel × diesel** — proporção biodiesel produzido / diesel vendido = % mistura efetiva.
+- **Produção × movimentação** — fluxo logístico: UFs produtoras exportam para UFs consumidoras? (join com movimentacao-terminais).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/producao-biocombustiveis/`.

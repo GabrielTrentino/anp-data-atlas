@@ -57,6 +57,28 @@ Microdados de amostras de lubrificantes coletadas no mercado e analisadas quanto
 | [registro-lubrificantes](registro-lubrificantes.md) | `registro` / `cnpj_detentor` | Produto registrado vs monitorado |
 | [movimentacao-derivados](movimentacao-derivados.md) | limitado | PML = qualidade, não volume |
 
+## Sugestões de análises
+
+### Qualidade de lubrificantes
+
+- **Taxa de não-conformidade** por tipo de resultado (final, registro, qualidade) — evolução anual.
+- **Ranking de detentores** — empresas com maior número de amostras reprovadas.
+- **Distribuição geográfica** — UFs/municípios com maior incidência de não-conformidade.
+- **Marcas problemáticas** — marcas comerciais com reprovação recorrente.
+
+### Mercado de lubrificantes
+
+- **SAE e composição** — distribuição por grau SAE e tipo de composição (mineral, sintético, semissintético).
+- **Nível de desempenho** — padrões API/ACEA mais frequentes nas amostras.
+- **Evolução temporal** — mudança no perfil de produtos monitorados ao longo dos anos.
+
+### Cruzamentos
+
+- **PML × registro-lubrificantes** — marcas amostradas que não constam no registro (irregular).
+- **PML × registro** — detentores com muitos produtos registrados mas nenhum monitorado.
+- **Não-conformidade × origem** — produtos nacionais vs importados: qual tem mais reprovação?
+- **PML × fiscalização** — ações de fiscalização em revendedores com lubrificantes reprovados.
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional no fuel-analytics — trusted completo.

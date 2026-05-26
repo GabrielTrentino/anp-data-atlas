@@ -85,6 +85,28 @@ CSVs mensais organizados por ano. Nomes inconsistentes:
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #28 (SBQ, Mensal)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Qualidade por produto e região
+
+- **Taxa de não-conformidade** por produto (gasolina, etanol, diesel, GLP) — evolução mensal e ranking UF.
+- **Mapa geográfico** — municípios/UFs com maior incidência de adulteração por tipo de teste.
+- **Sazonalidade** — não-conformidade aumenta em períodos de alta demanda (férias, safra)?
+- **Tipos de não-conformidade** — distribuição dos parâmetros reprovados (teor alcoólico, aspecto visual, etc.).
+
+### Postos e reincidência
+
+- **Postos reincidentes** — CNPJs com múltiplas não-conformidades ao longo do tempo.
+- **Correlação bandeira × qualidade** — postos de bandeira branca vs. bandeirados (cruzar com cadastro-revendas).
+- **Postos fiscalizados nunca amostrados no PMQC** — gap de monitoramento (cruzar com fiscalizacao-abastecimento).
+- **Tempo entre coleta e resultado** — SLA operacional do programa.
+
+### Cruzamentos analíticos
+
+- **Preço vs qualidade** — postos com preço abaixo de P10 têm mais reprovações? (join com serie-historica-precos).
+- **Qualidade vs volume de vendas** — regiões com alta não-conformidade vendem mais ou menos? (join com vendas-derivados).
+- **PMQC vs fiscalização** — ações de fiscalização são direcionadas para regiões com mais reprovações?
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional no fuel-analytics — trusted 2024–2026 concluído.

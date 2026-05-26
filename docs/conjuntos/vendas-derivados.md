@@ -67,6 +67,33 @@ O portal organiza os CSVs em subpastas:
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #42 (SDC, Mensal / Anual)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Evolução temporal e sazonalidade
+
+- **Série nacional por produto** — demanda agregada de gasolina C, diesel, etanol, GLP ao longo de 35 anos (1990-2026).
+- **Sazonalidade por produto** — padrões mensais (ex.: pico de etanol na safra, gasolina no verão).
+- **Crescimento por UF** — estados com maior expansão de demanda na última década.
+- **Mudanças estruturais** — impacto de biocombustíveis (mandato B15, E27), carro flex, pré-sal na composição.
+
+### Segmentação e mercado
+
+- **Mix de demanda por segmento** — contribuição de TRR, revendedores, grandes consumidores, etc.
+- **Evolução segmento por produto** — ex.: diesel S10 vs S500, gasolina aditivada vs comum.
+- **Concentração por UF** — share de cada estado no consumo nacional; evolução da participação.
+
+### Geografia municipal
+
+- **Ranking municipal** — maiores consumidores por produto (proxy para atividade econômica/frota).
+- **Consumo per capita** (cruzar com IBGE) — normalizar por população e frota.
+- **Clusters logísticos** — municípios com alto consumo de diesel (transporte) vs gasolina (urbano).
+
+### Balanço oferta-demanda
+
+- **Produção + importação − exportação vs vendas** — identificar déficits/superávits por derivado (join com processamento + importacoes-exportacoes).
+- **Vendas vs movimentação** — comparar volumes SDC (vendas) vs SIMP (movimentação-derivados) por UF/mês.
+- **Vendas vs tancagem** — capacidade autorizada é suficiente para X dias de venda? (proxy de estoque estratégico).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional no fuel-analytics — trusted mensal + segmento concluídos.

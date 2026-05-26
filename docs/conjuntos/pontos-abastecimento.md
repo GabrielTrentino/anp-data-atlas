@@ -54,6 +54,22 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #27 (SDL, Diário)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+> Nota: este conjunto não possui CSV público. As análises abaixo seriam viáveis caso os dados se tornem disponíveis.
+
+### Infraestrutura de abastecimento
+
+- **Cobertura geográfica** — pontos autorizados por UF/município; identificar desertos de abastecimento.
+- **Tipos de ponto** — distribuição entre postos terrestres, marítimos, aéreos, ferroviários.
+- **Evolução temporal** — novos pontos autorizados vs desativados por ano.
+
+### Cruzamentos potenciais
+
+- **Pontos × cadastro-revendas** — validação cruzada de postos ativos (se dados existirem).
+- **Pontos × tancagem** — capacidade autorizada nos pontos de abastecimento vs tancagem SIMP.
+- **Pontos × vendas regionais** — cobertura vs demanda por combustível.
+
 ## Uso neste atlas
 
 **Status da exploração:** documentação de referência criada (pontos-abastecimento). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.

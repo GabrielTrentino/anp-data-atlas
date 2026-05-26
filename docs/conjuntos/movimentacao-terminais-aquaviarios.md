@@ -55,6 +55,33 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #22 (SIM, Mensal)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Fluxo logístico costeiro/fluvial
+
+- **Volume por terminal** — ranking de terminais por volume total movimentado; concentração.
+- **Série temporal** — evolução mensal do volume total (2013-2026); tendência e sazonalidade.
+- **Sentido da operação** — recepção vs expedição; terminais importadores vs exportadores.
+- **Modal de transporte** — peso de cabotagem, navegação interior, dutoviário na movimentação.
+
+### Produtos e rotas
+
+- **Mix de produtos** — quais derivados/biocombustíveis dominam a logística aquaviária?
+- **Produtos por terminal** — especialização: terminais focados em gasolina vs. diesel vs. petróleo.
+- **Volume por UF** — mapa de movimentação costeira; estados dependentes de cabotagem para abastecimento.
+
+### Eficiência e utilização
+
+- **Utilização vs capacidade** — (volume mensal × 12) / capacidade nominal = proxy de utilização anual (join com capacidade-armazenagem).
+- **Terminais subutilizados** — volume < 30% da capacidade por >6 meses consecutivos.
+- **Terminais congestionados** — volume > 80% da capacidade (potencial gargalo).
+
+### Cruzamentos
+
+- **Movimentação × vendas regionais** — volume recebido em terminal ≈ demanda local? (join com vendas-derivados por UF/mês).
+- **Movimentação × importação** — volume de derivados importados vs recepção em terminais marítimos.
+- **Movimentação × produção por estado** — fluxo: estados produtores (expedição) vs consumidores (recepção).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + prepare + trusted + cruzamento). Trusted layer em `data/trusted/movimentacao-terminais-aquaviarios/movimentacao_terminais.parquet`.

@@ -58,6 +58,33 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #34 (SDC / SDP, Mensal)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Produção primária
+
+- **Ranking de estados produtores** — RJ domina? Evolução do share de cada UF ao longo de 30 anos.
+- **Terra vs Mar** — evolução da produção offshore vs onshore; pré-sal como inflexão.
+- **Produção de gás natural** — crescimento do gás associado vs não-associado; UFs emergentes.
+- **Declínio de campos maduros** — estados com produção em queda (ex.: BA, SE, RN onshore).
+
+### Fluxo produção → refino
+
+- **Petróleo produzido vs processado** — volume extraído na UF vs volume processado nas refinarias locais.
+- **Dependência logística** — UFs que produzem mas não refinam (necessidade de escoamento).
+- **Autossuficiência estadual** — produção local cobre demanda local? (join com vendas-derivados).
+
+### Gás natural
+
+- **Queima e perda** — proporção de GN queimado/perdido vs disponibilizado; evolução (melhoria ambiental?).
+- **Consumo próprio** — quanto do GN fica na plataforma/campo vs vai para mercado.
+- **GN disponível** — série temporal do GN efetivamente ofertado; base para planejamento energético.
+
+### Cruzamentos
+
+- **Produção × producao-por-poco** — validação: soma por estado (poco) ≈ total estado (esta série)?
+- **Produção × processamento** — petróleo produzido alimenta quais refinarias? Fluxo implícito inter-UF.
+- **Produção × importação** — estados que produzem e ainda assim importam (gargalo de refino).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/producao-por-estado/`.

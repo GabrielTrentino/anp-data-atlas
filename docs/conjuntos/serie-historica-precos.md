@@ -106,6 +106,35 @@ Script: [cruzamento_cadastro_revendas.py](https://github.com/GabrielTrentino/anp
 - [vendas-derivados.md](vendas-derivados.md)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md)
 
+## Sugestões de análises
+
+### Evolução temporal e sazonalidade
+
+- **Série de preço médio semanal** por produto e UF — tendência, volatilidade e sazonalidade intra-anual.
+- **Spread compra/venda** — margem bruta da revenda por produto; evolução ao longo do tempo.
+- **Convergência regional** — dispersão de preços entre UFs diminuindo ou aumentando? Coeficiente de variação temporal.
+- **Impacto de reajustes Petrobras** — defasagem média entre anúncio de reajuste e repasse ao consumidor.
+
+### Geografia e competição
+
+- **Mapa de preço médio por município** — heatmap para gasolina, diesel, etanol; identificar outliers.
+- **Efeito bandeira** — preço médio por bandeira (Branca vs. marcas) controlando por município.
+- **Dispersão intra-municipal** — range de preços no mesmo município; cidades com maior/menor spread.
+- **Ranking de municípios** — mais caros e mais baratos por produto, por região.
+
+### Postos e mercado
+
+- **Comportamento individual do posto** (CNPJ) — frequência de alteração, amplitude de variação, tempo de repasse.
+- **Postos "fora da curva"** — outliers persistentes (abaixo de P5 ou acima de P95 por >4 semanas).
+- **Correlação preço × qualidade** — cruzar com PMQC: postos baratos têm mais não-conformidades?
+- **Entrada/saída de postos** — CNPJs que surgem ou desaparecem da pesquisa LPC ao longo da série.
+
+### Cruzamentos derivados
+
+- **Preço × vendas regionais** — elasticidade implícita: quando preço sobe, vendas caem? (join com vendas-derivados por UF/mês)
+- **Preço × custo de produção** — preço etanol vs produção safra (producao-biocombustiveis); diesel vs petróleo (processamento).
+- **Preço × importação** — derivados com preço doméstico vs. paridade de importação.
+
 ## Uso neste atlas
 
 **Status:** exploração com download dsan 2024–2025, trusted consolidado e join CNPJ cadastro. Diesel/GLP trusted e notebook pendentes.

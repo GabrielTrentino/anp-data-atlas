@@ -55,6 +55,28 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #9 (SIM, Semestral)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Infraestrutura de armazenagem
+
+- **Capacidade por tipo** — ranking MARÍTIMO vs TERRESTRE vs FLUVIAL vs LACUSTRE; evolução se houver série.
+- **Concentração por operador** — top operadores por capacidade total; HHI do segmento de terminais.
+- **Distribuição geográfica** — mapa de capacidade por UF; litorais vs interior.
+- **Dimensionamento** — capacidade média por tanque; terminais "gigantes" (outliers > P95).
+
+### Produtos e mix
+
+- **Capacidade por tipo de produto** — petróleo vs derivados/biocombustíveis vs GLP; proporção e evolução.
+- **Especificidade regional** — UFs com capacidade majoritária em petróleo (produtoras) vs derivados (consumidoras).
+- **GLP estratégico** — terminais com capacidade GLP significativa; cobertura regional para gás de cozinha.
+
+### Cruzamentos
+
+- **Capacidade × movimentação** — taxa de utilização (volume movimentado / capacidade nominal) por terminal/UF.
+- **Capacidade × vendas regionais** — dias de estoque implícito (capacidade ÷ vendas mensais) por UF.
+- **Capacidade × importação** — terminais marítimos próximos a portos de importação; gargalos de recepção.
+- **Capacidade × tancagem-abastecimento** — comparar universo (terminais aquaviários vs. toda a cadeia SIMP).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted layer em `data/trusted/capacidade-armazenagem-terminais/capacidade.parquet`.

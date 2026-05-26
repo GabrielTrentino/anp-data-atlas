@@ -67,6 +67,27 @@ Mercado de gás engarrafado; complementa movimentação GLP e tancagem por grupo
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #11 (SDL, Diária)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Mercado GLP
+
+- **Concentração por distribuidora** — market share das distribuidoras (Copagaz, Ultragaz, Nacional Gás, etc.) por UF.
+- **Densidade de revendedores** — pontos de venda GLP por 10 mil habitantes (cruzar IBGE).
+- **Evolução temporal** — ritmo de novas autorizações por ano (data_publicacao).
+- **Cobertura municipal** — municípios sem revendedor GLP autorizado (deserto de abastecimento).
+
+### Geografia e logística
+
+- **Mapa de calor** — distribuição geográfica dos revendedores por classe (varejista, comercializador).
+- **Vinculação × distribuidora** — tempo médio de vínculo (data_vinculacao vs hoje).
+- **Regiões de monopólio** — municípios onde apenas uma distribuidora opera.
+
+### Cruzamentos
+
+- **Cadastro GLP × vendas-derivados** — UFs com muitos revendedores mas vendas baixas (ineficiência) e vice-versa.
+- **Cadastro GLP × tancagem** — capacidade instalada de GLP vs. número de revendedores por UF.
+- **Cadastro GLP × cadastro-revendas-combustiveis** — sobreposição de CNPJs (postos que vendem GLP e combustíveis líquidos).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional no fuel-analytics — trusted completo.

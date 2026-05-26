@@ -57,6 +57,34 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #2 (SFI, Mensal)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Evolução das ações fiscalizatórias
+
+- **Série temporal** — número de ações de fiscalização por mês/ano (1998-2026); tendência de longo prazo.
+- **Resultado das ações** — proporção de "Sem Registro de Ocorrência" vs. notificações vs. autuações por período.
+- **Procedimentos por tipo** — evolução dos tipos de procedimento (coleta, notificação, interdição) ao longo do tempo.
+- **Sazonalidade** — períodos de pico de fiscalização (ex.: antes de feriados, operações especiais).
+
+### Geografia da fiscalização
+
+- **Cobertura por UF** — número de ações per capita por estado; UFs sub/super fiscalizadas.
+- **Mapa municipal** — municípios mais fiscalizados; correlação com número de postos (cadastro-revendas).
+- **Concentração urbana** — fiscalização concentrada em capitais/cidades grandes ou distribuída?
+
+### Segmentos e agentes
+
+- **Fiscalização por segmento** — distribuição entre postos, distribuidores, TRR, etc.
+- **Agentes reincidentes** — CNPJs com múltiplas ações de fiscalização; evolução entre visitas.
+- **Resultados por segmento** — taxas de irregularidade são maiores em quais segmentos?
+
+### Cruzamentos
+
+- **Fiscalização × PMQC** — postos com não-conformidade na qualidade são mais fiscalizados? Lag entre resultado PMQC e ação fiscal.
+- **Fiscalização × cadastro-revendas** — proporção de postos ativos que nunca foram visitados.
+- **Fiscalização × preços** — postos com preço outlier recebem mais visitas?
+- **Cobertura temporal** — intervalo médio entre fiscalizações no mesmo CNPJ.
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + prepare + trusted + cruzamento). Trusted layer em `data/trusted/fiscalizacao-abastecimento/fiscalizacao.parquet`.

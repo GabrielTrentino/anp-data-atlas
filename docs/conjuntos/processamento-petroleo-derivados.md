@@ -58,6 +58,34 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #32 (SDC, Mensal)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Parque refinador
+
+- **Capacidade de processamento por refinaria** — ranking e evolução temporal (1990-2026).
+- **Mix de matéria-prima** — proporção petróleo nacional vs importado vs outras cargas por refinaria.
+- **Utilização do parque** — (processado real / capacidade instalada) por refinaria e período.
+- **Geografica do refino** — concentração em poucos estados; dependência logística dos demais.
+
+### Produção de derivados
+
+- **Perfil de produção por refinaria** — quais derivados cada refinaria produz (gasolina, diesel, QAV, nafta, etc.).
+- **Evolução do mix** — mudança na composição (mais diesel? menos nafta?) ao longo das décadas.
+- **Produção por UF** — contribuição de cada estado para a oferta nacional de derivados.
+- **Sazonalidade** — picos de produção de determinados derivados (ex.: QAV em alta temporada aérea).
+
+### Balanço e autossuficiência
+
+- **Produção vs vendas** por derivado — autossuficiência doméstica ou dependência de importação?
+- **Gap de refino** — produção + importação - exportação - vendas = estoque/perda implícita.
+- **Tendência de longo prazo** — parque refinador cresce mais lento que a demanda? Pressão importadora?
+
+### Cruzamentos
+
+- **Processamento × importação** — correlação: quando refino cai, importação sobe? (join com importacoes-exportacoes).
+- **Processamento × produção por estado** — petróleo produzido vs processado no mesmo estado.
+- **Derivados refinaria × vendas** — diferença entre o que se refina e o que se vende (movimentação inter-regional implícita).
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/processamento-petroleo-derivados/`.

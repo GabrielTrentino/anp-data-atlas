@@ -53,6 +53,33 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #35 (SDP, Mensal / Anual (séries históricas))
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Produção por poço e campo
+
+- **Ranking de campos** — top campos por produção de petróleo e gás; concentração.
+- **Curva de declínio** — produção por poço ao longo dos meses; modelagem de declínio exponencial/hiperbólico.
+- **Poços novos vs maduros** — proporção da produção de poços recentes (< 2 anos) vs antigos.
+- **Razão gás/óleo (RGO)** — evolução por bacia; indicador de maturidade do reservatório.
+
+### Operadores e bacias
+
+- **Concentração por operador** — Petrobras vs operadores independentes; evolução do share.
+- **Produção por bacia** — ranking de bacias (Santos, Campos, Solimões, etc.); tendência.
+- **Novos entrantes** — operadores que aparecem pela primeira vez em poços; leilões recentes.
+- **Produtividade** — produção média por poço por operador (proxy de eficiência ou qualidade de ativos).
+
+### Água e sustentabilidade
+
+- **Razão água/óleo (RAO)** — indicador de maturidade; campos com RAO muito alta (injeção extensiva).
+- **Horas de produção** — poços com baixa utilização (< 50% do mês); intermitentes por limitação?
+
+### Cruzamentos
+
+- **Poco × estado** — validar soma (producao-por-poco ≈ producao-por-estado em 2023).
+- **Poco × processamento** — produção dos campos alimenta quais refinarias? (se contrato identificar).
+- **Poco × importação** — produção nacional crescente reduz dependência de importação? Série longa.
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + prepare + trusted + cruzamento). Amostra 2023. Trusted em `data/trusted/producao-por-poco/`.

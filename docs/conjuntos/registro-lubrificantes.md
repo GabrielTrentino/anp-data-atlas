@@ -55,6 +55,29 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 - [Inventário de Dados ANP](../inventario-dados.md) — base institucional #37 (SDL, Conforme demanda)
 - [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
 
+## Sugestões de análises
+
+### Catálogo de produtos
+
+- **Distribuição por tipo** — óleo lubrificante vs graxa; composição (mineral, sintético, semissintético).
+- **Ranking de detentores** — empresas com mais produtos registrados; concentração do mercado.
+- **Evolução temporal** — novos registros por ano; ritmo de inovação/entrada de produtos.
+- **Finalidade e aplicação** — segmentação: automotivo, industrial, marítimo, etc.
+
+### Especificações técnicas
+
+- **SAE e desempenho** — graus SAE mais comuns; níveis de desempenho (API SN, SP, etc.).
+- **Acondicionamento** — volumes de embalagem mais frequentes; evolução para embalagens maiores/menores.
+- **Origem** — proporção nacional vs importado; evolução ao longo dos anos.
+- **Produtores** — concentração de fabricação; poucos produtores para muitas marcas?
+
+### Cruzamentos
+
+- **Registro × PML** — produtos registrados nunca monitorados (gap de fiscalização da qualidade).
+- **Registro × PML** — taxa de não-conformidade por detentor e por tipo de composição.
+- **Registro × importação** — correlação entre importações de lubrificantes e novos registros de produtos importados.
+- **Detentores × distribuidores** — empresas que são simultaneamente detentor de registro e distribuidor autorizado.
+
 ## Uso neste atlas
 
 **Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted layer em `data/trusted/registro-lubrificantes/registro_lubrificantes.parquet`.
