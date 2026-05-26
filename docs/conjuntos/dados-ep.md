@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `dados-ep` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#13) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-de-e-p |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/gestao-contratos-exploracao-producao-dados-e-p |
 | **Unidade ANP (inventário)** | SDP / SEP |
 | **Periodicidade** | Mensal |
 | **Formato** | CSV |

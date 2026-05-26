@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `incidentes-ep` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#20) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/incidentes-de-exploracao-e-producao-de-petroleo-e-gas-natural |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/incidentes-seguranca-operacional |
 | **Unidade ANP (inventário)** | SSO |
 | **Periodicidade** | Mensal |
 | **Formato** | CSV |

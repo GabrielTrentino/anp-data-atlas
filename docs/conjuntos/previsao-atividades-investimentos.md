@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `previsao-atividades-investimentos` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#31) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/previsao-de-atividades-e-investimentos-exploratorios |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/previsao-de-exploracao |
 | **Unidade ANP (inventário)** | SEP |
 | **Periodicidade** | Anual |
 | **Formato** | CSV |

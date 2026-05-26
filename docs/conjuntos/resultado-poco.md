@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `resultado-poco` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#38) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/resultado-de-poco |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/resultados-de-poco |
 | **Unidade ANP (inventário)** | SDP |
 | **Periodicidade** | Mensal |
 | **Formato** | CSV |

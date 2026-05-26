@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `prestadores-apoio-administrativo` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#30) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/prestadores-de-servico-de-apoio-administrativo |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/prestadores-de-servicos-de-apoio-administrativo |
 | **Unidade ANP (inventário)** | SFI |
 | **Periodicidade** | Eventual (cadastral) |
 | **Formato** | CSV |

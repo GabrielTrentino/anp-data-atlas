@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `pesquisa-desenvolvimento-inovacao` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#26) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/pesquisa-desenvolvimento-e-inovacao |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos-pesquisa-e-desenvolvimento-e-inovacao-pd-i |
 | **Unidade ANP (inventário)** | SFI |
 | **Periodicidade** | Anual |
 | **Formato** | CSV |

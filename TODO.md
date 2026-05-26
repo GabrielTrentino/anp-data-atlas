@@ -67,15 +67,15 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 13 | `dados-ep` | Dados de E&P | ✓ | — | — | — | — |
-| 16 | `fase-exploracao` | Fase de Exploração | ✓ | — | — | — | — |
-| 17 | `fase-desenvolvimento-producao` | Fase de Desenvolvimento e Produção | ✓ | — | — | — | — |
-| 8 | `blocos-fase-exploratoria-encerrada` | Blocos com Fase Exploratória Encerrada | ✓ | — | — | — | — |
-| 20 | `incidentes-ep` | Incidentes de E&P | ✓ | — | — | — | — |
-| 38 | `resultado-poco` | Resultado de poço | ✓ | — | — | — | — |
-| 31 | `previsao-atividades-investimentos` | Previsão de Atividades e Investimentos Exploratórios | ✓ | — | — | — | — |
-| 36 | `relacao-concessionarios` | Relação de Concessionários | ✓ | — | — | — | — |
-| 39 | `rodadas-licitacoes` | Rodadas de Licitações | ✓ | — | — | — | — |
+| 13 | `dados-ep` | Dados de E&P | ✓ | ✓ | — | — | — |
+| 16 | `fase-exploracao` | Fase de Exploração | ✓ | ✓ | — | — | — |
+| 17 | `fase-desenvolvimento-producao` | Fase de Desenvolvimento e Produção | ✓ | ✓ | — | — | — |
+| 8 | `blocos-fase-exploratoria-encerrada` | Blocos com Fase Exploratória Encerrada | ✓ | ✓ | — | — | — |
+| 20 | `incidentes-ep` | Incidentes de E&P | ✓ | ✓ | — | — | — |
+| 38 | `resultado-poco` | Resultado de poço | ✓ | ◐ | — | — | — |
+| 31 | `previsao-atividades-investimentos` | Previsão de Atividades e Investimentos Exploratórios | ✓ | ✓ | — | — | — |
+| 36 | `relacao-concessionarios` | Relação de Concessionários | ✓ | ✓ | — | — | — |
+| 39 | `rodadas-licitacoes` | Rodadas de Licitações | ✓ | ✓ | — | — | — |
 
 ---
 
@@ -84,8 +84,8 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
 | 7 | `autorizacoes-gas-natural` | Autorizações de gás natural | ✓ | — | — | — | — |
-| 10 | `comercializacao-gas-natural` | Comercialização de Gás Natural | ✓ | — | — | — | — |
-| 23 | `movimentacao-gas-gasodutos` | Movimentação em gasodutos de transporte | ✓ | — | — | — | — |
+| 10 | `comercializacao-gas-natural` | Comercialização de Gás Natural | ✓ | ✓ | — | — | — |
+| 23 | `movimentacao-gas-gasodutos` | Movimentação em gasodutos de transporte | ✓ | ✓ | — | — | — |
 
 ---
 
@@ -93,10 +93,10 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 1 | `acervo-dados-tecnicos` | Acervo de Dados Técnicos | ✓ | — | — | — | — |
-| 4 | `amostras-rochas-fluidos` | Amostras de Rochas e Fluidos | ✓ | — | — | — | — |
-| 6 | `aquisicao-processamento-estudo-dados` | Aquisição, Processamento e Estudo de Dados | ✓ | — | — | — | — |
-| 14 | `bacias-sedimentares` | Bacias Sedimentares Brasileiras | ✓ | — | — | — | — |
+| 1 | `acervo-dados-tecnicos` | Acervo de Dados Técnicos | ✓ | ✓ | — | — | — |
+| 4 | `amostras-rochas-fluidos` | Amostras de Rochas e Fluidos | ✓ | ✓ | — | — | — |
+| 6 | `aquisicao-processamento-estudo-dados` | Aquisição, Processamento e Estudo de Dados | ✓ | ✓ | — | — | — |
+| 14 | `bacias-sedimentares` | Bacias Sedimentares Brasileiras | ✓ | ✓ | — | — | — |
 
 ---
 
@@ -104,12 +104,12 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 3 | `aditamento-conteudo-local` | Aditamento de conteúdo local | ✓ | — | — | — | — |
-| 18 | `fiscalizacao-conteudo-local` | Fiscalização de Conteúdo Local | ✓ | — | — | — | — |
-| 24 | `multas-2016` | Multas (vencimento a partir de 2016) | ✓ | — | — | — | — |
-| 25 | `participacoes-governamentais` | Participações Governamentais | ✓ | — | — | — | — |
-| 26 | `pesquisa-desenvolvimento-inovacao` | Pesquisa, Desenvolvimento e Inovação | ✓ | — | — | — | — |
-| 30 | `prestadores-apoio-administrativo` | Prestadores de apoio administrativo | ✓ | — | — | — | — |
+| 3 | `aditamento-conteudo-local` | Aditamento de conteúdo local | ✓ | ✓ | — | — | — |
+| 18 | `fiscalizacao-conteudo-local` | Fiscalização de Conteúdo Local | ✓ | ✓ | — | — | — |
+| 24 | `multas-2016` | Multas (vencimento a partir de 2016) | ✓ | ✓ | — | — | — |
+| 25 | `participacoes-governamentais` | Participações Governamentais | ✓ | ✓ | — | — | — |
+| 26 | `pesquisa-desenvolvimento-inovacao` | Pesquisa, Desenvolvimento e Inovação | ✓ | ✓ | — | — | — |
+| 30 | `prestadores-apoio-administrativo` | Prestadores de apoio administrativo | ✓ | ✓ | — | — | — |
 
 ---
 

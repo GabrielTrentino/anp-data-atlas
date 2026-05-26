@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `movimentacao-gas-gasodutos` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#23) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/movimentacao-de-gas-natural-em-gasodutos-de-transporte |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-consolidados-movimentacao-de-gas-natural-em-gasodutos-de-transporte |
 | **Unidade ANP (inventário)** | SCM |
 | **Periodicidade** | Mensal |
 | **Formato** | CSV |

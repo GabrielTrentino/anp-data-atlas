@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `fase-exploracao` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#16) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/fase-de-exploracao |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/fase-exploracao |
 | **Unidade ANP (inventário)** | SEP |
 | **Periodicidade** | Mensal |
 | **Formato** | CSV |

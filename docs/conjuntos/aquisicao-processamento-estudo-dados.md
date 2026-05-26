@@ -4,7 +4,7 @@
 |-------|-------|
 | **Slug** | `aquisicao-processamento-estudo-dados` |
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#6) |
-| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/aquisicao-processamento-e-estudo-de-dados |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/aquisicao-procedimento-e-estudo-de-dados |
 | **Unidade ANP (inventário)** | SDT |
 | **Periodicidade** | Eventual |
 | **Formato** | CSV |
