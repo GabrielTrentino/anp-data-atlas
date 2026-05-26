@@ -6,8 +6,8 @@
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#11) |
 | **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-cadastrais-das-revendas-de-gas-liquefeito-de-petroleo |
 | **Unidade ANP (inventário)** | SDL |
-| **Periodicidade** | Diária |
-| **Formato** | CSV |
+| **Periodicidade** | Diária (snapshot) |
+| **Formato** | CSV (`;` sep, UTF-8 c/ BOM) |
 | **Fonte operacional** | Cadastro ANP |
 | **Pasta local** | `data/raw/cadastro-revendas-glp/` |
 | **Inventário ANP** | Dados Cadastrais das Revendas de Gás Liquefeito de Petróleo |
@@ -15,39 +15,52 @@
 
 ## Contexto
 
-Cadastro de revendas de GLP (botijão e granel), com localização e situação.
+Cadastro de revendas de GLP (botijão e granel), com localização, distribuidora vinculada e classificação de segurança NBR.
 
 ## Relevância para anp-fuel-analytics
 
 Mercado de gás engarrafado; complementa movimentação GLP e tancagem por grupo de produtos.
 
-Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/cadastro-revendas-glp/) (documentação de referência; pipeline pendente).
+## Schema (14 colunas)
 
-## Estrutura dos arquivos
+| Coluna | Tipo | Descrição |
+|--------|------|-----------|
+| CODIGOISIMP | INT | Código interno SIMP |
+| AUTORIZACAO | VARCHAR | Número da autorização ANP |
+| CNPJ | VARCHAR | CNPJ da revenda (14 dígitos) |
+| RAZAOSOCIAL | VARCHAR | Razão social |
+| ENDERECO | VARCHAR | Logradouro |
+| COMPLEMENTO | VARCHAR | Complemento |
+| BAIRRO | VARCHAR | Bairro |
+| CEP | VARCHAR | CEP |
+| UF | VARCHAR | UF (2 letras) |
+| MUNICIPIO | VARCHAR | Município |
+| DISTRIBUIDORA | VARCHAR | Distribuidora vinculada |
+| CLASSE | VARCHAR | Classificação NBR (segurança) |
+| DATAPUBLICACAO | DATE | Data de publicação no DOU |
+| DATAVINCULACAO | DATE | Data de vinculação à distribuidora |
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+## Inventário empírico
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
-
-## Inventário empírico dos brutos
-
-> **Status:** pendente — preencher após download em `data/raw/cadastro-revendas-glp/`.
-
-| Arquivo local | Linhas | Métrica | Período | Notas |
-|---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| Arquivo | Linhas | Encoding | Sep |
+|---------|-------:|----------|:---:|
+| `cadastro-revendas-glp.csv` | 59.349 | UTF-8-sig | `;` |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- **Chave lógica:** `cnpj` (59.346 distintos — quase 1:1)
+- **Distribuidoras:** 19 (27,3% são "INDEPENDENTE")
+- **Cobertura:** 27 UFs, 5.163 municípios
+- **Classe NBR:** 113 variantes (padrão: "1 AREA - Classe X - NBR 15514")
 
 ## Cruzamentos sugeridos
 
-- [movimentacao-derivados](movimentacao-derivados.md)
-- [tancagem-abastecimento](tancagem-abastecimento.md)
+| Parceiro | Chave join | Observação |
+|----------|-----------|------------|
+| [vendas-derivados](vendas-derivados.md) (GLP) | `uf` | Densidade revendas × volume vendido |
+| [tancagem-abastecimento](tancagem-abastecimento.md) | `uf` / distribuidora | Capacidade GLP vs distribuição |
+| [cadastro-revendas-combustiveis](cadastro-revendas-combustiveis.md) | `cnpj` | Postos que também vendem GLP |
+| [movimentacao-derivados](movimentacao-derivados.md) | `uf` | Volume movimentado GLP |
 
 ## Conjuntos relacionados
 
@@ -56,10 +69,10 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (cadastro-revendas-glp). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional no fuel-analytics — trusted completo.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/cadastro-revendas-glp/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook exploratório (mapa, concentração distribuidora/UF)
+2. Refined: densidade revendas × volume vendas por município
+3. Cross-match com cadastro-revendas-combustiveis (sobreposição CNPJ)
