@@ -1,0 +1,73 @@
+# Comercialização de Gás Natural
+
+| Campo | Valor |
+|-------|-------|
+| **Slug** | `comercializacao-gas-natural` |
+| **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#10) |
+| **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/comercializacao-de-gas-natural |
+| **Unidade ANP (inventário)** | SCM |
+| **Periodicidade** | Mensal |
+| **Formato** | CSV |
+| **Fonte operacional** | Gás Natural |
+| **Pasta local** | `data/raw/comercializacao-gas-natural/` |
+| **Inventário ANP** | Comercialização de Gás Natural |
+| **Prioridade fuel-analytics** | Média (oferta energética) |
+
+## Contexto
+
+Volumes mensais de gás natural comercializados — por agente, origem (nacional/importado), destino (industrial, termelétrico, automotivo/GNV, distribuição canalizada). Dados sobre preços e contratos de fornecimento.
+
+## Relevância para anp-fuel-analytics
+
+Gás natural compete com GLP e diesel em alguns segmentos (industrial, geração). Entender o volume comercializado por segmento complementa análises de demanda energética.
+
+## Estrutura dos arquivos
+
+> **Status:** pendente — página ainda não explorada empiricamente.
+
+## Cruzamentos sugeridos
+
+- [autorizacoes-gas-natural](autorizacoes-gas-natural.md) — agentes autorizados
+- [movimentacao-gas-gasodutos](movimentacao-gas-gasodutos.md) — transporte físico
+- [importacoes-exportacoes](importacoes-exportacoes.md) — GN importado (Bolívia, GNL)
+- [producao-por-estado](producao-por-estado.md) — produção nacional de gás
+
+## Conjuntos relacionados
+
+- [Inventário de Dados ANP](../inventario-dados.md) — base SCM
+- [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
+
+## Sugestões de análises
+
+### Volume e sazonalidade
+
+- **Evolução mensal** — total comercializado (Mm³/dia); tendência e sazonalidade.
+- **Mix de destinos** — industrial vs termelétrico vs automotivo vs distribuição; evolução.
+- **Nacional vs importado** — dependência do gás boliviano e GNL spot; variação com câmbio.
+
+### Preços
+
+- **Preço médio por segmento** — industrial vs termelétrico vs GNV; spread.
+- **Evolução de preços** — série temporal; indexação ao petróleo vs descolamento.
+- **Competitividade** — GN vs GLP vs diesel no segmento industrial (R$/GJ).
+
+### Agentes e mercado
+
+- **Concentração** — market share por comercializador; Petrobras vs novos entrantes.
+- **Impacto Nova Lei do Gás** — antes vs depois (2021); número de agentes, volumes.
+
+### Cruzamentos
+
+- **Comercialização × produção** — balanço nacional: produção + importação vs consumo.
+- **Comercialização × geração elétrica** — despacho térmico vs volume de GN comercializado.
+- **Comercialização × movimentação-derivados** — substituição: GN crescendo onde diesel industrial cai?
+
+## Uso neste atlas
+
+**Status da exploração:** pendente.
+
+**Próximos passos:**
+
+1. Explorar página e mapear CSVs disponíveis
+2. Download de amostras para `data/raw/comercializacao-gas-natural/`
+3. Documentar schema e volume

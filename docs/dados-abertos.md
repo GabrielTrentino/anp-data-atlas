@@ -45,47 +45,47 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 
 | # | Conjunto | Slug | Explorado |
 |---|----------|------|-----------|
-| 1 | Acervo de Dados Técnicos | `acervo-dados-tecnicos` | |
+| 1 | Acervo de Dados Técnicos | `acervo-dados-tecnicos` | [doc](conjuntos/acervo-dados-tecnicos.md) |
 | 2 | Ações de Fiscalização do Abastecimento | `fiscalizacao-abastecimento` | [doc](conjuntos/fiscalizacao-abastecimento.md) |
-| 3 | Aditamento de conteúdo local | `aditamento-conteudo-local` | |
-| 4 | Amostras de Rochas e Fluidos | `amostras-rochas-fluidos` | |
+| 3 | Aditamento de conteúdo local | `aditamento-conteudo-local` | [doc](conjuntos/aditamento-conteudo-local.md) |
+| 4 | Amostras de Rochas e Fluidos | `amostras-rochas-fluidos` | [doc](conjuntos/amostras-rochas-fluidos.md) |
 | 5 | Anuário Estatístico | `anuario-estatistico` | [doc](conjuntos/anuario-estatistico.md) |
-| 6 | Aquisição, Processamento e Estudo de Dados | `aquisicao-processamento-estudo-dados` | |
-| 7 | Autorizações de gás natural | `autorizacoes-gas-natural` | |
-| 8 | Blocos com Fase Exploratória Encerrada | `blocos-fase-exploratoria-encerrada` | |
+| 6 | Aquisição, Processamento e Estudo de Dados | `aquisicao-processamento-estudo-dados` | [doc](conjuntos/aquisicao-processamento-estudo-dados.md) |
+| 7 | Autorizações de gás natural | `autorizacoes-gas-natural` | [doc](conjuntos/autorizacoes-gas-natural.md) |
+| 8 | Blocos com Fase Exploratória Encerrada | `blocos-fase-exploratoria-encerrada` | [doc](conjuntos/blocos-fase-exploratoria-encerrada.md) |
 | 9 | Capacidade de Armazenagem de Terminais | `capacidade-armazenagem-terminais` | [doc](conjuntos/capacidade-armazenagem-terminais.md) |
-| 10 | Comercialização de Gás Natural | `comercializacao-gas-natural` | |
+| 10 | Comercialização de Gás Natural | `comercializacao-gas-natural` | [doc](conjuntos/comercializacao-gas-natural.md) |
 | 11 | Dados Cadastrais das Revendas de Gás Liquefeito de Petróleo (GLP) | `cadastro-revendas-glp` | [doc](conjuntos/cadastro-revendas-glp.md) |
 | 12 | Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos | `cadastro-revendas-combustiveis` | [doc](conjuntos/cadastro-revendas-combustiveis.md) |
-| 13 | Dados de E&P | `dados-ep` | |
-| 14 | Dados Georreferenciados das Bacias Sedimentares Brasileiras | `bacias-sedimentares` | |
+| 13 | Dados de E&P | `dados-ep` | [doc](conjuntos/dados-ep.md) |
+| 14 | Dados Georreferenciados das Bacias Sedimentares Brasileiras | `bacias-sedimentares` | [doc](conjuntos/bacias-sedimentares.md) |
 | 15 | Distribuidores de combustíveis líquidos | `distribuidores-combustiveis-liquidos` | [doc](conjuntos/distribuidores-combustiveis-liquidos.md) |
-| 16 | Fase de Exploração | `fase-exploracao` | |
-| 17 | Fase de Desenvolvimento e Produção | `fase-desenvolvimento-producao` | |
-| 18 | Fiscalização de Conteúdo Local | `fiscalizacao-conteudo-local` | |
+| 16 | Fase de Exploração | `fase-exploracao` | [doc](conjuntos/fase-exploracao.md) |
+| 17 | Fase de Desenvolvimento e Produção | `fase-desenvolvimento-producao` | [doc](conjuntos/fase-desenvolvimento-producao.md) |
+| 18 | Fiscalização de Conteúdo Local | `fiscalizacao-conteudo-local` | [doc](conjuntos/fiscalizacao-conteudo-local.md) |
 | 19 | Importações e exportações | `importacoes-exportacoes` | [doc](conjuntos/importacoes-exportacoes.md) |
-| 20 | Incidentes de Exploração e Produção de Petróleo e Gás Natural | `incidentes-ep` | |
+| 20 | Incidentes de Exploração e Produção de Petróleo e Gás Natural | `incidentes-ep` | [doc](conjuntos/incidentes-ep.md) |
 | 21 | Movimentação de derivados de petróleo e gás natural e biocombustíveis | `movimentacao-derivados` | [doc](conjuntos/movimentacao-derivados.md) |
 | 22 | Movimentação dos Terminais Aquaviários | `movimentacao-terminais-aquaviarios` | [doc](conjuntos/movimentacao-terminais-aquaviarios.md) |
-| 23 | Movimentação de Gás Natural em Gasodutos de Transporte | `movimentacao-gas-gasodutos` | |
-| 24 | Multas aplicadas com vencimento a partir de 2016 | `multas-2016` | |
-| 25 | Participações Governamentais | `participacoes-governamentais` | |
-| 26 | Pesquisa, Desenvolvimento e Inovação | `pesquisa-desenvolvimento-inovacao` | |
+| 23 | Movimentação de Gás Natural em Gasodutos de Transporte | `movimentacao-gas-gasodutos` | [doc](conjuntos/movimentacao-gas-gasodutos.md) |
+| 24 | Multas aplicadas com vencimento a partir de 2016 | `multas-2016` | [doc](conjuntos/multas-2016.md) |
+| 25 | Participações Governamentais | `participacoes-governamentais` | [doc](conjuntos/participacoes-governamentais.md) |
+| 26 | Pesquisa, Desenvolvimento e Inovação | `pesquisa-desenvolvimento-inovacao` | [doc](conjuntos/pesquisa-desenvolvimento-inovacao.md) |
 | 27 | Pontos de Abastecimento Autorizados | `pontos-abastecimento` | [doc](conjuntos/pontos-abastecimento.md) |
 | 28 | Programa de Monitoramento da Qualidade dos Combustíveis (PMQC) | `pmqc` | [doc](conjuntos/pmqc.md) |
 | 29 | Programa de Monitoramento dos Lubrificantes (PML) | `pml` | [doc](conjuntos/pml.md) |
-| 30 | Prestadores de serviço de apoio administrativo | `prestadores-apoio-administrativo` | |
-| 31 | Previsão de Atividades e Investimentos Exploratórios | `previsao-atividades-investimentos` | |
+| 30 | Prestadores de serviço de apoio administrativo | `prestadores-apoio-administrativo` | [doc](conjuntos/prestadores-apoio-administrativo.md) |
+| 31 | Previsão de Atividades e Investimentos Exploratórios | `previsao-atividades-investimentos` | [doc](conjuntos/previsao-atividades-investimentos.md) |
 | 32 | Processamento de petróleo e produção de derivados | `processamento-petroleo-derivados` | [doc](conjuntos/processamento-petroleo-derivados.md) |
 | 33 | Produção de biocombustíveis | `producao-biocombustiveis` | [doc](conjuntos/producao-biocombustiveis.md) |
 | 34 | Produção de petróleo e gás natural por estado e localização | `producao-por-estado` | [doc](conjuntos/producao-por-estado.md) |
 | 35 | Produção de Petróleo e Gás Natural por Poço | `producao-por-poco` | [doc](conjuntos/producao-por-poco.md) |
-| 36 | Relação de Concessionários | `relacao-concessionarios` | |
+| 36 | Relação de Concessionários | `relacao-concessionarios` | [doc](conjuntos/relacao-concessionarios.md) |
 | 37 | Registro de Óleos e Graxas Lubrificantes | `registro-lubrificantes` | [doc](conjuntos/registro-lubrificantes.md) |
-| 38 | Resultado de poço | `resultado-poco` | |
-| 39 | Rodadas de Licitações de Petróleo e Gás Natural | `rodadas-licitacoes` | |
+| 38 | Resultado de poço | `resultado-poco` | [doc](conjuntos/resultado-poco.md) |
+| 39 | Rodadas de Licitações de Petróleo e Gás Natural | `rodadas-licitacoes` | [doc](conjuntos/rodadas-licitacoes.md) |
 | 40 | Série Histórica de Preços de Combustíveis | `serie-historica-precos` | [doc](conjuntos/serie-historica-precos.md) |
-| 41 | Tancagem do Abastecimento Nacional de Combustíveis | `tancagem-abastecimento` | [sim](conjuntos/tancagem-abastecimento.md) |
+| 41 | Tancagem do Abastecimento Nacional de Combustíveis | `tancagem-abastecimento` | [doc](conjuntos/tancagem-abastecimento.md) |
 | 42 | Vendas de derivados de petróleo e biocombustíveis | `vendas-derivados` | [doc](conjuntos/vendas-derivados.md) |
 
 ### Notas do portal (resumo)
