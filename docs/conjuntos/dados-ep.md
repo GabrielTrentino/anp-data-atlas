@@ -61,12 +61,11 @@ Complementar ao foco downstream do monorepo. Utilidade principal em cruzamentos 
 - **E&P × importação** — aumento de produção nacional reduz dependência de importação?
 - **E&P × participações governamentais** — royalties vs produção por campo/bacia.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
+| Arquivo local | Tipo | Tamanho | Notas |
+|---------------|------|---------|-------|
+| `metadados-*.pdf` (5 arquivos) | PDF | — | Metadados e documentação; dados tabulares acessíveis via painel dinâmico ou API |
 
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/dados-ep/`
-3. Documentar schema e volume
+> Dados de E&P (contratos, campos, poços) disponibilizados primariamente via painel interativo.
+> CSVs detalhados encontram-se nos conjuntos filhos: `fase-exploracao`, `fase-desenvolvimento-producao`, `incidentes-ep`.

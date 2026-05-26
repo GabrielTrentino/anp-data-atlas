@@ -70,12 +70,13 @@ Contexto institucional do setor upstream. Blocos arrematados em rodadas se torna
 - **Rodadas × resultado-poco** — taxa de sucesso por rodada.
 - **Rodadas × participações governamentais** — royalties gerados por rodada.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/rodadas-licitacoes/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `lista-blocos-concedidos.csv` | CSV | Blocos concedidos em cada rodada |
+| `lista-ofertas-vencedoras.csv` | CSV | Ofertas vencedoras (concessão) |
+| `lista-ofertas-vencedoras-popp.csv` | CSV | Ofertas vencedoras (partilha de produção / pré-sal) |
+| `metadados-blocos-concedidos.pdf` | PDF | Dicionário de dados (blocos) |
+| `metadados-ofertas-vencedoras.pdf` | PDF | Dicionário de dados (ofertas) |
+| `metadados-ofertas-vencedoras-popp.pdf` | PDF | Dicionário de dados (partilha) |

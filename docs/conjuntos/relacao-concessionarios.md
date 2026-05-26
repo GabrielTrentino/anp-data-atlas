@@ -61,12 +61,11 @@ Tabela de dimensão para cruzamento. Permite enriquecer análises de produção/
 - **Concessionários × rodadas** — perfil dos vencedores; mudança ao longo das rodadas.
 - **Concessionários × incidentes** — taxa de incidentes por operador (normalizada).
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/relacao-concessionarios/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `relacao-concessionarios-cessao-onerosa.csv` | CSV | Concessionários do regime de cessão onerosa |
+| `relacao-concessionarios-concessao.csv` | CSV | Concessionários do regime de concessão |
+| `metadados-relacao-concessionarios-cessao-onerosa.pdf` | PDF | Dicionário de dados (cessão onerosa) |
+| `metadados-relacao-concessionarios-concessao.pdf` | PDF | Dicionário de dados (concessão) |

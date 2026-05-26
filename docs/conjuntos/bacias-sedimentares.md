@@ -69,12 +69,14 @@ Provável formato shapefile (.shp + .dbf + .shx + .prj) com polígonos das bacia
 - **Bacias × rodadas** — áreas ofertadas dentro de cada bacia; atratividade relativa.
 - **Bacias × incidentes** — taxa de incidentes normalizada por bacia.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear arquivos disponíveis (SHP / CSV)
-2. Download para `data/raw/bacias-sedimentares/`
-3. Documentar schema, projeção (CRS) e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `Bacias_Summit.zip` | ZIP (shapefile) | Polígonos das bacias (Summit) |
+| `BaciasMaritimas.zip` | ZIP (shapefile) | Bacias marítimas |
+| `BaciaTerrestres.zip` | ZIP (shapefile) | Bacias terrestres |
+| `LimitePoliticoMaritimo.zip` | ZIP (shapefile) | Limite político marítimo |
+| `Plataforma_Continental.zip` | ZIP (shapefile) | Plataforma continental |
+| `Brasil.zip` | ZIP (shapefile) | Contorno do Brasil |
+| `metadados-*.pdf` (6 arquivos) | PDF | Dicionários de dados por shapefile |

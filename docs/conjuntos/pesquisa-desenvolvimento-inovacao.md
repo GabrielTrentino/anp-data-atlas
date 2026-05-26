@@ -66,12 +66,13 @@ Indicador de inovação setorial. Pode revelar áreas prioritárias de P&D (tran
 - **PD&I × biocombustíveis** — investimento em etanol/biodiesel vs P&D geral.
 - **PD&I × participações governamentais** — P&D como % das receitas totais do setor.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/pesquisa-desenvolvimento-inovacao/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `obrigacaopdi.csv` | CSV | Obrigações de PD&I por concessionário |
+| `investimentos-prh.csv` | CSV | Investimentos em formação de RH (PRH) |
+| `projetos-rt-3-2015.csv` | CSV | Projetos RT (regulamento técnico 3/2015) |
+| `projetos-rt-5-2005.csv` | CSV | Projetos RT (regulamento técnico 5/2005) |
+| `dados-abertos-unidades-pesquisa-area-tema-subtema.xlsx` | XLSX | Unidades de pesquisa por área/tema |
+| `metadados-*.pdf` (6 arquivos) | PDF | Dicionários de dados |

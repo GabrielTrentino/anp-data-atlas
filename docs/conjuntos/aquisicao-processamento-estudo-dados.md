@@ -66,12 +66,19 @@ Sem uso direto em análises de abastecimento. Relevante para entender o esforço
 - **Dados × rodadas** — disponibilidade de sísmica vs atratividade em licitações.
 - **Dados × investimentos** — previsão de aquisição vs realizado.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/aquisicao-processamento-estudo-dados/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Notas |
+|---------------|-------:|---------|----------|:---:|-------|
+| `2020-autorizacoes-despachos.csv` | 17 | CSV | latin-1 | `;` | 5 colunas; autorizações e despachos 2020 |
+| `202501-ead-resultado-sismicos.xlsx` | — | XLSX | — | — | 29 KB; resultados sísmicos jan/2025 |
+| `202502-ead-resultado-sismicos.csv` | ~15 | CSV | utf-8-sig | `;` | Resultados sísmicos fev/2025 |
+| `202503-ead-resultado-sismicos.csv` | ~15 | CSV | utf-8-sig | `;` | Resultados sísmicos mar/2025 |
+| `202504-ead-resultado-sismicos.csv` | ~11 | CSV | utf-8-sig | `;` | Resultados sísmicos abr/2025 |
+| `202505-ead-resultado-sismicos.csv` | ~19 | CSV | utf-8-sig | `;` | Resultados sísmicos mai/2025 |
+| `202601-ead-resultado-sismicos.csv` | ~15 | CSV | utf-8-sig | `;` | Resultados sísmicos jan/2026 |
+| `202602-ead-resultado-sismicos.csv` | ~15 | CSV | utf-8-sig | `;` | Resultados sísmicos fev/2026 |
+| `202603-ead-resultado-sismicos.csv` | ~15 | CSV | utf-8-sig | `;` | Resultados sísmicos mar/2026 |
+| `2016-2019-autorizacoes-despachos.zip` | — | ZIP | — | — | Dados históricos 2016–2019 |
+| `2004-2015-autorizacoes-despachos.zip` | — | ZIP | — | — | Dados históricos 2004–2015 |
+| `metadados-*.pdf` (4 arquivos) | — | PDF | — | — | Dicionários de dados |

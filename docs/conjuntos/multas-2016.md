@@ -67,12 +67,18 @@ Relevante para cruzamento com fiscalização do abastecimento: postos autuados e
 - **Multas × cadastro** — postos multados que perderam autorização.
 - **Multas × preços** — postos que praticam preços outlier e são fiscalizados.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/multas-2016/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `multas-aplicadas-2016a2019.csv` | CSV | Consolidado 2016–2019 (2,3 MB) |
+| `multas-aplicadas-2020.csv` | CSV | Multas 2020 |
+| `multas-aplicadas-2021.csv` | CSV | Multas 2021 |
+| `multas-aplicadas-2022.csv` | CSV | Multas 2022 |
+| `multas-aplicadas-2023.csv` | CSV | Multas 2023 |
+| `multas-aplicadas-2024.csv` | CSV | Multas 2024 |
+| `multas-aplicadas-2025.csv` | CSV | Multas 2025 |
+| `multas-2021-junho22.xlsx` | XLSX | Versão Excel 2021 (721 KB) |
+| `multas-aplicadas-2024-excel.xlsx` | XLSX | Versão Excel 2024 |
+| `multas-aplicadas-2025.xlsx` | XLSX | Versão Excel 2025 |
+| `metadados-multas-aplicadas-2016a2019.pdf` | PDF | Dicionário de dados |

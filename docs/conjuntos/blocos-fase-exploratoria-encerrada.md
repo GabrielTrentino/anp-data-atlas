@@ -58,12 +58,10 @@ Histórico de E&P. Útil para estudos de taxa de sucesso exploratório e como co
 - **Encerrados → desenvolvimento** — blocos que evoluíram para campos produtores.
 - **Encerrados × resultado-poco** — tipo de resultado nos poços perfurados antes da devolução.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
+| Arquivo local | Tipo | Notas |
+|---------------|------|-------|
+| `metadados-fase-exploratoria-encerrada.pdf` | PDF | Metadados e dicionário de dados |
 
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/blocos-fase-exploratoria-encerrada/`
-3. Documentar schema e volume
+> CSV não localizado na página (possivelmente descontinuado ou acessível apenas via painel interativo).

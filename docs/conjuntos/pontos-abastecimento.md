@@ -25,17 +25,17 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** parcial — apenas metadados (PDF). CSV não disponível para download público.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- `metadados-pa.pdf` — dicionário de dados do cadastro de pontos de abastecimento
+- Dados cadastrais de postos autorizados não estão disponíveis como CSV na página de dados abertos
+- Acesso possivelmente restrito ao painel dinâmico ou consulta via API interna
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/pontos-abastecimento/`.
-
-| Arquivo local | Linhas | Métrica | Período | Notas |
-|---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| Arquivo local | Tipo | Tamanho | Notas |
+|---------------|------|---------|-------|
+| `metadados-pa.pdf` | PDF | — | Dicionário de dados |
 
 ## Qualidade e chaves
 

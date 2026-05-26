@@ -52,12 +52,9 @@ Relevância mínima para análises de abastecimento. Base cadastral de caráter 
 - **Prestadores × concessionários** — quais concessionários mais contratam; concentração.
 - **Prestadores × conteúdo local** — serviços administrativos nacionais vs importados.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/prestadores-apoio-administrativo/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `dados-abertos-apoio-adm-rj-df.xlsx` | XLSX | Prestadores habilitados (RJ e DF) |
+| `metadados-apoio-adm-rj-df.pdf` | PDF | Dicionário de dados |

@@ -59,12 +59,16 @@ Sem uso direto em análises de abastecimento. Relevante para pesquisa geológica
 - **Amostras × produção** — campos com mais amostras têm melhor caracterização e produtividade?
 - **Amostras × resultado-poco** — amostras de poços secos vs produtores.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/amostras-rochas-fluidos/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `amostras-de-rocha-sedimentar.zip` | ZIP (shapefile) | Amostras de rocha sedimentar |
+| `amostras-de-coquina.zip` | ZIP (shapefile) | Amostras de coquina |
+| `amostras-de-fluido.zip` | ZIP (shapefile) | Amostras de fluido |
+| `amostras-de-lamina.zip` | ZIP (shapefile) | Amostras de lâmina |
+| `amostras-de-plugue.zip` | ZIP (shapefile) | Amostras de plugue |
+| `amostras-de-testemunho.zip` | ZIP (shapefile) | Amostras de testemunho |
+| `amostras-de-calha.zip` | ZIP (shapefile) | Amostras de calha |
+| `amostras-laterais.zip` | ZIP (shapefile) | Amostras laterais |
+| `metadados-*.pdf` (7 arquivos) | PDF | Dicionários de dados por tipo de amostra |

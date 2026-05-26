@@ -60,12 +60,10 @@ Indicador da qualidade exploratória. Poços produtores de óleo/gás eventualme
 - **Resultado × rodadas** — sucesso por rodada; qualidade dos blocos ofertados.
 - **Resultado × acervo técnico** — dados sísmicos disponíveis vs taxa de sucesso.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
+| Arquivo local | Tipo | Notas |
+|---------------|------|-------|
+| `metadados-resultado-poco.pdf` | PDF | Metadados e dicionário de dados |
 
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/resultado-poco/`
-3. Documentar schema e volume
+> CSV não disponível publicamente. Dados possivelmente acessíveis via BDEP ou canal restrito.

@@ -60,12 +60,9 @@ Indicador forward-looking de oferta futura de petróleo e gás. Permite antever 
 - **Previsão × produção futura** — lag entre investimento e início de produção.
 - **Previsão × preço do petróleo** — correlação com ciclo de commodities.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/previsao-atividades-investimentos/`
-3. Documentar schema e volume
+| Arquivo local | Formato | Notas |
+|---------------|---------|-------|
+| `previsao-atividades-investimentos-pte.csv` | CSV | Previsão de atividades e investimentos exploratórios |
+| `metadados-previsao-atividades-investimentos-exploratorios.pdf` | PDF | Dicionário de dados |

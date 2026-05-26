@@ -68,12 +68,13 @@ Gás natural compete com GLP e diesel em alguns segmentos (industrial, geração
 - **Comercialização × geração elétrica** — despacho térmico vs volume de GN comercializado.
 - **Comercialização × movimentação-derivados** — substituição: GN crescendo onde diesel industrial cai?
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/comercializacao-gas-natural/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `distribuidoras-consumidores-livres.csv` | 376 | CSV | UTF-16 | `;` | 6 | Ano, Mês, TipoMercado, RegiãoAgregada, Preço em Reais por MMBtu, Volume em mil m³/dia |
+| `vendas-aos-comercializadores.csv` | 49 | CSV | UTF-16 | `;` | 4 | Vendas a comercializadores |
+| `vendas-entre-produtores.csv` | 226 | CSV | UTF-16 | `;` | 5 | Inclui BaciaAgregada |
+| `metadados-distribuidoras-consumidores-livres.pdf` | — | PDF | — | — | — | Dicionário de dados |
+| `metadados-vendas-aos-comercializadores.pdf` | — | PDF | — | — | — | Dicionário de dados |
+| `metadados-vendas-entre-produtores.pdf` | — | PDF | — | — | — | Dicionário de dados |

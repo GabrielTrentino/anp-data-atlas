@@ -80,12 +80,11 @@ Campos em produção alimentam refinarias e terminais. Útil para entender ofert
 - **Desenvolvimento × processamento** — campos → refinarias; rotas de escoamento.
 - **Desenvolvimento × participações** — royalties projetados por campo novo.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `producao-mar-*.csv` (15 CSVs) | ~438.000 total | CSV | misto (utf-8-sig / latin-1) | `,` | 13–14 | Períodos: 1994-1997, 1998-2000, 2001-2004, 2005-2009, 2010-2012, 2013-2015, 2016-2018, 2019–2023 (anuais), 2025, 2026. Cols: Ano, Mês/Ano, Estado, Bacia, Campo, Poço, Ambiente, Instalação, Produção de Óleo, Produção de Condensado, Produção de Gás, Produção de Água, Injeção de Água |
+| `producao_por_poco_2024.csv` | 15.230 | CSV | utf-8-sig | `,` | 14 | Formato atualizado com colchetes nos headers |
 
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/fase-desenvolvimento-producao/`
-3. Documentar schema e volume
+> Cobertura temporal: 1994–2026. Encoding inconsistente entre arquivos antigos (latin-1) e recentes (utf-8-sig).

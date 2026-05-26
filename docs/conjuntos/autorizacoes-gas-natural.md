@@ -58,12 +58,7 @@ Nenhum arquivo disponível para download na data de prospecção (mai/2026).
 - **Autorizações × movimentação** — coerência entre autorizações de transporte e volumes em gasodutos.
 - **Autorizações × preços** — número de comercializadores vs preço praticado (proxy de competição).
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/autorizacoes-gas-natural/`
-3. Documentar schema e volume
+> **Indisponível** — página retorna 404 (mai/2026). Possível reestruturação ou descontinuação do conjunto.
+> Nenhum arquivo baixado.

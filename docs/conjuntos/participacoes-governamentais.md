@@ -68,12 +68,10 @@ Indicador econômico do setor. Correlação direta com produção e preço do pe
 - **Participações × preço petróleo** — elasticidade da receita ao preço.
 - **Participações × investimento** — reinvestimento das receitas em infraestrutura/social?
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
+| Arquivo local | Formato | Encoding | Sep | Notas |
+|---------------|---------|----------|:---:|-------|
+| `royalties-uniao-*.csv` / `royalties_uniao_*.csv` (15 CSVs) | CSV | utf-8-sig | `,` | Royalties União 2011–2025; naming inconsistente entre anos |
 
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/participacoes-governamentais/`
-3. Documentar schema e volume
+> Página contém 92 links no total (royalties estados, municípios, participação especial, etc.). Amostra baixada limitada a royalties União. Sem PDFs neste diretório.

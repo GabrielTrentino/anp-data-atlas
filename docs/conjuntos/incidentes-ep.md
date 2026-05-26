@@ -71,12 +71,14 @@ Impacto indireto em abastecimento quando incidentes causam parada prolongada de 
 - **Incidentes × multas** — correlação temporal e geográfica.
 - **Incidentes × idade da instalação** — instalações mais antigas têm mais incidentes?
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/incidentes-ep/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `incidentes.csv` | 30.745 | CSV | latin-1 | `;` | 13 | Registro principal: Numero, Empresa, CNPJ, Data_de_criacao, Autoridades_comunicadas, Instalacao, Data_primeira_observacao, Hora, UF, Municipio, Ambiente, Classificacao_origem, Observacao |
+| `incidentes-classificacao.csv` | 45.241 | CSV | latin-1 | `;` | 2 | Numero, Classificacao_do_incidente |
+| `incidentes-feridos.csv` | 30.822 | CSV | latin-1 | `;` | 2 | Numero, [dados de feridos] |
+| `incidentes-substancias.csv` | 31.535 | CSV | latin-1 | `;` | 3 | Numero, Substancias, Volume |
+| `incidentes-tipo.csv` | 35.598 | CSV | latin-1 | `;` | 4 | Numero, Tipo_de_incidente, DSC_GRAVIDADE_TIPO, DSC_QUASE_ACIDENTE_ACIDENTE |
+| `metadados-incidentes.pdf` | — | PDF | — | — | — | Dicionário de dados |
+| `manual-comunicacao-incidentes.pdf` | — | PDF | — | — | — | Manual de comunicação |

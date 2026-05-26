@@ -67,12 +67,9 @@ Infraestrutura de transporte de gás é gargalo relevante para abastecimento ene
 - **Gasodutos × importação** — volume via GASBOL vs produção nacional escoada.
 - **Gasodutos × tancagem** — GLP/derivados vs gás: modais complementares.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/movimentacao-gas-gasodutos/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `gn_*.csv` / `gn-*.csv` (14 CSVs) | 5.400–11.100 cada | CSV | latin-1 | `;` | 6 | Dez/2024 a fev/2025 + abr–dez/2025 + jan–fev/2026. Cols: Código Instalação Transporte, Nome Instalação Transporte, Nome Instalação Gasoduto, Código Instalação Gasoduto, Competência, Volume (m³) |
+| `metadados-gn-sim.pdf` | — | PDF | — | — | — | Dicionário de dados |

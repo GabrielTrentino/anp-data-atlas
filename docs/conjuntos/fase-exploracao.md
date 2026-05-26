@@ -67,12 +67,10 @@ Indicador antecedente de oferta futura: blocos em exploração hoje são campos 
 - **Exploração × resultado-poco** — taxa de sucesso por bacia; economicidade.
 - **Exploração → produção** — blocos que passaram para fase de desenvolvimento; lead time.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/fase-exploracao/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `blocos-sob-contrato-*.csv` (11 arquivos) | ~400 cada | CSV | latin-1 | `;` | 16 | Meses jan–out/2025; BLOCO, CONTRATO, OPERADOR, CONTRATADOS, AMBIENTE, BACIAS AGRUPADAS, BACIA, ÁREA, RODADA, REGIME CONTRATUAL, PERÍODO, PRESTAÇAO DE GARANTIA, VIGÊNCIA CONTRATUAL, ETAPA, SUBETAPA, QUALIFICAÇÃO |
+| `blocos-sob-contrato_abr_2026.csv` | 34 | CSV | latin-1 | `;` | 16 | Abril 2026, mesmo schema |
+| `metadados-fase-exploracao.pdf` | — | PDF | — | — | — | Dicionário de dados |

@@ -66,12 +66,15 @@ Regulação industrial. Pode indicar gargalos na cadeia de fornecedores nacionai
 - **Fiscalização × operador** — taxa de cumprimento por concessionário.
 - **Fiscalização × rodadas** — rodadas com regras mais rígidas têm mais descumprimento?
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/fiscalizacao-conteudo-local/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `fiscalizacao-exploracao-r1-r6-1.csv` | 132 | CSV | utf-8-sig | `;` | 10–11 | Exploração, rodadas 1–6 |
+| `fiscalizacao-exploracao-r7-aditados-1.csv` | 280 | CSV | utf-8-sig | `;` | 10–11 | Exploração, rodada 7+ aditados |
+| `fiscalizacao-desenvolvimento-mar.csv` | 1 | CSV | utf-8-sig | `;` | 10–11 | Desenvolvimento marítimo (header only?) |
+| `fiscalizacao-desenvolvimento-terra.csv` | 14 | CSV | utf-8-sig | `;` | 11 | Desenvolvimento terrestre. Cols: Rodada, Bloco/Campo, Bacia, Contrato, Data, Término, Operador, CNPJ, Nível CL, [outro] |
+| `fiscalizacao-desenvolvimento-r1-r4.csv` | 9 | CSV | utf-8-sig | `;` | 10–11 | Desenvolvimento, rodadas 1–4 |
+| `fiscalizacao-desenvolvimento-r5-r6.csv` | 3 | CSV | utf-8-sig | `;` | 10–11 | Desenvolvimento, rodadas 5–6 |
+| `fiscalizacao-desenvolvimento-r7.csv` | 6 | CSV | utf-8-sig | `;` | 10–11 | Desenvolvimento, rodada 7 |
+| `metadados-*.pdf` (7 arquivos) | — | PDF | — | — | — | Dicionários de dados por segmento |

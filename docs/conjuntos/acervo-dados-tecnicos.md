@@ -64,12 +64,16 @@ Relevância indireta. O acervo é insumo para decisões exploratórias que, no l
 - **Acervo × taxa de sucesso** — bacias com mais dados disponíveis têm melhor taxa de sucesso exploratório?
 - **Acervo × rodadas** — disponibilidade de dados técnicos e atratividade de blocos.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/acervo-dados-tecnicos/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `pocos-publicos-2020.csv` | ~107 | CSV | utf-8-sig | `;` | 21 | POCO, CADASTRO, OPERADOR, POCO_OPERADOR, ESTADO, BACIA, BLOCO, SIG_CAMPO, CAMPO, TERRA_MAR, etc. |
+| `pocos-publicos-2021.csv` | ~140 | CSV | utf-8-sig | `;` | 21 | Idem |
+| `pocos-publicos-2022.csv` | ~180 | CSV | utf-8-sig | `;` | 21 | Idem |
+| `pocos-publicos-2023.csv` | ~219 | CSV | utf-8-sig | `;` | 21 | Idem |
+| `tabela-dados-geoquimicos.csv` | 4.667 | CSV | utf-8-sig | `;` | 38 | Dados geoquímicos |
+| `tabela-de-estudos.csv` | 45 | CSV | utf-8-sig | `;` | 7 | Estudos técnicos |
+| `tabela-levantamentos-geoquimicos.csv` | 70 | CSV | utf-8-sig | `;` | 8 | Levantamentos geoquímicos |
+| `tabela-programas-geofisicos.csv` | 3.811 | CSV | utf-8-sig | `;` | 11 | Programas sísmicos/geofísicos |
+| `metadados-*.pdf` (7 arquivos) | — | PDF | — | — | — | Dicionários de dados por tipo de tabela |

@@ -60,12 +60,9 @@ Relevância indireta. Aditamentos podem indicar dificuldades da cadeia produtiva
 - **Aditamento × investimento** — impacto na cadeia de fornecedores local.
 - **Aditamento × rodadas** — evolução das regras de CL ao longo das rodadas.
 
-## Uso neste atlas
+## Inventário empírico dos brutos
 
-**Status da exploração:** pendente.
-
-**Próximos passos:**
-
-1. Explorar página e mapear CSVs disponíveis
-2. Download de amostras para `data/raw/aditamento-conteudo-local/`
-3. Documentar schema e volume
+| Arquivo local | Linhas | Formato | Encoding | Sep | Colunas | Notas |
+|---------------|-------:|---------|----------|:---:|--------:|-------|
+| `planilha-aditamento-conteudo-local.csv` | 1.046 | CSV | latin-1 | `;` | 11 | Ordem, Solicitação, Data do Protocolo, Contrato, Operador do Contrato, Nome do Bloco/Campo, Bacia, Localização, Rodada, Status, [outro] |
+| `metadados-aditamento.pdf` | — | PDF | — | — | — | Dicionário de dados |
