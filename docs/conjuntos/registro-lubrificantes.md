@@ -25,24 +25,25 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — CSV com separador `;`, encoding latin-1-like (DuckDB auto_detect).
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Encoding:** latin-1 / cp1252
+- **Separador:** `;`
+- **Colunas (20):** `REG`, `SITUACAO`, `PROCESSO`, `ANO`, `MARCA_COMERCIAL`, `DETENTOR`, `CNPJ_DETENTOR`, `TIPO_EMPRESA`, `TIPO_PRODUTO`, `FINALIDADE`, `APLICACAO`, `PRODUTOR`, `ORIGEM`, `SAE`, `ISO`, `NLGI`, `ND`, `COMPOSICAO`, `ACONDICIONAMENTO`, `OBS.`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/registro-lubrificantes/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| dados-abertos-registro-produtos.csv | 14.910 | Registros de produtos | 2008-2026 | Todos ATIVO |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica candidata: `registro` (REG) — campo único por produto
+- 14.910 registros, todos com situação ATIVO
+- 293 detentores únicos, 2 tipos de produto (óleo lubrificante, graxa)
+- 79,1% dos CNPJs detentores no PML estão presentes neste registro
+- 68,0% das marcas do PML encontradas no registro
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +57,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (registro-lubrificantes). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted layer em `data/trusted/registro-lubrificantes/registro_lubrificantes.parquet`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/registro-lubrificantes/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook `01_perfil_exploratorio.ipynb` — distribuição por tipo, detentor, composição
+2. Refined layer — join com PML (conformidade por marca), análise temporal de registros

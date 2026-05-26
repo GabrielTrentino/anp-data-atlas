@@ -25,24 +25,25 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — CSV direto do portal.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Encoding:** UTF-8
+- **Separador:** `,`
+- **Colunas (8):** `Tipo`, `Municipio`, `UF`, `Operador`, `Numero_de_tanques`, `Capacidade_nominal_petroleo`, `Capacidade_nominal_derivados_biocombustiveis`, `Capacidade_nominal_GLP`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/capacidade-armazenagem-terminais/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| capacidade-armazenagem-terminais.csv | 134 | Terminais | Snapshot atual | Semestral |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica candidata: `operador` + `municipio` + `uf` + `tipo`
+- 134 terminais, 23 UFs
+- Tipos: TERRESTRE (63), MARÍTIMO (58), FLUVIAL (9), LACUSTRE (4)
+- Capacidade total derivados: 10.150.813 m³; GLP: 377.071 m³
+- 63 operadores (capacidade) encontrados por nome em nome_instalacao (movimentação)
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +57,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (capacidade-armazenagem-terminais). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted layer em `data/trusted/capacidade-armazenagem-terminais/capacidade.parquet`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/capacidade-armazenagem-terminais/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook `01_perfil_exploratorio.ipynb` — mapa de terminais, concentração por operador
+2. Refined layer — join com movimentação (utilização vs capacidade), evolução semestral

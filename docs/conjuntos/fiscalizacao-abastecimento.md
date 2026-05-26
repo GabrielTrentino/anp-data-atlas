@@ -25,24 +25,27 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — XLSX do painel dinâmico SFI, convertido para CSV consolidado.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Formato real:** XLSX (dois arquivos: 1998-2018, a-partir-2019)
+- **Encoding:** nativo Excel (unicode)
+- **Separador após prepare:** `;`
+- **Colunas (11):** `uf`, `municipio`, `bairro`, `endereco`, `cnpj_cpf`, `agente_economico`, `segmento_fiscalizado`, `data_do_df`, `numero_do_documento`, `procedimento_de_fiscalizacao`, `resultado`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/fiscalizacao-abastecimento/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| dados-fisc-1998-2018.xlsx | ~350k | Documentos de fiscalização | 1998-2018 | Sheet Planilha1 |
+| dados-fisc-a-partir-2019.xlsx | ~280k | Documentos de fiscalização | 2019-2026 | Sheet v_dados_abertos_dfs |
+| _prepared/fiscalizacao.csv | 631.167 | Consolidado | 1998-01 a 2026-05 | Normalizado |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica candidata: `cnpj_cpf` + `data_fiscalizacao` + `numero_documento`
+- 27 UFs, 35 segmentos fiscalizados distintos
+- 18,2% dos CNPJs fiscalizados estão presentes no PMQC
+- Resultado mais frequente: "Sem Registro de Ocorrência" (57k registros)
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +59,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (fiscalizacao-abastecimento). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + prepare + trusted + cruzamento). Trusted layer em `data/trusted/fiscalizacao-abastecimento/fiscalizacao.parquet`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/fiscalizacao-abastecimento/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook `01_perfil_exploratorio.ipynb` — análise temporal, segmentos, distribuição geográfica
+2. Refined layer — série de infrações por UF/mês, cruzamento com PMQC (não-conformidade vs fiscalização)

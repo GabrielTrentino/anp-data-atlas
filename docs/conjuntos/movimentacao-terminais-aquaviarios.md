@@ -25,24 +25,25 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — arquivo com extensão .csv mas formato XLSX interno; convertido via Python prepare.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Formato real:** XLSX disfarçado de CSV
+- **Encoding:** unicode (Excel)
+- **Colunas (13):** `mes_de_referencia`, `codigo_anp_do_terminal`, `nome_do_terminal`, `municipio_do_terminal`, `uf`, `sentido_da_operacao`, `tipo_da_operacao`, `modo_de_transporte`, `codigo_anp_do_produto`, `descricao_do_produto`, `sentido_modal`, `volume_m3`, `nome_da_instalacao`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/movimentacao-terminais-aquaviarios/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| dados-abertos-movimentacao-terminais-aquaviarios.csv | 177.314 | Operações mensais | 2013-01 a 2026-02 | Formato XLSX |
+| _prepared/movimentacao_terminais.csv | 177.314 | Normalizado | 2013-01 a 2026-02 | CSV real |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica candidata: `codigo_terminal` + `mes_referencia` + `codigo_produto` + `sentido_modal`
+- 78 terminais únicos, 457 produtos, 19 UFs
+- Volume total acumulado: 5.67 bilhões m³
+- 6 produtos em comum com vendas-derivados (gasolina, diesel, etanol, QAV, QI, gasolina aviação)
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +57,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (movimentacao-terminais-aquaviarios). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + prepare + trusted + cruzamento). Trusted layer em `data/trusted/movimentacao-terminais-aquaviarios/movimentacao_terminais.parquet`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/movimentacao-terminais-aquaviarios/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook `01_perfil_exploratorio.ipynb` — série temporal por terminal e produto
+2. Refined layer — join com capacidade (taxa de utilização), correlação com vendas regionais
