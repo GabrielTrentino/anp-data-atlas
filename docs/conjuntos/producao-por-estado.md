@@ -25,24 +25,28 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — 6 CSVs (petróleo, GN, LGN, queima, consumo próprio, GN disponível) com sep `;`.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Separador:** `;`
+- **Colunas:** `ANO`, `MÊS`, `GRANDE REGIÃO`, `UNIDADE DA FEDERAÇÃO`, `PRODUTO`, `LOCALIZAÇÃO`, `PRODUÇÃO`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/producao-por-estado/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| producao-petroleo-m3.csv | 7.920 | Petróleo por UF | 1997-2026 | TERRA/MAR |
+| producao-gas-natural-1000m3.csv | 7.643 | Gás natural por UF | 1997-2026 | 1000 m³ |
+| producao-lgn-m3.csv | — | LGN por UF | — | |
+| queima-e-perda-gn-1000m3.csv | — | Queima e perda | — | |
+| consumo-proprio-gn1000m3.csv | — | Consumo próprio | — | |
+| gn-disponivel-1000m3.csv | — | GN disponível | — | |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica: `ano` + `mes_abrev` + `uf` + `produto` + `localizacao`
+- 11 UFs produtoras (petróleo), localizações TERRA/MAR
+- Volume total petróleo: 3.63 bilhões m³ (1997-2026)
+- 7 UFs em comum com processamento (refinarias)
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +60,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (producao-por-estado). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/producao-por-estado/`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/producao-por-estado/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook exploratório — concentração geográfica, evolução TERRA vs MAR
+2. Refined layer — join com producao-por-poco (validação agregada) e processamento (fluxo produção→refino)

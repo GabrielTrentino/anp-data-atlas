@@ -25,24 +25,26 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — 4 CSVs (derivados, etanol, GN, petróleo) com sep `;`.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Separador:** `;`
+- **Colunas:** `ANO`, `MÊS`, `PRODUTO`, `OPERAÇÃO COMERCIAL`, `IMPORTADO / EXPORTADO`, `DISPÊNDIO / RECEITA`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/importacoes-exportacoes/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| importacoes-exportacoes-derivados.csv | 9.432 | Derivados imp/exp | 2000-2026 | 16 produtos |
+| importacoes-exportacoes-etanol.csv | 684 | Etanol imp/exp | 2012-2026 | |
+| importacao-gas-natural.csv | 630 | Gás natural imp | 2000-2026 | |
+| importacoes-exportacoes-petroleo.csv | 630 | Petróleo imp/exp | 2000-2026 | |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica: `ano` + `mes_abrev` + `produto` + `operacao`
+- Volume importado derivados: 672M m³; exportado: 412M m³
+- Sobreposição temporal com processamento: 2000-2026
+- 16 produtos de derivados para cruzamento com vendas
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +58,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (importacoes-exportacoes). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/importacoes-exportacoes/`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/importacoes-exportacoes/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook exploratório — balança comercial, dependência externa por produto
+2. Refined layer — balanço produção + importação - exportação vs vendas (deficit/superávit por derivado)

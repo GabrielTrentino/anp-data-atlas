@@ -25,24 +25,25 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — CSVs com sep `;`, volumes com decimal vírgula.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Separador:** `;`
+- **Colunas biodiesel:** `ANO`, `MÊS`, `GRANDE REGIÃO`, `PRODUÇÃO`
+- **Colunas etanol:** `ANO`, `MÊS`, `GRANDE REGIÃO`, `UNIDADE DA FEDERAÇÃO`, `PRODUTO`, `PRODUÇÃO`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/producao-biocombustiveis/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| producao-biodiesel-m3-2005-2023.csv + 2024-2026.csv | 24.004 | Biodiesel por região | 2005-2026 | 5 regiões |
+| producao-etanol-anidro-hidratado-m3-2012-2026.csv | 9.288 | Etanol por UF/produto | 2012-2026 | ANIDRO + HIDRATADO |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica: `ano` + `mes_abrev` + `grande_regiao` (+ `uf` + `produto` para etanol)
+- Produção total biodiesel: 89.8M m³; etanol: 443.8M m³
+- 27 UFs para etanol, 5 grandes regiões para biodiesel
+- Vendas-derivados tem 11.745 registros de etanol para cruzamento
 
 ## Cruzamentos sugeridos
 
@@ -57,10 +58,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (producao-biocombustiveis). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/producao-biocombustiveis/`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/producao-biocombustiveis/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook exploratório — tendência produção por região, sazonalidade
+2. Refined layer — producao vs vendas etanol/biodiesel (autossuficiência regional)

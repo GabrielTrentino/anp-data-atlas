@@ -25,24 +25,28 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — 6 CSVs com sep `;`.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Encoding:** UTF-8 / latin-1
+- **Separador:** `;`
+- **Colunas principais:** `ANO`, `MÊS`, `UNIDADE DA FEDERAÇÃO`, `REFINARIA`, `MATÉRIA PRIMA`/`PRODUTO`, `PROCESSADO`/`PRODUÇÃO`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/processamento-petroleo-derivados/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| processamento-petroleo-m3-1990-2025.csv | 23.100 | Processamento por refinaria | 1990-2026 | Volume m³ |
+| producao-derivados-petroleo-por-refinaria-m3-1990-2025.csv | 113.468 | Derivados por refinaria | 1990-2026 | 15 produtos |
+| producao-derivados-centrais-petroquimicas-m3-2001-2025.csv | — | Centrais petroquímicas | 2001-2025 | |
+| producao-derivados-xisto-m3-2001-2025.csv | — | Xisto | 2001-2025 | |
+| producao-gas-combustivel-1000m3-2000-2025.csv | — | Gás combustível | 2000-2025 | |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica: `ano` + `mes_abrev` + `refinaria` + `materia_prima`/`produto`
+- 21 refinarias, 10 UFs
+- 6 produtos em comum com vendas-derivados
+- Período 1990-2026, volume total processado: 3.54 bilhões m³
 
 ## Cruzamentos sugeridos
 
@@ -56,10 +60,9 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (processamento-petroleo-derivados). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + trusted + cruzamento). Trusted em `data/trusted/processamento-petroleo-derivados/`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/processamento-petroleo-derivados/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Notebook exploratório — série temporal por refinaria, mix de derivados
+2. Refined layer — balanço oferta/demanda (processamento + importação - exportação vs vendas)

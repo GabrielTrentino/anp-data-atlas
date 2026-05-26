@@ -25,24 +25,24 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** validado — ZIPs mensais contendo CSVs com 48+ colunas (report-style); prepare extrai 13 colunas-chave.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+- **Formato original:** ZIP → CSV (sep `;`, encoding latin-1)
+- **Colunas extraídas (13):** `estado`, `bacia`, `campo`, `operador`, `numero_do_contrato`, `periodo`, `oleo_bbl_dia`, `condensado_bbl_dia`, `petroleo_bbl_dia`, `agua_bbl_dia`, `instalacao_destino`, `tipo_instalacao`, `tempo_de_producao_hs_por_mes`
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/producao-por-poco/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| zips/ (12 arquivos 2023) | — | ZIPs mensais | 2023 | Amostra MVP |
+| _prepared/producao_poco.csv | 24.870 | Consolidado 2023 | 2023 | 13 colunas |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Chave lógica: `campo` + `operador` + `periodo` (+ `instalacao_destino`)
+- 11 estados produtores, 14 bacias, 47 operadores, 305 campos
+- Produção total petróleo (2023): 21.5M bbl/dia (soma diária dos meses)
+- 100% estados match com producao-por-estado (11/11)
 
 ## Cruzamentos sugeridos
 
@@ -55,10 +55,10 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (producao-por-poco). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional (download + prepare + trusted + cruzamento). Amostra 2023. Trusted em `data/trusted/producao-por-poco/`.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/producao-por-poco/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Expandir download para 2005-2022 (histórico completo ~50 ZIPs adicionais)
+2. Notebook exploratório — concentração por operador/bacia, declínio de campos
+3. Refined layer — agregação por bacia/UF vs producao-por-estado (validação cruzada)

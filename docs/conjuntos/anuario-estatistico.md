@@ -25,24 +25,20 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 ## Estrutura dos arquivos
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+> **Status:** sem CSV público — página não oferece dados abertos em formato tabular, apenas publicação em PDF/painel.
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+Não há dataset CSV/XLSX disponível para download automatizado.
 
 ## Inventário empírico dos brutos
 
-> **Status:** pendente — preencher após download em `data/raw/anuario-estatistico/`.
-
 | Arquivo local | Linhas | Métrica | Período | Notas |
 |---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| — | — | — | — | Sem CSV público disponível |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- Dados consolidados do Anuário já estão presentes nas demais séries (vendas, produção, importação)
+- Não há valor incremental em pipeline dedicado
 
 ## Cruzamentos sugeridos
 
@@ -57,10 +53,6 @@ Consultar a página oficial e metadados publicados no portal antes de integrar.
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (anuario-estatistico). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** cancelado — sem CSV público. Dados do anuário já cobertos pelas séries individuais (processamento, produção, vendas, importações).
 
-**Próximos passos (fuel-analytics):**
-
-1. Download amostra → `data/raw/anuario-estatistico/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+**Próximos passos:** nenhum (dados redundantes com outros conjuntos já integrados).
