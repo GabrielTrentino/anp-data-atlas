@@ -6,60 +6,76 @@
 | **Catálogo** | [dados-abertos.md](../dados-abertos.md) (#15) |
 | **Página oficial** | https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos-distribuidores-de-combustiveis-liquidos |
 | **Unidade ANP (inventário)** | SDL |
-| **Periodicidade** | Mensal / Semanal / Semestral (subconjuntos) |
-| **Formato** | CSV |
+| **Periodicidade** | Snapshot (atualização periódica) |
+| **Formato** | CSV (`;` sep, Latin-1 / report-style) |
 | **Fonte operacional** | Cadastro e autorizações ANP |
 | **Pasta local** | `data/raw/distribuidores-combustiveis-liquidos/` |
-| **Inventário ANP** | Distribuidores de Combustíveis Líquidos (várias bases) |
+| **Portal** | `.../arquivos/dcl/` |
 | **Prioridade fuel-analytics** | Sim — [TODO.md](../../TODO.md) |
 
 ## Contexto
 
-Distribuidores autorizados, contratos de cessão, inutilizadores de botijões GLP e início de atividade.
+Distribuidores autorizados pela ANP, contratos de cessão entre cedentes e cessionárias, e inutilizadores de botijões GLP.
 
 ## Relevância para anp-fuel-analytics
 
 Atacado/distribuição — elos entre refinaria/terminal e varejo.
 
-Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/distribuidores-combustiveis-liquidos/) (documentação de referência; pipeline pendente).
+## Estrutura dos arquivos (portal `dcl/`)
 
-## Estrutura dos arquivos
+| Arquivo | Tipo | Linhas | Descrição |
+|---------|------|-------:|-----------|
+| `planilha-aea-filiais.csv` | Report-style (latin-1) | 713 | Lista de distribuidores autorizados (AEA) |
+| `ce-cr.csv` | CSV normal (latin-1) | 1.888 | Contratos de cessão/carregamento |
+| `inutilizadores.csv` | Report-style (latin-1) | 36 | Inutilizadores de botijões |
 
-> **Status:** pendente — confirmar schema, encoding e periodicidade real após download de amostra.
+## Schema — Distribuidores AEA (16 colunas)
 
-Consultar a página oficial e metadados publicados no portal antes de integrar.
+| Coluna | Descrição |
+|--------|-----------|
+| Código Agente / i-SIMP | IDs internos |
+| CNPJ | CNPJ da distribuidora |
+| Nome Reduzido / Razão Social | Identificação |
+| Endereço, Bairro, Município, UF, CEP | Localização |
+| Situação | AUTORIZADA / CANCELADA / REVOGADA |
+| Início da Situação / Data Publicação | Datas |
+| Tipo de Ato / Autorização / Número | Detalhes regulatórios |
 
-## Inventário empírico dos brutos
+## Schema — Contratos CE/CR (29 colunas)
 
-> **Status:** pendente — preencher após download em `data/raw/distribuidores-combustiveis-liquidos/`.
-
-| Arquivo local | Linhas | Métrica | Período | Notas |
-|---------------|-------:|---------|---------|-------|
-| _a preencher_ | | | | |
+| Coluna chave | Descrição |
+|--------------|-----------|
+| TIPO DE CONTRATO | CARREGAMENTO / CESSÃO |
+| CNPJ DA CEDENTE / CESSIONÁRIA | Partes do contrato |
+| VOLUME (m³) | Volume contratado |
+| Produtos (Gasolina A/C, Diesel, EAC, EHC, QAV...) | Flags por produto |
 
 ## Qualidade e chaves
 
-> **Status:** pendente — validar na exploração fuel-analytics.
-
-- Chave lógica candidata: _a definir_
-- Regras de agregação: _a definir_
+- **Encoding:** Latin-1 (report-style com header nas primeiras linhas)
+- **Chave lógica (AEA):** `cnpj` (713 distintos)
+- **Chave lógica (CE/CR):** `cnpj_cedente` + `cnpj_cessionaria` + `inicio_contrato`
+- **Cobertura:** 25 UFs, concentrado em SP (38%)
 
 ## Cruzamentos sugeridos
 
-- [movimentacao-derivados](movimentacao-derivados.md)
-- [capacidade-armazenagem-terminais](capacidade-armazenagem-terminais.md)
+| Parceiro | Chave join | Observação |
+|----------|-----------|------------|
+| [movimentacao-derivados](movimentacao-derivados.md) | `cnpj` | Volume movimentado pela distribuidora |
+| [cadastro-revendas-combustiveis](cadastro-revendas-combustiveis.md) | distribuidora (nome) | Postos vinculados |
+| [capacidade-armazenagem-terminais](capacidade-armazenagem-terminais.md) | `cnpj` | Terminais da distribuidora |
 
 ## Conjuntos relacionados
 
-- [Inventário de Dados ANP](../inventario-dados.md) — base institucional #15 (SDL, Mensal / Semanal / Semestral (subconjuntos))
-- [tancagem-abastecimento.md](tancagem-abastecimento.md) — referência de documentação completa
+- [Inventário de Dados ANP](../inventario-dados.md) — base institucional #15 (SDL)
+- [tancagem-abastecimento.md](tancagem-abastecimento.md)
 
 ## Uso neste atlas
 
-**Status da exploração:** documentação de referência criada (distribuidores-combustiveis-liquidos). Inventário empírico, qualidade e pipeline fuel-analytics **pendentes**.
+**Status da exploração:** pipeline operacional no fuel-analytics — trusted AEA completo.
 
 **Próximos passos (fuel-analytics):**
 
-1. Download amostra → `data/raw/distribuidores-combustiveis-liquidos/`
-2. Notebook `01_perfil_exploratorio.ipynb`
-3. Promover findings estáveis para este arquivo
+1. Trusted contratos cessão (resolver encoding latin-1 no DuckDB)
+2. Notebook exploratório (mapa, timeline autorizações)
+3. Refined: join distribuidores × movimentação por CNPJ
