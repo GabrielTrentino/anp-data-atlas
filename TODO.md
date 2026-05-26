@@ -114,6 +114,16 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 ---
 
+## Conjuntos sem Raw disponível
+
+| # | Slug | Motivo |
+|---|------|--------|
+| 5 | `anuario-estatistico` | Sem CSV público — página só publica PDF/painel. Dados já cobertos pelas séries individuais (vendas, produção, importações, processamento). |
+| 7 | `autorizacoes-gas-natural` | Página removida do portal (404). Possível reestruturação ou descontinuação. |
+| 38 | `resultado-poco` | Página existe mas disponibiliza apenas metadados (PDF). CSV não localizado — possivelmente acessível apenas via BDEP ou canal interno. |
+
+---
+
 ## Em andamento — detalhe
 
 ### 41 · `tancagem-abastecimento`
