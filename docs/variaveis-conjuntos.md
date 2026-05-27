@@ -33,18 +33,18 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 |---|------|-------------------|----------------------|-------------------|-------------|
 | 41 | [`tancagem-abastecimento`](conjuntos/tancagem-abastecimento.md) | Capacidade m³ (`TancagemM3`) | `Data`, `Cnpj`, `CodInstalacao`, `Uf`, `Municipio`, `Segmento`, `Tag`, `GrupoDeProdutos` **✓** | `CodInstalacao`+`Tag`+`GrupoDeProdutos`; `Cnpj`; geo | movimentação, cadastros, preços |
 | 21 | [`movimentacao-derivados`](conjuntos/movimentacao-derivados.md) | Volume movimentado | `Ano`, `Mês`, `Agente Regulado`, `Código do Produto`, `UF Origem/Destino`, volume **✓** | nome agente→tancagem; geo→vendas |
-| 12 | [`cadastro-revendas-combustiveis`](conjuntos/cadastro-revendas-combustiveis.md) | Cadastro de postos | `Cnpj`, `Uf`, `Municipio`, `Bandeira`, `Situacao`, endereço **~** | `Cnpj`; `Uf`+`Municipio` | tancagem, preços, movimentação |
-| 11 | [`cadastro-revendas-glp`](conjuntos/cadastro-revendas-glp.md) | Cadastro revendas GLP | `Cnpj`, `Uf`, `Municipio`, modalidade botijão/granel, `Situacao` **~** | `Cnpj`; geo | movimentação GLP, tancagem (GLP) |
-| 27 | [`pontos-abastecimento`](conjuntos/pontos-abastecimento.md) | Instalações autorizadas | `CodInstalacao`, `Cnpj`, `Uf`, `Municipio`, `Segmento`, `Situacao` **~** | `CodInstalacao`, `Cnpj` | cadastro revendas, fiscalização |
-| 15 | [`distribuidores-combustiveis-liquidos`](conjuntos/distribuidores-combustiveis-liquidos.md) | Cadastro atacado | `Cnpj`, `NomeEmpresarial`, `Uf`, contratos cessão, início atividade **~** | `Cnpj` | movimentação, terminais |
-| 28 | [`pmqc`](conjuntos/pmqc.md) | Qualidade analítica | `Periodo`, `Produto`, `Uf`/região, parâmetros, % conformidade **~** | `Produto`+geo+mês | fiscalização, cadastros |
-| 29 | [`pml`](conjuntos/pml.md) | Qualidade lubrificantes | `Produto`/marca, parâmetros, conformidade, região **~** | código produto | registro lubrificantes, movimentação |
-| 40 | [`serie-historica-precos`](conjuntos/serie-historica-precos.md) | Preço R$/L (`PrecoMedio`) | `Produto`, `Regiao`/`Estado`/`Municipio`, semana/mês, min/max **~** | `Produto`+geo+tempo | vendas, cadastros, tancagem |
-| 42 | [`vendas-derivados`](conjuntos/vendas-derivados.md) | Volume vendido | `Periodo`, `Segmento`, `Produto`, `Uf`, `Municipio`, volume **~** | `Produto`+geo+mês | movimentação, importações, biocombustíveis |
-| 2 | [`fiscalizacao-abastecimento`](conjuntos/fiscalizacao-abastecimento.md) | Ações e documentos | `DataAcao`, `Cnpj`, `Uf`, `Municipio`, `Segmento`, tipo doc, resultado **~** | `Cnpj`; geo | PMQC, cadastros |
-| 9 | [`capacidade-armazenagem-terminais`](conjuntos/capacidade-armazenagem-terminais.md) | Capacidade terminal m³ | `Terminal`, `Cnpj`, tipo terminal, `Uf`, `Municipio`, produto **~** | terminal, `Cnpj` | tancagem, mov. aquaviária |
-| 22 | [`movimentacao-terminais-aquaviarios`](conjuntos/movimentacao-terminais-aquaviarios.md) | Volume terminal m³ | `Terminal`, `Periodo`, `Produto`, operação carga/descarga **~** | terminal+mês+produto | capacidade terminais, movimentação |
-| 37 | [`registro-lubrificantes`](conjuntos/registro-lubrificantes.md) | Catálogo produtos | `RegistroANP`, nome, classe/viscosidade, fabricante **~** | código produto | PML, movimentação lubrificantes |
+| 12 | [`cadastro-revendas-combustiveis`](conjuntos/cadastro-revendas-combustiveis.md) | Cadastro de postos | `cnpj`, `uf`, `municipio`, `bandeira`, `autorizacao`, `data_publicacao`, `data_vinculacao` **✓** | `cnpj`; `uf`+`municipio` | tancagem, preços, movimentação |
+| 11 | [`cadastro-revendas-glp`](conjuntos/cadastro-revendas-glp.md) | Cadastro revendas GLP | `cnpj`, `uf`, `municipio`, `distribuidora`, `autorizacao`, `data_vinculacao` **✓** | `cnpj`; geo | movimentação GLP, tancagem (GLP) |
+| 27 | [`pontos-abastecimento`](conjuntos/pontos-abastecimento.md) | Instalações autorizadas | Apenas metadados (PDF) — CSV não disponível **~** | `CodInstalacao`, `Cnpj` | cadastro revendas, fiscalização |
+| 15 | [`distribuidores-combustiveis-liquidos`](conjuntos/distribuidores-combustiveis-liquidos.md) | Cadastro atacado | `Cnpj`, `RazaoSocial`, `Uf`, `TipoContrato`, cessão/carregamento **✓** | `Cnpj` | movimentação, terminais |
+| 28 | [`pmqc`](conjuntos/pmqc.md) | Qualidade analítica | `cnpj`, `data_coleta`, `uf`, `grupo_produto`, `conforme`, parâmetros **✓** | `cnpj`+`data_coleta`+`produto` | fiscalização, cadastros |
+| 29 | [`pml`](conjuntos/pml.md) | Qualidade lubrificantes | `amostra`, `produto`, `marca`, `fabricante`, `regiao`, parâmetros **✓** | código amostra | registro lubrificantes, movimentação |
+| 40 | [`serie-historica-precos`](conjuntos/serie-historica-precos.md) | Preço R$/L | `cnpj`, `produto`, `data_coleta`, `valor_venda`, `valor_compra`, `uf`, `municipio`, `bandeira` **✓** | `cnpj`+`produto`+`data` | vendas, cadastros, tancagem |
+| 42 | [`vendas-derivados`](conjuntos/vendas-derivados.md) | Volume vendido m³ | `ano`, `mes`, `uf`, `produto`, `vendas_m3`, `segmento`, `cod_ibge` **✓** | `produto`+`uf`+`mes` | movimentação, importações, biocombustíveis |
+| 2 | [`fiscalizacao-abastecimento`](conjuntos/fiscalizacao-abastecimento.md) | Ações e documentos | XLSX: data, CNPJ, UF, município, segmento, tipo, resultado **✓** | `Cnpj`; geo | PMQC, cadastros |
+| 9 | [`capacidade-armazenagem-terminais`](conjuntos/capacidade-armazenagem-terminais.md) | Capacidade terminal m³ | `Tipo`, `Municipio`, `UF`, `Operador`, `Numero_de_tanques`, `Capacidade_nominal_total` **✓** | `Operador`+`UF` | tancagem, mov. aquaviária |
+| 22 | [`movimentacao-terminais-aquaviarios`](conjuntos/movimentacao-terminais-aquaviarios.md) | Volume terminal m³ | terminal, período, produto, operação, volume (321k linhas) **✓** | terminal+mês+produto | capacidade terminais, movimentação |
+| 37 | [`registro-lubrificantes`](conjuntos/registro-lubrificantes.md) | Catálogo produtos | `RegistroANP`, nome, classificação, viscosidade, fabricante (14.9k registros) **✓** | código registro | PML, movimentação lubrificantes |
 
 ---
 
@@ -52,12 +52,12 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 
 | # | Slug | Métrica principal | Variáveis principais | Chaves de ligação | Cruzamentos |
 |---|------|-------------------|----------------------|-------------------|-------------|
-| 32 | [`processamento-petroleo-derivados`](conjuntos/processamento-petroleo-derivados.md) | Volume refino/produção m³ | `Periodo`, refinaria, `Produto`, volume processado/produzido **~** | refinaria+produto+mês | vendas, importações |
-| 33 | [`producao-biocombustiveis`](conjuntos/producao-biocombustiveis.md) | Produção biodiesel/etanol | `Periodo`, `Produto`, `Uf`/região, volume **~** | produto+geo+mês | vendas, preços etanol |
-| 34 | [`producao-por-estado`](conjuntos/producao-por-estado.md) | Produção E&P por UF | `Periodo`, `Uf`, terra/mar, petróleo, gás, LGN **~** | `Uf`+mês | anuário, importações |
-| 35 | [`producao-por-poco`](conjuntos/producao-por-poco.md) | Produção por poço | `Periodo`, `CodigoPoco`, `Campo`, `Bacia`, operador, volumes **~** | `CodigoPoco`+mês | produção por estado, resultado poço |
-| 19 | [`importacoes-exportacoes`](conjuntos/importacoes-exportacoes.md) | Volume imp/exp | `Periodo`, `Produto`, `Pais`, importação/exportação **~** | produto+mês+país | vendas, refino |
-| 5 | [`anuario-estatistico`](conjuntos/anuario-estatistico.md) | Multi-tabela (~10 anos) | colunas variam: `Ano`, `Produto`, `Volume`, `Uf`… **~** | chave por tabela | benchmark de todas as séries mensais |
+| 32 | [`processamento-petroleo-derivados`](conjuntos/processamento-petroleo-derivados.md) | Volume refino/produção m³ | `ANO`, `MES`, `PRODUTO`, volume m³, refinaria (5 CSVs série 1990–2025) **✓** | refinaria+produto+mês | vendas, importações |
+| 33 | [`producao-biocombustiveis`](conjuntos/producao-biocombustiveis.md) | Produção biodiesel/etanol | `ANO`, `MES`, `PRODUTO`, `UF`, volume m³ (biodiesel + etanol) **✓** | produto+geo+mês | vendas, preços etanol |
+| 34 | [`producao-por-estado`](conjuntos/producao-por-estado.md) | Produção E&P por UF | `ANO`, `MES`, `UF`, petróleo m³, gás 1000m³, LGN, reinjeção **✓** | `UF`+mês | anuário, importações |
+| 35 | [`producao-por-poco`](conjuntos/producao-por-poco.md) | Produção por poço | `Ano`, `Mês/Ano`, `Estado`, `Bacia`, `Campo`, `Poço`, volumes (ZIP→CSV) **✓** | `Poço`+mês | produção por estado, resultado poço |
+| 19 | [`importacoes-exportacoes`](conjuntos/importacoes-exportacoes.md) | Volume imp/exp | `ANO`, `MÊS`, `PRODUTO`, `OPERAÇÃO COMERCIAL`, volume, dispêndio/receita **✓** | produto+mês | vendas, refino |
+| 5 | [`anuario-estatistico`](conjuntos/anuario-estatistico.md) | Multi-tabela (~10 anos) | Sem CSV público — apenas PDF/painel **~** | chave por tabela | benchmark de todas as séries mensais |
 
 ---
 
