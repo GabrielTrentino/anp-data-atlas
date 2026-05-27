@@ -21,10 +21,11 @@ Rastreio de exploração e integração por conjunto. Catálogo oficial: [docs/d
 | Status | Qtd |
 |--------|----:|
 | Doc ✓ | 42 |
-| Raw ✓ (dados baixados) | 38 (3 indisponíveis) |
-| Emp. ✓ (inventário no doc) | 39 (+1 ◐ resultado-poco) |
+| Raw ✓ (dados baixados) | 38 |
+| Emp. ✓ (inventário no doc) | 38 |
 | Fuel ◐ (pipeline fuel-analytics) | 20 |
-| **Total conjuntos** | **42** |
+| **Total conjuntos ativos** | **39** |
+| Indisponíveis (seção separada) | 3 |
 
 ---
 
@@ -60,7 +61,6 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | 34 | `producao-por-estado` | Produção por estado e localização | ✓ | ✓ | ✓ | ◐ | — |
 | 35 | `producao-por-poco` | Produção por Poço | ✓ | ✓ | ✓ | ◐ | — |
 | 19 | `importacoes-exportacoes` | Importações e exportações | ✓ | ✓ | ✓ | ◐ | — |
-| 5 | `anuario-estatistico` | Anuário Estatístico | ✓ | — | — | — | — |
 
 ---
 
@@ -73,7 +73,6 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 | 17 | `fase-desenvolvimento-producao` | Fase de Desenvolvimento e Produção | ✓ | ✓ | ✓ | — | — |
 | 8 | `blocos-fase-exploratoria-encerrada` | Blocos com Fase Exploratória Encerrada | ✓ | ✓ | ✓ | — | — |
 | 20 | `incidentes-ep` | Incidentes de E&P | ✓ | ✓ | ✓ | — | — |
-| 38 | `resultado-poco` | Resultado de poço | ✓ | ◐ | ◐ | — | — |
 | 31 | `previsao-atividades-investimentos` | Previsão de Atividades e Investimentos Exploratórios | ✓ | ✓ | ✓ | — | — |
 | 36 | `relacao-concessionarios` | Relação de Concessionários | ✓ | ✓ | ✓ | — | — |
 | 39 | `rodadas-licitacoes` | Rodadas de Licitações | ✓ | ✓ | ✓ | — | — |
@@ -84,7 +83,6 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
-| 7 | `autorizacoes-gas-natural` | Autorizações de gás natural | ✓ | — | — | — | — |
 | 10 | `comercializacao-gas-natural` | Comercialização de Gás Natural | ✓ | ✓ | ✓ | — | — |
 | 23 | `movimentacao-gas-gasodutos` | Movimentação em gasodutos de transporte | ✓ | ✓ | ✓ | — | — |
 
@@ -114,13 +112,15 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 ---
 
-## Conjuntos sem Raw disponível
+## Conjuntos indisponíveis (sem dados tabulares)
 
-| # | Slug | Motivo |
-|---|------|--------|
-| 5 | `anuario-estatistico` | Sem CSV público — página só publica PDF/painel. Dados já cobertos pelas séries individuais (vendas, produção, importações, processamento). |
-| 7 | `autorizacoes-gas-natural` | Página removida do portal (404). Possível reestruturação ou descontinuação. |
-| 38 | `resultado-poco` | Página existe mas disponibiliza apenas metadados (PDF). CSV não localizado — possivelmente acessível apenas via BDEP ou canal interno. |
+Removidos das tabelas de acompanhamento — doc existe mas não há CSV/XLSX explorável.
+
+| # | Slug | Categoria original | Motivo |
+|---|------|-------------------|--------|
+| 5 | `anuario-estatistico` | Produção | Sem CSV público — apenas PDF/painel. Dados cobertos pelas séries individuais. |
+| 7 | `autorizacoes-gas-natural` | Gás natural | Página removida do portal (404). Possível reestruturação. |
+| 38 | `resultado-poco` | E&P | Apenas metadados (PDF). CSV possivelmente acessível via BDEP. |
 
 ---
 
