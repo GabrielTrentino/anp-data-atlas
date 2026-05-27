@@ -117,3 +117,14 @@ CSVs mensais organizados por ano. Nomes inconsistentes:
 2. Notebook exploratório (distribuição geográfica, sazonalidade não-conformidade)
 3. Refined: join com preços (postos não-conformes × preço praticado)
 4. Série temporal taxa não-conformidade por UF/produto
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

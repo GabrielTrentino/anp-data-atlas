@@ -62,3 +62,14 @@ Nenhum arquivo disponível para download na data de prospecção (mai/2026).
 
 > **Indisponível** — página retorna 404 (mai/2026). Possível reestruturação ou descontinuação do conjunto.
 > Nenhum arquivo baixado.
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

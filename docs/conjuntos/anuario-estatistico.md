@@ -56,3 +56,14 @@ Não há dataset CSV/XLSX disponível para download automatizado.
 **Status da exploração:** cancelado — sem CSV público. Dados do anuário já cobertos pelas séries individuais (processamento, produção, vendas, importações).
 
 **Próximos passos:** nenhum (dados redundantes com outros conjuntos já integrados).
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

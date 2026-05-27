@@ -72,3 +72,14 @@ Histórico de E&P. Útil para estudos de taxa de sucesso exploratório e como co
 - **Schema esperado:** Bloco, Bacia, data de encerramento, motivo
 - **Chave lógica esperada:** `Bloco`
 - **Observação:** Dados possivelmente descontinuados ou integrados em `fase-exploracao`
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

@@ -80,3 +80,14 @@ Provável formato shapefile (.shp + .dbf + .shx + .prj) com polígonos das bacia
 | `Plataforma_Continental.zip` | ZIP (shapefile) | Plataforma continental |
 | `Brasil.zip` | ZIP (shapefile) | Contorno do Brasil |
 | `metadados-*.pdf` (6 arquivos) | PDF | Dicionários de dados por shapefile |
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

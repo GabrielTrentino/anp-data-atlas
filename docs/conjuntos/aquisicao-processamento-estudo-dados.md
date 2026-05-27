@@ -91,3 +91,14 @@ Sem uso direto em análises de abastecimento. Relevante para entender o esforço
 - **Schema:** 5 colunas (títulos tipo relatório — header = título do documento)
 - **Registros:** 11–19 linhas por mês (baixo volume — dados administrativos)
 - **Observações:** Formato não-padrão (header é título do relatório, não nomes de colunas). Requer pré-processamento para extrair dados tabulares. ZIPs contêm dados sísmicos complementares.
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

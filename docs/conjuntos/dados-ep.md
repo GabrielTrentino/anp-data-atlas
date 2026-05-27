@@ -75,3 +75,14 @@ Complementar ao foco downstream do monorepo. Utilidade principal em cruzamentos 
 - **Status:** Dados tabulares não disponíveis como CSV público. Portal oferece apenas documentação/metadados.
 - **Acesso:** Via painel dinâmico da ANP ou datasets filhos (`fase-exploracao`, `fase-desenvolvimento-producao`, `incidentes-ep`)
 - **Chaves esperadas:** `Bloco`, `Campo`, `CodigoPoco`, `Contrato`
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

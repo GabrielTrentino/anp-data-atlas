@@ -101,3 +101,14 @@ Atacado/distribuição — elos entre refinaria/terminal e varejo.
 1. Trusted contratos cessão (resolver encoding latin-1 no DuckDB)
 2. Notebook exploratório (mapa, timeline autorizações)
 3. Refined: join distribuidores × movimentação por CNPJ
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

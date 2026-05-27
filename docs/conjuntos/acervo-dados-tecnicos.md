@@ -91,3 +91,14 @@ Relevância indireta. O acervo é insumo para decisões exploratórias que, no l
   - `tabela-levantamentos-geoquimicos.csv` — 70 linhas, 8 cols
 - **Nulls relevantes:** Muitas colunas técnicas 100% nulas (UNIDADE_ESTRATIGRAFICA, AGP, PERFIS_DIGITAIS) — campos opcionais do cadastro
 - **Cobertura:** Poços de 10+ operadores, múltiplas bacias
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

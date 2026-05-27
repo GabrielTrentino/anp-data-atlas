@@ -104,3 +104,14 @@ O portal organiza os CSVs em subpastas:
 2. Notebook exploratório (evolução temporal, sazonalidade por produto)
 3. Refined: join vendas × movimentação (volume SDC vs SIMP por UF/mês)
 4. Refined: join vendas × preços médios (receita estimada)
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

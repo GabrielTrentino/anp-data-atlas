@@ -140,3 +140,14 @@ Script: [cruzamento_cadastro_revendas.py](https://github.com/GabrielTrentino/anp
 **Status:** exploração com download dsan 2024–2025, trusted consolidado e join CNPJ cadastro. Diesel/GLP trusted e notebook pendentes.
 
 **Próximos passos:** download mensal 2024–2025 · séries por produto · spread compra/venda × bandeira.
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

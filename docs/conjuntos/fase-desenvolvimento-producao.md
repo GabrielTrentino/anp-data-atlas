@@ -99,3 +99,14 @@ Campos em produção alimentam refinarias e terminais. Útil para entender ofert
 - **Total estimado:** ~438k linhas, ~1.047 poços distintos no período mais antigo
 - **Nulls relevantes:** `Injeção de Gás` (100%), `Injeção de Água para Recuperação Secundária` (100%), `Injeção de Água para Descarte` (100%) — colunas presentes mas vazias nos arquivos antigos
 - **Observações:** Quebra de formato em 2022 (headers passam a usar colchetes); encoding inconsistente entre períodos
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

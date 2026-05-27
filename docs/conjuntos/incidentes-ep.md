@@ -92,3 +92,14 @@ Impacto indireto em abastecimento quando incidentes causam parada prolongada de 
 - **Relação 1:N:** Um incidente pode ter múltiplas classificações (45.240 registros), substâncias (31.535) e tipos (35.598)
 - **Nulls relevantes:** `Tipo_de_Ferimento` 98,1% nulo (maioria dos incidentes sem feridos)
 - **Observações:** Modelo estrela — `Numero` liga as 5 tabelas
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

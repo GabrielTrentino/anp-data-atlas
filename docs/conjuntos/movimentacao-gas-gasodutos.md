@@ -83,3 +83,14 @@ Infraestrutura de transporte de gás é gargalo relevante para abastecimento ene
 - **Cobertura:** 14 CSVs mensais (dez/2024 a mar/2026), 269 gasodutos, 43 transportadores
 - **Nulls:** 28–37% por coluna de dia (nem todos os gasodutos operam todos os dias)
 - **Observações:** Formato wide (1 coluna por dia) — requer unpivot para série temporal. Nomes de colunas = datas (ex: `01/02/2025`)
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

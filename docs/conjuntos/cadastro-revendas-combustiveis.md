@@ -132,3 +132,14 @@ Script: [cruzamento_tancagem_movimentacao.py](https://github.com/GabrielTrentino
 1. Notebook `01_perfil_exploratorio.ipynb` (geo, bandeira, entradas cadastrais)
 2. Join **serie-historica-precos** por CNPJ
 3. Refined agregado UF × bandeira
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

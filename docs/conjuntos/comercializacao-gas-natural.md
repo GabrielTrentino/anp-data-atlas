@@ -91,3 +91,14 @@ Gás natural compete com GLP e diesel em alguns segmentos (industrial, geração
 - **Cobertura temporal:** ~7 anos (Ano com 7 valores distintos)
 - **Nulls:** `Preço em Reais por MMBtu` 19,2% nulo em distribuidoras (meses sem dado de preço)
 - **Observações:** Encoding UTF-16 incomum no portal ANP — requer tratamento especial na ingestão
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

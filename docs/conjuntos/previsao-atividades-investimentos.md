@@ -75,3 +75,14 @@ Indicador forward-looking de oferta futura de petróleo e gás. Permite antever 
 - **Registros:** 261 linhas
 - **Colunas-chave:** ATIVIDADE, TIPO (Perfuração/Sísmica/etc.), ANO PTE, QUANTIDADE, INVESTIMENTO (milhões R$ e US$)
 - **Nulls:** `QUANTIDADE` e `INVESTIMENTO US$` com 1,5% nulos
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

@@ -94,3 +94,14 @@ Relevante para cruzamento com fiscalização do abastecimento: postos autuados e
   - (+ 2021, 2022, 2023, 2024)
 - **Nulls:** `Unnamed:6` ~8–11% nulo (campo de observação)
 - **Observações:** Formato report-style com cabeçalho institucional na primeira linha. Requer skip de linhas iniciais para extrair dados reais. Colunas prováveis: Nº processo, CNPJ, valor, data vencimento, situação.
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

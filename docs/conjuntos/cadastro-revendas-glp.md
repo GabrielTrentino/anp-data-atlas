@@ -97,3 +97,14 @@ Mercado de gás engarrafado; complementa movimentação GLP e tancagem por grupo
 1. Notebook exploratório (mapa, concentração distribuidora/UF)
 2. Refined: densidade revendas × volume vendas por município
 3. Cross-match com cadastro-revendas-combustiveis (sobreposição CNPJ)
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

@@ -93,3 +93,14 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 
 1. Notebook exploratório — balança comercial, dependência externa por produto
 2. Refined layer — balanço produção + importação - exportação vs vendas (deficit/superávit por derivado)
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

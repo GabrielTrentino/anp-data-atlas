@@ -75,3 +75,14 @@ Relevância indireta. Aditamentos podem indicar dificuldades da cadeia produtiva
 - **Colunas:** Ordem, Solicitação, Data do Protocolo, Contrato, Operador do Contrato, Nome do Bloco/Campo, Bacia, Localização, Rodada, Status, [observação]
 - **Cobertura:** 287 contratos distintos, múltiplas rodadas e bacias
 - **Nulls:** Sem nulls significativos
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

@@ -295,3 +295,14 @@ data/raw/tancagem-abastecimento/
 
 - [Capacidade de Armazenagem de Terminais](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/capacidade-de-armazenagem-de-terminais) — foco em terminais
 - [Catálogo de dados abertos](../dados-abertos.md) — índice dos 42 conjuntos ANP
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-22 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

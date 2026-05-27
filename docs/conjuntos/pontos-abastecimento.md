@@ -79,3 +79,14 @@ Estudo planejado em [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-
 1. Download amostra → `data/raw/pontos-abastecimento/`
 2. Notebook `01_perfil_exploratorio.ipynb`
 3. Promover findings estáveis para este arquivo
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

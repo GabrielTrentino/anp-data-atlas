@@ -89,3 +89,14 @@ Regulação industrial. Pode indicar gargalos na cadeia de fornecedores nacionai
   - Exploração: R1-R6 (132), R7-aditados (280)
 - **Nulls:** `Multa Aplicada`, `Nº Processo`, `Nº Auto de Infração` — 100% nulos (campos previstos mas não preenchidos)
 - **Observações:** `fiscalizacao-desenvolvimento-mar.csv` tem 0 linhas de dados (apenas header). Volume muito baixo — dados esparsos.
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

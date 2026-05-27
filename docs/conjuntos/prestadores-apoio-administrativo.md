@@ -65,3 +65,14 @@ Relevância mínima para análises de abastecimento. Base cadastral de caráter 
 - **Granularidade:** 1 linha por prestador autorizado
 - **Encoding:** Verificar empiricamente (CSV único + 1 PDF)
 - **Observações:** Dataset pequeno — cadastro administrativo de apoio. Baixa relevância analítica.
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

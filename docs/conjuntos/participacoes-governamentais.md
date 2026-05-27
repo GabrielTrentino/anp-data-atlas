@@ -85,3 +85,14 @@ Indicador econômico do setor. Correlação direta com produção e preço do pe
 - **Colunas:** competencia, caixa, estados, municipios, fundo_social, educacao, ciencia_tecnologia, total, [outro]
 - **Cobertura:** ~12 linhas úteis por arquivo (mensal) + 3 totais (20% nulls = linhas de subtotal)
 - **Observações:** Valores monetários (R$). Séries curtas (1 ano por arquivo).
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

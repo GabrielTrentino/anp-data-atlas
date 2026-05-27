@@ -72,3 +72,14 @@ Sem uso direto em análises de abastecimento. Relevante para pesquisa geológica
 | `amostras-de-calha.zip` | ZIP (shapefile) | Amostras de calha |
 | `amostras-laterais.zip` | ZIP (shapefile) | Amostras laterais |
 | `metadados-*.pdf` (7 arquivos) | PDF | Dicionários de dados por tipo de amostra |
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

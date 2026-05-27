@@ -74,3 +74,14 @@ Indicador da qualidade exploratória. Poços produtores de óleo/gás eventualme
 - **Schema esperado (conforme metadados):** Código do poço, campo, bacia, resultado (seco/subcomercial/comercial), profundidade
 - **Chave lógica esperada:** `CodigoPoco`
 - **Acesso alternativo:** Possivelmente disponível via BDEP (Banco de Dados de Exploração e Produção)
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

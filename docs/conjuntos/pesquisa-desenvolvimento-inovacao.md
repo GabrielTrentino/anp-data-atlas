@@ -86,3 +86,14 @@ Indicador de inovação setorial. Pode revelar áreas prioritárias de P&D (tran
   - Demais: report-style com headers institucionais
 - **Encoding:** misto (utf-8-sig e latin-1)
 - **Observações:** Apenas `obrigacaopdi.csv` é facilmente ingerível. Os demais requerem pré-processamento (skip header institucional).
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

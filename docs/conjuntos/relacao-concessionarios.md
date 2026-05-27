@@ -80,3 +80,14 @@ Tabela de dimensão para cruzamento. Permite enriquecer análises de produção/
   - `relacao-pais-origem-concessionarios.csv` — 118 linhas, 4 cols (nome, razão social, grupo, país)
 - **Join interno:** `Nome Fantasia` liga os dois arquivos
 - **Cobertura:** 118 CNPJs distintos, 20 países de origem
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

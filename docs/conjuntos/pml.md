@@ -87,3 +87,14 @@ Microdados de amostras de lubrificantes coletadas no mercado e analisadas quanto
 
 1. Notebook exploratório (taxa conformidade por ano/detentor)
 2. Join com registro-lubrificantes
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-24 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |

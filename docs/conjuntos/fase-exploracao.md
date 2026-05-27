@@ -84,3 +84,14 @@ Indicador antecedente de oferta futura: blocos em exploração hoje são campos 
 - **Cobertura geográfica:** Implícita via `BACIA` e `AMBIENTE` (terra/mar)
 - **Nulls relevantes:** `3ª PE VENCIMENTO` (99%), `DATA INÍCIO SUSPENSÃO` (90%), `ÚLTIMO PAD VENCIMENTO` (89%)
 - **Observações:** Colunas de datas/vencimentos são esparsas — nem todos os blocos passaram por todas as fases contratuais
+
+---
+
+## Histórico
+
+> Este documento foi gerado a partir de informações extraídas do portal de dados abertos da ANP.
+
+| Data | Evento |
+|------|--------|
+| 2026-05-26 | Criação do documento — extração inicial de metadados e arquivos do portal ANP |
+| 2026-05-26 | Inventário empírico dos brutos e seção Qualidade e chaves adicionados |
