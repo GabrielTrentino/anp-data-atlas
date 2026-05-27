@@ -78,3 +78,14 @@ Regulação industrial. Pode indicar gargalos na cadeia de fornecedores nacionai
 | `fiscalizacao-desenvolvimento-r5-r6.csv` | 3 | CSV | utf-8-sig | `;` | 10–11 | Desenvolvimento, rodadas 5–6 |
 | `fiscalizacao-desenvolvimento-r7.csv` | 6 | CSV | utf-8-sig | `;` | 10–11 | Desenvolvimento, rodada 7 |
 | `metadados-*.pdf` (7 arquivos) | — | PDF | — | — | — | Dicionários de dados por segmento |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Campo`/`Bloco` + `Rodada` + `Contrato` (por arquivo de fase)
+- **Granularidade:** 1 linha por campo/bloco fiscalizado em determinada fase
+- **Encoding:** utf-8-sig, sep `;`, 10–11 colunas (varia por arquivo)
+- **Arquivos:** 7 CSVs segmentados por fase e ambiente:
+  - Desenvolvimento: mar (0 dados!), R1-R4 (8), R5-R6 (3), R7 (6), terra (14)
+  - Exploração: R1-R6 (132), R7-aditados (280)
+- **Nulls:** `Multa Aplicada`, `Nº Processo`, `Nº Auto de Infração` — 100% nulos (campos previstos mas não preenchidos)
+- **Observações:** `fiscalizacao-desenvolvimento-mar.csv` tem 0 linhas de dados (apenas header). Volume muito baixo — dados esparsos.

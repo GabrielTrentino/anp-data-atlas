@@ -82,3 +82,15 @@ Relevante para cruzamento com fiscalização do abastecimento: postos autuados e
 | `multas-aplicadas-2024-excel.xlsx` | XLSX | Versão Excel 2024 |
 | `multas-aplicadas-2025.xlsx` | XLSX | Versão Excel 2025 |
 | `metadados-multas-aplicadas-2016a2019.pdf` | PDF | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** Não estruturada — CSVs são report-style (header = cabeçalho institucional da ANP)
+- **Granularidade:** 1 linha por auto de infração/multa
+- **Encoding:** utf-8-sig, sep `;`, 10 colunas (nomeadas como Unnamed — header real está na linha 2+)
+- **Arquivos:** 6 CSVs por período:
+  - `multas-aplicadas-2016a2019.csv` — 16.444 linhas
+  - `multas-aplicadas-2020.csv` — 2.032 linhas
+  - (+ 2021, 2022, 2023, 2024)
+- **Nulls:** `Unnamed:6` ~8–11% nulo (campo de observação)
+- **Observações:** Formato report-style com cabeçalho institucional na primeira linha. Requer skip de linhas iniciais para extrair dados reais. Colunas prováveis: Nº processo, CNPJ, valor, data vencimento, situação.

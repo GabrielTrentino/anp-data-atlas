@@ -66,3 +66,12 @@ Relevância indireta. Aditamentos podem indicar dificuldades da cadeia produtiva
 |---------------|-------:|---------|----------|:---:|--------:|-------|
 | `planilha-aditamento-conteudo-local.csv` | 1.046 | CSV | latin-1 | `;` | 11 | Ordem, Solicitação, Data do Protocolo, Contrato, Operador do Contrato, Nome do Bloco/Campo, Bacia, Localização, Rodada, Status, [outro] |
 | `metadados-aditamento.pdf` | — | PDF | — | — | — | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Ordem` (518 distintos — 1:1 com linhas)
+- **Granularidade:** 1 linha por solicitação de aditamento
+- **Encoding:** latin-1, sep `;`, 11 colunas
+- **Colunas:** Ordem, Solicitação, Data do Protocolo, Contrato, Operador do Contrato, Nome do Bloco/Campo, Bacia, Localização, Rodada, Status, [observação]
+- **Cobertura:** 287 contratos distintos, múltiplas rodadas e bacias
+- **Nulls:** Sem nulls significativos

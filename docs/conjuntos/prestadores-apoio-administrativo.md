@@ -58,3 +58,10 @@ Relevância mínima para análises de abastecimento. Base cadastral de caráter 
 |---------------|---------|-------|
 | `dados-abertos-apoio-adm-rj-df.xlsx` | XLSX | Prestadores habilitados (RJ e DF) |
 | `metadados-apoio-adm-rj-df.pdf` | PDF | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `CNPJ` (cadastro de prestadores)
+- **Granularidade:** 1 linha por prestador autorizado
+- **Encoding:** Verificar empiricamente (CSV único + 1 PDF)
+- **Observações:** Dataset pequeno — cadastro administrativo de apoio. Baixa relevância analítica.

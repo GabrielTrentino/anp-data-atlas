@@ -75,3 +75,13 @@ Indicador econômico do setor. Correlação direta com produção e preço do pe
 | `royalties-uniao-*.csv` / `royalties_uniao_*.csv` (15 CSVs) | CSV | utf-8-sig | `,` | Royalties União 2011–2025; naming inconsistente entre anos |
 
 > Página contém 92 links no total (royalties estados, municípios, participação especial, etc.). Amostra baixada limitada a royalties União. Sem PDFs neste diretório.
+
+## Qualidade e chaves
+
+- **Chave lógica:** `competencia` (mês de referência) — séries mensais de royalties
+- **Granularidade:** 1 linha por mês de competência (12 meses + totais por ano)
+- **Encoding:** utf-8, sep `;`, 9 colunas
+- **Arquivos:** 15 CSVs (royalties por ano: 2019–2026 + participação especial, preço referência)
+- **Colunas:** competencia, caixa, estados, municipios, fundo_social, educacao, ciencia_tecnologia, total, [outro]
+- **Cobertura:** ~12 linhas úteis por arquivo (mensal) + 3 totais (20% nulls = linhas de subtotal)
+- **Observações:** Valores monetários (R$). Séries curtas (1 ano por arquivo).

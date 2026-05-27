@@ -76,3 +76,13 @@ Indicador de inovação setorial. Pode revelar áreas prioritárias de P&D (tran
 | `projetos-rt-5-2005.csv` | CSV | Projetos RT (regulamento técnico 5/2005) |
 | `dados-abertos-unidades-pesquisa-area-tema-subtema.xlsx` | XLSX | Unidades de pesquisa por área/tema |
 | `metadados-*.pdf` (6 arquivos) | PDF | Dicionários de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Grupo Econômico` + `Ano` (em obrigacaopdi.csv); sem chave clara nos demais (report-style)
+- **Granularidade:** Varia por arquivo:
+  - `obrigacaopdi.csv` — 780 linhas, sep `,`, 4 cols (Grupo, Área, Ano, Valor Obrigação). 17 grupos, 28 anos, 59 áreas.
+  - `investimentos-prh.csv` — 17 linhas (report-style, latin-1)
+  - Demais: report-style com headers institucionais
+- **Encoding:** misto (utf-8-sig e latin-1)
+- **Observações:** Apenas `obrigacaopdi.csv` é facilmente ingerível. Os demais requerem pré-processamento (skip header institucional).
