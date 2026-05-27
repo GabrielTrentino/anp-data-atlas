@@ -1,51 +1,28 @@
-"""Download raw samples from ANP portal for all 22 pending datasets.
+"""Download raw samples from ANP portal for all configured datasets.
 
+Reads dataset configuration from config/datasets.yaml.
 Probes each dataset page, extracts CSV/XLSX links, and downloads samples.
 """
 from __future__ import annotations
 
-import os
 import re
 import urllib.request
 from pathlib import Path
 
+import yaml
+
 REPO = Path(__file__).resolve().parents[1]
 RAW = REPO / "data" / "raw"
-USER_AGENT = "Mozilla/5.0 (anp-data-atlas; research)"
-BASE = "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos"
-
-DATASETS: dict[str, str] = {
-    # E&P
-    "dados-ep": "dados-de-e-p",
-    "fase-exploracao": "fase-de-exploracao",
-    "fase-desenvolvimento-producao": "fase-de-desenvolvimento-e-producao",
-    "blocos-fase-exploratoria-encerrada": "blocos-com-fase-exploratoria-encerrada",
-    "incidentes-ep": "incidentes-de-exploracao-e-producao-de-petroleo-e-gas-natural",
-    "resultado-poco": "resultado-de-poco",
-    "previsao-atividades-investimentos": "previsao-de-atividades-e-investimentos-exploratorios",
-    "relacao-concessionarios": "relacao-de-concessionarios",
-    "rodadas-licitacoes": "rodadas-de-licitacoes-de-petroleo-e-gas-natural",
-    # Gas natural
-    "autorizacoes-gas-natural": "autorizacoes-de-gas-natural",
-    "comercializacao-gas-natural": "comercializacao-de-gas-natural",
-    "movimentacao-gas-gasodutos": "movimentacao-de-gas-natural-em-gasodutos-de-transporte",
-    # Acervo
-    "acervo-dados-tecnicos": "acervo-de-dados-tecnicos",
-    "amostras-rochas-fluidos": "amostras-de-rochas-e-fluidos",
-    "aquisicao-processamento-estudo-dados": "aquisicao-processamento-e-estudo-de-dados",
-    "bacias-sedimentares": "dados-georreferenciados-das-bacias-sedimentares-brasileiras",
-    # Regulacao
-    "aditamento-conteudo-local": "aditamento-de-conteudo-local",
-    "fiscalizacao-conteudo-local": "fiscalizacao-de-conteudo-local",
-    "multas-2016": "multas-aplicadas-com-vencimento-a-partir-de-2016",
-    "participacoes-governamentais": "participacoes-governamentais",
-    "pesquisa-desenvolvimento-inovacao": "pesquisa-desenvolvimento-e-inovacao",
-    "prestadores-apoio-administrativo": "prestadores-de-servico-de-apoio-administrativo",
-}
+CONFIG_PATH = REPO / "config" / "datasets.yaml"
 
 
-def fetch_page(url: str) -> str | None:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+def load_config() -> dict:
+    with open(CONFIG_PATH, encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def fetch_page(url: str, user_agent: str) -> str | None:
+    req = urllib.request.Request(url, headers={"User-Agent": user_agent})
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return resp.read().decode("utf-8", errors="replace")
@@ -58,8 +35,8 @@ def extract_links(html: str) -> list[str]:
     """Extract CSV, XLSX, ZIP, PDF links from page HTML."""
     pattern = r'href="([^"]+\.(?:csv|xlsx|xls|zip|pdf|shp|json))"'
     links = re.findall(pattern, html, re.IGNORECASE)
-    seen = set()
-    result = []
+    seen: set[str] = set()
+    result: list[str] = []
     for link in links:
         if link not in seen:
             seen.add(link)
@@ -67,11 +44,11 @@ def extract_links(html: str) -> list[str]:
     return result
 
 
-def download_file(url: str, dest: Path) -> bool:
+def download_file(url: str, dest: Path, user_agent: str) -> bool:
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() and dest.stat().st_size > 0:
         return True
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(url, headers={"User-Agent": user_agent})
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
             dest.write_bytes(resp.read())
@@ -81,12 +58,14 @@ def download_file(url: str, dest: Path) -> bool:
         return False
 
 
-def process_dataset(slug: str, page_path: str) -> tuple[int, int]:
-    url = f"{BASE}/{page_path}"
+def process_dataset(
+    slug: str, page_path: str, base_url: str, user_agent: str, max_files: int
+) -> tuple[int, int]:
+    url = f"{base_url}/{page_path}"
     print(f"\n{'='*60}")
     print(f"[{slug}] -> {url}")
 
-    html = fetch_page(url)
+    html = fetch_page(url, user_agent)
     if not html:
         return 0, 1
 
@@ -99,7 +78,7 @@ def process_dataset(slug: str, page_path: str) -> tuple[int, int]:
     dest_dir = RAW / slug
     ok, fail = 0, 0
 
-    for link in links[:20]:  # limit to 20 files per dataset
+    for link in links[:max_files]:
         if link.startswith("/"):
             full_url = f"https://www.gov.br{link}"
         elif link.startswith("http"):
@@ -111,7 +90,7 @@ def process_dataset(slug: str, page_path: str) -> tuple[int, int]:
         dest = dest_dir / filename
 
         print(f"  get {filename}")
-        if download_file(full_url, dest):
+        if download_file(full_url, dest, user_agent):
             ok += 1
         else:
             fail += 1
@@ -121,11 +100,16 @@ def process_dataset(slug: str, page_path: str) -> tuple[int, int]:
 
 
 def main() -> None:
+    cfg = load_config()
+    base_url = cfg["base_url"]
+    user_agent = cfg["user_agent"]
+    max_files = cfg.get("max_files_per_dataset", 20)
+
     total_ok, total_fail = 0, 0
     results: dict[str, tuple[int, int]] = {}
 
-    for slug, page_path in DATASETS.items():
-        ok, fail = process_dataset(slug, page_path)
+    for slug, meta in cfg["datasets"].items():
+        ok, fail = process_dataset(slug, meta["page"], base_url, user_agent, max_files)
         results[slug] = (ok, fail)
         total_ok += ok
         total_fail += fail

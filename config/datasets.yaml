@@ -1,0 +1,186 @@
+# Configuração dos 42 conjuntos de dados abertos ANP
+# Usado por scripts/download_raw_all.py e outros scripts do atlas.
+
+base_url: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos
+user_agent: "Mozilla/5.0 (anp-data-atlas; research)"
+max_files_per_dataset: 20
+
+datasets:
+  # --- Abastecimento, distribuição e mercado downstream ---
+  tancagem-abastecimento:
+    page: tancagem-do-abastecimento-nacional
+    categoria: abastecimento
+
+  movimentacao-derivados:
+    page: movimentacao-de-derivados-de-petroleo-glp-e-biocombustiveis
+    categoria: abastecimento
+
+  cadastro-revendas-combustiveis:
+    page: cadastro-de-revendedores-varejistas
+    categoria: abastecimento
+
+  cadastro-revendas-glp:
+    page: cadastro-de-revendedores-de-glp
+    categoria: abastecimento
+
+  pontos-abastecimento:
+    page: pontos-de-abastecimento-autorizados
+    categoria: abastecimento
+
+  distribuidores-combustiveis-liquidos:
+    page: distribuidores-de-combustiveis-liquidos
+    categoria: abastecimento
+
+  pmqc:
+    page: programa-de-monitoramento-da-qualidade-dos-combustiveis
+    categoria: abastecimento
+
+  pml:
+    page: programa-de-monitoramento-dos-lubrificantes
+    categoria: abastecimento
+
+  serie-historica-precos:
+    page: serie-historica-de-precos-de-combustiveis
+    categoria: abastecimento
+
+  vendas-derivados:
+    page: vendas-de-derivados-de-petroleo-e-biocombustiveis
+    categoria: abastecimento
+
+  fiscalizacao-abastecimento:
+    page: acoes-de-fiscalizacao-do-abastecimento
+    categoria: abastecimento
+
+  capacidade-armazenagem-terminais:
+    page: capacidade-de-armazenagem-de-terminais
+    categoria: abastecimento
+
+  movimentacao-terminais-aquaviarios:
+    page: movimentacao-de-terminais-aquaviarios
+    categoria: abastecimento
+
+  registro-lubrificantes:
+    page: registro-de-oleos-e-graxas-lubrificantes
+    categoria: abastecimento
+
+  # --- Produção, refino e biocombustíveis ---
+  processamento-petroleo-derivados:
+    page: processamento-de-petroleo-e-producao-de-derivados
+    categoria: producao
+
+  producao-biocombustiveis:
+    page: producao-de-biocombustiveis
+    categoria: producao
+
+  producao-por-estado:
+    page: producao-de-petroleo-e-gas-natural-por-estado-e-localizacao
+    categoria: producao
+
+  producao-por-poco:
+    page: producao-de-petroleo-e-gas-natural-por-poco
+    categoria: producao
+
+  importacoes-exportacoes:
+    page: importacoes-e-exportacoes
+    categoria: producao
+
+  # --- Exploração e produção (E&P) ---
+  dados-ep:
+    page: dados-de-e-p
+    categoria: ep
+
+  fase-exploracao:
+    page: fase-de-exploracao
+    categoria: ep
+
+  fase-desenvolvimento-producao:
+    page: fase-de-desenvolvimento-e-producao
+    categoria: ep
+
+  blocos-fase-exploratoria-encerrada:
+    page: blocos-com-fase-exploratoria-encerrada
+    categoria: ep
+
+  incidentes-ep:
+    page: incidentes-de-exploracao-e-producao-de-petroleo-e-gas-natural
+    categoria: ep
+
+  previsao-atividades-investimentos:
+    page: previsao-de-atividades-e-investimentos-exploratorios
+    categoria: ep
+
+  relacao-concessionarios:
+    page: relacao-de-concessionarios
+    categoria: ep
+
+  rodadas-licitacoes:
+    page: rodadas-de-licitacoes-de-petroleo-e-gas-natural
+    categoria: ep
+
+  # --- Gás natural ---
+  comercializacao-gas-natural:
+    page: comercializacao-de-gas-natural
+    categoria: gas
+
+  movimentacao-gas-gasodutos:
+    page: movimentacao-de-gas-natural-em-gasodutos-de-transporte
+    categoria: gas
+
+  # --- Acervo técnico e geociências ---
+  acervo-dados-tecnicos:
+    page: acervo-de-dados-tecnicos
+    categoria: acervo
+
+  amostras-rochas-fluidos:
+    page: amostras-de-rochas-e-fluidos
+    categoria: acervo
+
+  aquisicao-processamento-estudo-dados:
+    page: aquisicao-processamento-e-estudo-de-dados
+    categoria: acervo
+
+  bacias-sedimentares:
+    page: dados-georreferenciados-das-bacias-sedimentares-brasileiras
+    categoria: acervo
+
+  # --- Regulação, fiscalização e participações ---
+  aditamento-conteudo-local:
+    page: aditamento-de-conteudo-local
+    categoria: regulacao
+
+  fiscalizacao-conteudo-local:
+    page: fiscalizacao-de-conteudo-local
+    categoria: regulacao
+
+  multas-2016:
+    page: multas-aplicadas-com-vencimento-a-partir-de-2016
+    categoria: regulacao
+
+  participacoes-governamentais:
+    page: participacoes-governamentais
+    categoria: regulacao
+
+  pesquisa-desenvolvimento-inovacao:
+    page: pesquisa-desenvolvimento-e-inovacao
+    categoria: regulacao
+
+  prestadores-apoio-administrativo:
+    page: prestadores-de-servico-de-apoio-administrativo
+    categoria: regulacao
+
+# --- Conjuntos indisponíveis (sem CSV/XLSX no portal) ---
+indisponiveis:
+  anuario-estatistico:
+    page: anuario-estatistico
+    categoria: producao
+    motivo: Sem CSV público — apenas PDF/painel
+
+  autorizacoes-gas-natural:
+    page: autorizacoes-de-gas-natural
+    categoria: gas
+    motivo: Página removida do portal (404)
+
+  resultado-poco:
+    page: resultado-de-poco
+    categoria: ep
+    motivo: Apenas metadados (PDF) — CSV via BDEP
