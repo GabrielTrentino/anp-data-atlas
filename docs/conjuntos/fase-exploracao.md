@@ -74,3 +74,13 @@ Indicador antecedente de oferta futura: blocos em exploração hoje são campos 
 | `blocos-sob-contrato-*.csv` (11 arquivos) | ~400 cada | CSV | latin-1 | `;` | 16 | Meses jan–out/2025; BLOCO, CONTRATO, OPERADOR, CONTRATADOS, AMBIENTE, BACIAS AGRUPADAS, BACIA, ÁREA, RODADA, REGIME CONTRATUAL, PERÍODO, PRESTAÇAO DE GARANTIA, VIGÊNCIA CONTRATUAL, ETAPA, SUBETAPA, QUALIFICAÇÃO |
 | `blocos-sob-contrato_abr_2026.csv` | 34 | CSV | latin-1 | `;` | 16 | Abril 2026, mesmo schema |
 | `metadados-fase-exploracao.pdf` | — | PDF | — | — | — | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `BLOCO` (413 distintos por snapshot mensal — quase 1:1 com linhas)
+- **Granularidade:** 1 linha por bloco sob contrato, atualizada mensalmente
+- **Encoding:** latin-1, sep `;`, 22 colunas
+- **Cobertura temporal:** Snapshots mensais (jan–dez/2025 + abr/2026)
+- **Cobertura geográfica:** Implícita via `BACIA` e `AMBIENTE` (terra/mar)
+- **Nulls relevantes:** `3ª PE VENCIMENTO` (99%), `DATA INÍCIO SUSPENSÃO` (90%), `ÚLTIMO PAD VENCIMENTO` (89%)
+- **Observações:** Colunas de datas/vencimentos são esparsas — nem todos os blocos passaram por todas as fases contratuais

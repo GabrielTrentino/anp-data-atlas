@@ -69,3 +69,9 @@ Complementar ao foco downstream do monorepo. Utilidade principal em cruzamentos 
 
 > Dados de E&P (contratos, campos, poços) disponibilizados primariamente via painel interativo.
 > CSVs detalhados encontram-se nos conjuntos filhos: `fase-exploracao`, `fase-desenvolvimento-producao`, `incidentes-ep`.
+
+## Qualidade e chaves
+
+- **Status:** Dados tabulares não disponíveis como CSV público. Portal oferece apenas documentação/metadados.
+- **Acesso:** Via painel dinâmico da ANP ou datasets filhos (`fase-exploracao`, `fase-desenvolvimento-producao`, `incidentes-ep`)
+- **Chaves esperadas:** `Bloco`, `Campo`, `CodigoPoco`, `Contrato`

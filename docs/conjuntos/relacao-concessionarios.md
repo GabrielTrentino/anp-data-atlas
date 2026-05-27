@@ -69,3 +69,14 @@ Tabela de dimensão para cruzamento. Permite enriquecer análises de produção/
 | `relacao-concessionarios-concessao.csv` | CSV | Concessionários do regime de concessão |
 | `metadados-relacao-concessionarios-cessao-onerosa.pdf` | PDF | Dicionário de dados (cessão onerosa) |
 | `metadados-relacao-concessionarios-concessao.pdf` | PDF | Dicionário de dados (concessão) |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Número Contrato` (886 distintos em 1.107 linhas — relação N:1 contrato:concessionário)
+- **Granularidade:** 1 linha por participação de concessionário em contrato
+- **Encoding:** latin-1, sep `;`
+- **Arquivos:**
+  - `relacao-concessionarios.csv` — 1.107 linhas, 9 cols (contrato, CNPJ, nome, participação %)
+  - `relacao-pais-origem-concessionarios.csv` — 118 linhas, 4 cols (nome, razão social, grupo, país)
+- **Join interno:** `Nome Fantasia` liga os dois arquivos
+- **Cobertura:** 118 CNPJs distintos, 20 países de origem

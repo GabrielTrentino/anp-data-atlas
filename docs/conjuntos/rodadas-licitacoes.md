@@ -80,3 +80,13 @@ Contexto institucional do setor upstream. Blocos arrematados em rodadas se torna
 | `metadados-blocos-concedidos.pdf` | PDF | Dicionário de dados (blocos) |
 | `metadados-ofertas-vencedoras.pdf` | PDF | Dicionário de dados (ofertas) |
 | `metadados-ofertas-vencedoras-popp.pdf` | PDF | Dicionário de dados (partilha) |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Bloco` + `Rodada` (blocos ofertados); `Bloco` (ofertas vencedoras)
+- **Granularidade:** 1 linha por bloco ofertado ou lance vencedor
+- **Encoding:** latin-1, sep `;`
+- **Arquivos:**
+  - `blocos-ofertados-rodadas.csv` — 1.681 linhas, 8 cols (Bloco, Setor, Bacia, Área, Bônus Mínimo, Rodada, etc.)
+  - `ofertas-vencedoras-rodadas.csv` — 498 linhas, 11 cols (Bloco, Empresa/Consórcio, Bônus, % CL, etc.)
+- **Cobertura:** 1.426 blocos distintos ofertados, 479 com oferta vencedora, 23 bacias

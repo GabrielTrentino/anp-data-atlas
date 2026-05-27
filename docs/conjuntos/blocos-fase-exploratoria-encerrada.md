@@ -65,3 +65,10 @@ Histórico de E&P. Útil para estudos de taxa de sucesso exploratório e como co
 | `metadados-fase-exploratoria-encerrada.pdf` | PDF | Metadados e dicionário de dados |
 
 > CSV não localizado na página (possivelmente descontinuado ou acessível apenas via painel interativo).
+
+## Qualidade e chaves
+
+- **Status:** Não validável empiricamente — apenas metadados (PDF) disponíveis no portal.
+- **Schema esperado:** Bloco, Bacia, data de encerramento, motivo
+- **Chave lógica esperada:** `Bloco`
+- **Observação:** Dados possivelmente descontinuados ou integrados em `fase-exploracao`

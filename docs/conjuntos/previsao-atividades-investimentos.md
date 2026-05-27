@@ -66,3 +66,12 @@ Indicador forward-looking de oferta futura de petróleo e gás. Permite antever 
 |---------------|---------|-------|
 | `previsao-atividades-investimentos-pte.csv` | CSV | Previsão de atividades e investimentos exploratórios |
 | `metadados-previsao-atividades-investimentos-exploratorios.pdf` | PDF | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `ATIVIDADE (Unidade)` + `ANO PTE` (21 atividades × anos)
+- **Granularidade:** 1 linha por atividade exploratória × ano previsto
+- **Encoding:** utf-8-sig, sep `;`, 8 colunas
+- **Registros:** 261 linhas
+- **Colunas-chave:** ATIVIDADE, TIPO (Perfuração/Sísmica/etc.), ANO PTE, QUANTIDADE, INVESTIMENTO (milhões R$ e US$)
+- **Nulls:** `QUANTIDADE` e `INVESTIMENTO US$` com 1,5% nulos

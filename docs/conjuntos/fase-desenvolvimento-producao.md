@@ -88,3 +88,14 @@ Campos em produção alimentam refinarias e terminais. Útil para entender ofert
 | `producao_por_poco_2024.csv` | 15.230 | CSV | utf-8-sig | `,` | 14 | Formato atualizado com colchetes nos headers |
 
 > Cobertura temporal: 1994–2026. Encoding inconsistente entre arquivos antigos (latin-1) e recentes (utf-8-sig).
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Poço` + `Mês/Ano` (produção mensal por poço)
+- **Granularidade:** 1 linha por poço × mês
+- **Encoding:** misto (utf-8-sig nos mais antigos, latin-1 em 2016–2021), sep `,`
+- **Schema:** 13–14 colunas (mudança de schema a partir de 2022 — headers com colchetes `[Ano]`)
+- **Cobertura temporal:** 1994–2026 (15 CSVs segmentados por período)
+- **Total estimado:** ~438k linhas, ~1.047 poços distintos no período mais antigo
+- **Nulls relevantes:** `Injeção de Gás` (100%), `Injeção de Água para Recuperação Secundária` (100%), `Injeção de Água para Descarte` (100%) — colunas presentes mas vazias nos arquivos antigos
+- **Observações:** Quebra de formato em 2022 (headers passam a usar colchetes); encoding inconsistente entre períodos

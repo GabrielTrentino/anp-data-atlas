@@ -82,3 +82,13 @@ Impacto indireto em abastecimento quando incidentes causam parada prolongada de 
 | `incidentes-tipo.csv` | 35.598 | CSV | latin-1 | `;` | 4 | Numero, Tipo_de_incidente, DSC_GRAVIDADE_TIPO, DSC_QUASE_ACIDENTE_ACIDENTE |
 | `metadados-incidentes.pdf` | — | PDF | — | — | — | Dicionário de dados |
 | `manual-comunicacao-incidentes.pdf` | — | PDF | — | — | — | Manual de comunicação |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Numero` (ID do incidente — 30.741 distintos no arquivo principal)
+- **Granularidade:** Tabela fato (`incidentes.csv`) + tabelas dimensão (classificação, feridos, substâncias, tipo)
+- **Encoding:** latin-1, sep `;`
+- **Schema principal:** 13 colunas: Numero, Empresa, CNPJ, Data_de_criacao, Autoridades_comunicadas, Instalacao, Data_primeira_observacao, Hora, UF, Municipio, Ambiente, Classificacao_origem, Observacao
+- **Relação 1:N:** Um incidente pode ter múltiplas classificações (45.240 registros), substâncias (31.535) e tipos (35.598)
+- **Nulls relevantes:** `Tipo_de_Ferimento` 98,1% nulo (maioria dos incidentes sem feridos)
+- **Observações:** Modelo estrela — `Numero` liga as 5 tabelas

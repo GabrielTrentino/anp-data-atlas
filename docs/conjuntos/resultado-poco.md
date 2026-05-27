@@ -67,3 +67,10 @@ Indicador da qualidade exploratória. Poços produtores de óleo/gás eventualme
 | `metadados-resultado-poco.pdf` | PDF | Metadados e dicionário de dados |
 
 > CSV não disponível publicamente. Dados possivelmente acessíveis via BDEP ou canal restrito.
+
+## Qualidade e chaves
+
+- **Status:** Não validável empiricamente — apenas metadados (PDF) disponíveis no portal.
+- **Schema esperado (conforme metadados):** Código do poço, campo, bacia, resultado (seco/subcomercial/comercial), profundidade
+- **Chave lógica esperada:** `CodigoPoco`
+- **Acesso alternativo:** Possivelmente disponível via BDEP (Banco de Dados de Exploração e Produção)
