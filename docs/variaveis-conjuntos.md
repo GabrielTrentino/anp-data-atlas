@@ -65,15 +65,15 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 
 | # | Slug | Métrica principal | Variáveis principais | Chaves de ligação | Cruzamentos |
 |---|------|-------------------|----------------------|-------------------|-------------|
-| 13 | `dados-ep` | Agregados E&P | bloco, operador, fase, volumes (sub-bases) **~** | `Bloco`, `Campo` | fases, produção |
-| 16 | `fase-exploracao` | Blocos em exploração | `BLOCO`, `BACIA`, `OPERADOR`, `CONTRATADOS`, `RODADA`, `REGIME CONTRATUAL` **✓** | `BLOCO` | rodadas, concessionários |
-| 17 | `fase-desenvolvimento-producao` | Campos em D&P | `Poço`, `Campo`, `Bacia`, `Estado`, `Instalação`, volumes produção **✓** | `Campo`/`Poço` | produção por poço/estado |
-| 8 | `blocos-fase-exploratoria-encerrada` | Blocos encerrados | `Bloco`, `Bacia`, data encerramento, motivo **~** | `Bloco` | rodadas, fase exploração |
-| 20 | `incidentes-ep` | Incidentes operacionais | `Numero`, `Empresa`, `CNPJ`, `Data_de_criacao`, `UF`, `Ambiente` **✓** | `Numero`+tabelas dim | produção, concessionários |
-| 38 | `resultado-poco` | Resultado de poço | `CodigoPoco`, `Campo`, `Bacia`, resultado, profundidade **~** | `CodigoPoco` | produção por poço, acervo |
-| 31 | `previsao-atividades-investimentos` | Investimentos previstos | `ATIVIDADE`, `TIPO`, `ANO PTE`, `QUANTIDADE`, `INVESTIMENTO` **✓** | atividade+ano | rodadas, fase exploração |
-| 36 | `relacao-concessionarios` | Concessionários | `Número Contrato`, `CNPJ`, `Nome`, participação, `Rodada` **✓** | `Número Contrato`, `CNPJ` | rodadas, produção |
-| 39 | `rodadas-licitacoes` | Licitações | `Bloco`, `Rodada`, `Setor`, `Bacia`, `Bônus`, `Empresa/Consórcio` **✓** | `Bloco`+`Rodada` | concessionários, fases |
+| 13 | [`dados-ep`](conjuntos/dados-ep.md) | Agregados E&P | bloco, operador, fase, volumes (sub-bases) **~** | `Bloco`, `Campo` | fases, produção |
+| 16 | [`fase-exploracao`](conjuntos/fase-exploracao.md) | Blocos em exploração | `BLOCO`, `BACIA`, `OPERADOR`, `CONTRATADOS`, `RODADA`, `REGIME CONTRATUAL` **✓** | `BLOCO` | rodadas, concessionários |
+| 17 | [`fase-desenvolvimento-producao`](conjuntos/fase-desenvolvimento-producao.md) | Campos em D&P | `Poço`, `Campo`, `Bacia`, `Estado`, `Instalação`, volumes produção **✓** | `Campo`/`Poço` | produção por poço/estado |
+| 8 | [`blocos-fase-exploratoria-encerrada`](conjuntos/blocos-fase-exploratoria-encerrada.md) | Blocos encerrados | `Bloco`, `Bacia`, data encerramento, motivo **~** | `Bloco` | rodadas, fase exploração |
+| 20 | [`incidentes-ep`](conjuntos/incidentes-ep.md) | Incidentes operacionais | `Numero`, `Empresa`, `CNPJ`, `Data_de_criacao`, `UF`, `Ambiente` **✓** | `Numero`+tabelas dim | produção, concessionários |
+| 38 | [`resultado-poco`](conjuntos/resultado-poco.md) | Resultado de poço | `CodigoPoco`, `Campo`, `Bacia`, resultado, profundidade **~** | `CodigoPoco` | produção por poço, acervo |
+| 31 | [`previsao-atividades-investimentos`](conjuntos/previsao-atividades-investimentos.md) | Investimentos previstos | `ATIVIDADE`, `TIPO`, `ANO PTE`, `QUANTIDADE`, `INVESTIMENTO` **✓** | atividade+ano | rodadas, fase exploração |
+| 36 | [`relacao-concessionarios`](conjuntos/relacao-concessionarios.md) | Concessionários | `Número Contrato`, `CNPJ`, `Nome`, participação, `Rodada` **✓** | `Número Contrato`, `CNPJ` | rodadas, produção |
+| 39 | [`rodadas-licitacoes`](conjuntos/rodadas-licitacoes.md) | Licitações | `Bloco`, `Rodada`, `Setor`, `Bacia`, `Bônus`, `Empresa/Consórcio` **✓** | `Bloco`+`Rodada` | concessionários, fases |
 
 ---
 
@@ -81,9 +81,9 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 
 | # | Slug | Métrica principal | Variáveis principais | Chaves de ligação | Cruzamentos |
 |---|------|-------------------|----------------------|-------------------|-------------|
-| 7 | `autorizacoes-gas-natural` | Autorizações | `Cnpj`, tipo atividade, `Uf`, validade **~** | `Cnpj` | comercialização, gasodutos |
-| 10 | `comercializacao-gas-natural` | Volume vendido m³ | `Ano`, `Mês`, `TipoMercado`, `RegiãoAgregada`, `Preço MMBtu`, `Volume mil m³/dia` **✓** | segmento+mês | gasodutos, autorizações |
-| 23 | `movimentacao-gas-gasodutos` | Volume transportado m³ | `Código Instalação Gasoduto`, `Nome Instalação Transporte`, dias (wide) **✓** | gasoduto+dia | comercialização |
+| 7 | [`autorizacoes-gas-natural`](conjuntos/autorizacoes-gas-natural.md) | Autorizações | `Cnpj`, tipo atividade, `Uf`, validade **~** | `Cnpj` | comercialização, gasodutos |
+| 10 | [`comercializacao-gas-natural`](conjuntos/comercializacao-gas-natural.md) | Volume vendido m³ | `Ano`, `Mês`, `TipoMercado`, `RegiãoAgregada`, `Preço MMBtu`, `Volume mil m³/dia` **✓** | segmento+mês | gasodutos, autorizações |
+| 23 | [`movimentacao-gas-gasodutos`](conjuntos/movimentacao-gas-gasodutos.md) | Volume transportado m³ | `Código Instalação Gasoduto`, `Nome Instalação Transporte`, dias (wide) **✓** | gasoduto+dia | comercialização |
 
 ---
 
@@ -91,10 +91,10 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 
 | # | Slug | Métrica principal | Variáveis principais | Chaves de ligação | Cruzamentos |
 |---|------|-------------------|----------------------|-------------------|-------------|
-| 1 | `acervo-dados-tecnicos` | Poços, sísmica, geoquímica | `POCO`, `CADASTRO`, `OPERADOR`, `ESTADO`, `BACIA`, `CAMPO` (58 cols) **✓** | `POCO`/`CADASTRO` | resultado poço, bacias |
-| 4 | `amostras-rochas-fluidos` | Declaração amostras | `CodigoPoco`, código amostra, tipo, profundidade **~** | `CodigoPoco` | acervo, resultado poço |
-| 6 | `aquisicao-processamento-estudo-dados` | Surveys sísmicos | relatório mensal EAD (report-style, 5 cols) **✓** | `Bacia`/survey | bacias, acervo |
-| 14 | `bacias-sedimentares` | Geometria bacias | `Bacia`, polígonos (shapefile) **~** | `Bacia` | blocos, poços, E&P |
+| 1 | [`acervo-dados-tecnicos`](conjuntos/acervo-dados-tecnicos.md) | Poços, sísmica, geoquímica | `POCO`, `CADASTRO`, `OPERADOR`, `ESTADO`, `BACIA`, `CAMPO` (58 cols) **✓** | `POCO`/`CADASTRO` | resultado poço, bacias |
+| 4 | [`amostras-rochas-fluidos`](conjuntos/amostras-rochas-fluidos.md) | Declaração amostras | `CodigoPoco`, código amostra, tipo, profundidade **~** | `CodigoPoco` | acervo, resultado poço |
+| 6 | [`aquisicao-processamento-estudo-dados`](conjuntos/aquisicao-processamento-estudo-dados.md) | Surveys sísmicos | relatório mensal EAD (report-style, 5 cols) **✓** | `Bacia`/survey | bacias, acervo |
+| 14 | [`bacias-sedimentares`](conjuntos/bacias-sedimentares.md) | Geometria bacias | `Bacia`, polígonos (shapefile) **~** | `Bacia` | blocos, poços, E&P |
 
 ---
 
@@ -102,12 +102,12 @@ Catálogo completo: [dados-abertos.md](dados-abertos.md) · inventário instituc
 
 | # | Slug | Métrica principal | Variáveis principais | Chaves de ligação | Cruzamentos |
 |---|------|-------------------|----------------------|-------------------|-------------|
-| 3 | `aditamento-conteudo-local` | Aditamentos contratuais | `Ordem`, `Contrato`, `Operador`, `Bloco/Campo`, `Bacia`, `Rodada`, `Status` **✓** | `Contrato`/`Bloco` | fiscalização conteúdo local |
-| 18 | `fiscalizacao-conteudo-local` | Metas conteúdo local | `Rodada`, `Bloco`/`Campo`, `Bacia`, `Contrato`, `Operador`, `CNPJ` **✓** | `Bloco` | aditamentos, rodadas |
-| 24 | `multas-2016` | Valor multa R$ | processo, `Cnpj`, valor, vencimento, situação (report-style) **✓** | `Cnpj`, nº processo | fiscalização abastecimento |
-| 25 | `participacoes-governamentais` | Royalties e participação especial | `competencia`, `caixa`, `estados`, `municipios`, `fundo_social` **✓** | competência (mês) | produção E&P |
-| 26 | `pesquisa-desenvolvimento-inovacao` | Investimento PD&I | `Grupo Econômico`, `Área`, `Ano`, `Valor Obrigação` **✓** | `Grupo`+`Ano` | (fraco) E&P |
-| 30 | `prestadores-apoio-administrativo` | Cadastro prestadores | `Cnpj`, tipo serviço, `Situacao`, `Uf` **✓** | `Cnpj` | (fraco) cadastros |
+| 3 | [`aditamento-conteudo-local`](conjuntos/aditamento-conteudo-local.md) | Aditamentos contratuais | `Ordem`, `Contrato`, `Operador`, `Bloco/Campo`, `Bacia`, `Rodada`, `Status` **✓** | `Contrato`/`Bloco` | fiscalização conteúdo local |
+| 18 | [`fiscalizacao-conteudo-local`](conjuntos/fiscalizacao-conteudo-local.md) | Metas conteúdo local | `Rodada`, `Bloco`/`Campo`, `Bacia`, `Contrato`, `Operador`, `CNPJ` **✓** | `Bloco` | aditamentos, rodadas |
+| 24 | [`multas-2016`](conjuntos/multas-2016.md) | Valor multa R$ | processo, `Cnpj`, valor, vencimento, situação (report-style) **✓** | `Cnpj`, nº processo | fiscalização abastecimento |
+| 25 | [`participacoes-governamentais`](conjuntos/participacoes-governamentais.md) | Royalties e participação especial | `competencia`, `caixa`, `estados`, `municipios`, `fundo_social` **✓** | competência (mês) | produção E&P |
+| 26 | [`pesquisa-desenvolvimento-inovacao`](conjuntos/pesquisa-desenvolvimento-inovacao.md) | Investimento PD&I | `Grupo Econômico`, `Área`, `Ano`, `Valor Obrigação` **✓** | `Grupo`+`Ano` | (fraco) E&P |
+| 30 | [`prestadores-apoio-administrativo`](conjuntos/prestadores-apoio-administrativo.md) | Cadastro prestadores | `Cnpj`, tipo serviço, `Situacao`, `Uf` **✓** | `Cnpj` | (fraco) cadastros |
 
 ---
 
