@@ -33,5 +33,5 @@ Referência rápida — ver [TODO.md](../TODO.md) para status por etapa.
 | `anuario-estatistico` | [conjuntos/anuario-estatistico.md](conjuntos/anuario-estatistico.md) |
 
 | [TODO.md](../TODO.md) | Rastreio dos 42 conjuntos — o que falta explorar |
-| [conjuntos/tancagem-abastecimento.md](conjuntos/tancagem-abastecimento.md) | Tancagem do Abastecimento Nacional de Combustíveis |
-| `conjuntos/` | Demais explorações por conjunto (a criar) |
+
+Todos os 42 conjuntos estão documentados em `conjuntos/{slug}.md`.
