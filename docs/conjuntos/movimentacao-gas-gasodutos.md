@@ -73,3 +73,13 @@ Infraestrutura de transporte de gás é gargalo relevante para abastecimento ene
 |---------------|-------:|---------|----------|:---:|--------:|-------|
 | `gn_*.csv` / `gn-*.csv` (14 CSVs) | 5.400–11.100 cada | CSV | latin-1 | `;` | 6 | Dez/2024 a fev/2025 + abr–dez/2025 + jan–fev/2026. Cols: Código Instalação Transporte, Nome Instalação Transporte, Nome Instalação Gasoduto, Código Instalação Gasoduto, Competência, Volume (m³) |
 | `metadados-gn-sim.pdf` | — | PDF | — | — | — | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Código da Instalação de Gasoduto` + data (269 gasodutos distintos)
+- **Granularidade:** 1 linha por gasoduto × dia (colunas = dias do mês)
+- **Encoding:** latin-1, sep `;`
+- **Schema:** 41–44 colunas (6 fixas + 1 coluna por dia do mês — formato wide/pivotado)
+- **Cobertura:** 14 CSVs mensais (dez/2024 a mar/2026), 269 gasodutos, 43 transportadores
+- **Nulls:** 28–37% por coluna de dia (nem todos os gasodutos operam todos os dias)
+- **Observações:** Formato wide (1 coluna por dia) — requer unpivot para série temporal. Nomes de colunas = datas (ex: `01/02/2025`)

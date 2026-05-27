@@ -78,3 +78,16 @@ Gás natural compete com GLP e diesel em alguns segmentos (industrial, geração
 | `metadados-distribuidoras-consumidores-livres.pdf` | — | PDF | — | — | — | Dicionário de dados |
 | `metadados-vendas-aos-comercializadores.pdf` | — | PDF | — | — | — | Dicionário de dados |
 | `metadados-vendas-entre-produtores.pdf` | — | PDF | — | — | — | Dicionário de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `Ano` + `Mês` + `TipoMercado`/`BaciaAgregada` (série temporal por segmento)
+- **Granularidade:** 1 linha por mês × segmento de mercado
+- **Encoding:** UTF-16, sep `;` (atípico — atenção na ingestão)
+- **Arquivos:**
+  - `distribuidoras-consumidores-livres.csv` — 375 linhas, 6 cols (Ano, Mês, TipoMercado, Região, Preço MMBtu, Volume mil m³/dia)
+  - `vendas-aos-comercializadores.csv` — 48 linhas, 4 cols
+  - `vendas-entre-produtores.csv` — 226 linhas, 5 cols (inclui BaciaAgregada)
+- **Cobertura temporal:** ~7 anos (Ano com 7 valores distintos)
+- **Nulls:** `Preço em Reais por MMBtu` 19,2% nulo em distribuidoras (meses sem dado de preço)
+- **Observações:** Encoding UTF-16 incomum no portal ANP — requer tratamento especial na ingestão
