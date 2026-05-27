@@ -1,186 +1,600 @@
-# Configuração dos 42 conjuntos de dados abertos ANP
-# Usado por scripts/download_raw_all.py e outros scripts do atlas.
+# Configuração centralizada dos 42 conjuntos de dados abertos ANP
+# Fonte única de verdade — usado por scripts de download, validação e geração de docs.
 
 base_url: https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos
 user_agent: "Mozilla/5.0 (anp-data-atlas; research)"
 max_files_per_dataset: 20
 
 datasets:
-  # --- Abastecimento, distribuição e mercado downstream ---
+
+  # ═══════════════════════════════════════════════════════════════════
+  # Abastecimento, distribuição e mercado downstream
+  # ═══════════════════════════════════════════════════════════════════
+
   tancagem-abastecimento:
     page: tancagem-do-abastecimento-nacional
     categoria: abastecimento
+    titulo: Tancagem do Abastecimento Nacional
+    unidade_anp: SDL
+    periodicidade: Mensal
+    formato: CSV
+    fonte: SIMP — Resolução ANP nº 17/2004
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [CodInstalacao, Tag, GrupoDeProdutos, Data]
+    cruzamentos: [movimentacao-derivados, cadastro-revendas-combustiveis]
 
   movimentacao-derivados:
     page: movimentacao-de-derivados-de-petroleo-glp-e-biocombustiveis
     categoria: abastecimento
+    titulo: Movimentação de derivados de petróleo, gás natural e biocombustíveis
+    unidade_anp: SDL
+    periodicidade: Mensal
+    formato: CSV / ZIP
+    fonte: SIMP — Resolução ANP nº 729/2018
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Ano, Mês, Agente Regulado, Código do Produto, UF Origem]
+    cruzamentos: [tancagem-abastecimento, cadastro-revendas-combustiveis, vendas-derivados, serie-historica-precos]
 
   cadastro-revendas-combustiveis:
     page: cadastro-de-revendedores-varejistas
     categoria: abastecimento
+    titulo: Dados Cadastrais dos Revendedores Varejistas de Combustíveis Automotivos
+    unidade_anp: SDL
+    periodicidade: Diária
+    formato: CSV
+    fonte: Cadastro ANP / i-SIMP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [cnpj]
+    cruzamentos: [tancagem-abastecimento, pontos-abastecimento, serie-historica-precos, movimentacao-derivados]
 
   cadastro-revendas-glp:
     page: cadastro-de-revendedores-de-glp
     categoria: abastecimento
+    titulo: Dados Cadastrais das Revendas de Gás Liquefeito de Petróleo (GLP)
+    unidade_anp: SDL
+    periodicidade: Diária
+    formato: CSV
+    fonte: Cadastro ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [cnpj]
+    cruzamentos: [movimentacao-derivados, tancagem-abastecimento]
 
   pontos-abastecimento:
     page: pontos-de-abastecimento-autorizados
     categoria: abastecimento
+    titulo: Pontos de Abastecimento Autorizados
+    unidade_anp: SDL
+    periodicidade: Diário
+    formato: PDF (sem CSV público)
+    fonte: Cadastro ANP
+    schema:
+      encoding: null
+      separator: null
+      key_columns: [CodInstalacao, Cnpj]
+    cruzamentos: [cadastro-revendas-combustiveis, fiscalizacao-abastecimento]
 
   distribuidores-combustiveis-liquidos:
     page: distribuidores-de-combustiveis-liquidos
     categoria: abastecimento
+    titulo: Distribuidores de combustíveis líquidos
+    unidade_anp: SDL
+    periodicidade: Mensal / Semanal / Semestral
+    formato: CSV
+    fonte: Cadastro e autorizações ANP
+    schema:
+      encoding: latin-1
+      separator: ";"
+      key_columns: [Cnpj]
+    cruzamentos: [movimentacao-derivados, capacidade-armazenagem-terminais]
 
   pmqc:
     page: programa-de-monitoramento-da-qualidade-dos-combustiveis
     categoria: abastecimento
+    titulo: Programa de Monitoramento da Qualidade dos Combustíveis (PMQC)
+    unidade_anp: SBQ
+    periodicidade: Mensal
+    formato: CSV / JSON
+    fonte: PMQC / fiscalização analítica
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [cnpj, data_coleta, grupo_produto]
+    cruzamentos: [fiscalizacao-abastecimento, cadastro-revendas-combustiveis]
 
   pml:
     page: programa-de-monitoramento-dos-lubrificantes
     categoria: abastecimento
+    titulo: Programa de Monitoramento dos Lubrificantes (PML)
+    unidade_anp: SBQ
+    periodicidade: Conforme programa
+    formato: CSV
+    fonte: PML
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [amostra]
+    cruzamentos: [movimentacao-derivados, registro-lubrificantes]
 
   serie-historica-precos:
     page: serie-historica-de-precos-de-combustiveis
     categoria: abastecimento
+    titulo: Série Histórica de Preços de Combustíveis
+    unidade_anp: SDC
+    periodicidade: Semanal (LPC)
+    formato: CSV
+    fonte: Levantamento de Preços de Combustíveis (LPC)
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [cnpj, produto, data_coleta]
+    cruzamentos: [vendas-derivados, cadastro-revendas-combustiveis, tancagem-abastecimento]
 
   vendas-derivados:
     page: vendas-de-derivados-de-petroleo-e-biocombustiveis
     categoria: abastecimento
+    titulo: Vendas de derivados de petróleo e biocombustíveis
+    unidade_anp: SDC
+    periodicidade: Mensal / Anual
+    formato: CSV
+    fonte: Estatística ANP / distribuidoras
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [ano, mes, uf, produto]
+    cruzamentos: [movimentacao-derivados, producao-biocombustiveis, importacoes-exportacoes]
 
   fiscalizacao-abastecimento:
     page: acoes-de-fiscalizacao-do-abastecimento
     categoria: abastecimento
+    titulo: Ações de Fiscalização do Abastecimento
+    unidade_anp: SFI
+    periodicidade: Mensal
+    formato: XLSX
+    fonte: Fiscalização ANP
+    schema:
+      encoding: utf-8
+      separator: null
+      key_columns: [Cnpj, DataAcao]
+    cruzamentos: [pmqc, cadastro-revendas-combustiveis]
 
   capacidade-armazenagem-terminais:
     page: capacidade-de-armazenagem-de-terminais
     categoria: abastecimento
+    titulo: Capacidade de Armazenagem de Terminais
+    unidade_anp: SIM
+    periodicidade: Semestral
+    formato: CSV
+    fonte: Cadastro de terminais ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Operador, UF, Tipo]
+    cruzamentos: [tancagem-abastecimento, movimentacao-terminais-aquaviarios]
 
   movimentacao-terminais-aquaviarios:
     page: movimentacao-de-terminais-aquaviarios
     categoria: abastecimento
+    titulo: Movimentação dos Terminais Aquaviários
+    unidade_anp: SIM
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Terminais aquaviários
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [terminal, periodo, produto]
+    cruzamentos: [capacidade-armazenagem-terminais, movimentacao-derivados]
 
   registro-lubrificantes:
     page: registro-de-oleos-e-graxas-lubrificantes
     categoria: abastecimento
+    titulo: Registro de Óleos e Graxas Lubrificantes
+    unidade_anp: SDL
+    periodicidade: Conforme demanda
+    formato: CSV
+    fonte: Registro de produtos
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [RegistroANP]
+    cruzamentos: [pml, movimentacao-derivados]
 
-  # --- Produção, refino e biocombustíveis ---
+  # ═══════════════════════════════════════════════════════════════════
+  # Produção, refino e biocombustíveis
+  # ═══════════════════════════════════════════════════════════════════
+
   processamento-petroleo-derivados:
     page: processamento-de-petroleo-e-producao-de-derivados
     categoria: producao
+    titulo: Processamento de petróleo e produção de derivados
+    unidade_anp: SDC
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Estatística de refino ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [ANO, MES, PRODUTO]
+    cruzamentos: [vendas-derivados, importacoes-exportacoes]
 
   producao-biocombustiveis:
     page: producao-de-biocombustiveis
     categoria: producao
+    titulo: Produção de biocombustíveis
+    unidade_anp: SDC
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Estatística ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [ANO, MES, PRODUTO, UF]
+    cruzamentos: [vendas-derivados, movimentacao-derivados, serie-historica-precos]
 
   producao-por-estado:
     page: producao-de-petroleo-e-gas-natural-por-estado-e-localizacao
     categoria: producao
+    titulo: Produção de petróleo e gás natural por estado e localização
+    unidade_anp: SDC / SDP
+    periodicidade: Mensal
+    formato: CSV
+    fonte: E&P / estatística ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [ANO, MES, UF]
+    cruzamentos: [importacoes-exportacoes]
 
   producao-por-poco:
     page: producao-de-petroleo-e-gas-natural-por-poco
     categoria: producao
+    titulo: Produção de Petróleo e Gás Natural por Poço
+    unidade_anp: SDP
+    periodicidade: Mensal
+    formato: ZIP → CSV
+    fonte: E&P
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Poço, Ano, Mês/Ano]
+    cruzamentos: [producao-por-estado]
 
   importacoes-exportacoes:
     page: importacoes-e-exportacoes
     categoria: producao
+    titulo: Importações e exportações
+    unidade_anp: SDC
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Estatística ANP / comércio exterior
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [ANO, MÊS, PRODUTO, OPERAÇÃO COMERCIAL]
+    cruzamentos: [vendas-derivados, processamento-petroleo-derivados]
 
-  # --- Exploração e produção (E&P) ---
+  # ═══════════════════════════════════════════════════════════════════
+  # Exploração e produção (E&P)
+  # ═══════════════════════════════════════════════════════════════════
+
   dados-ep:
     page: dados-de-e-p
     categoria: ep
+    titulo: Dados de E&P
+    unidade_anp: SDP
+    periodicidade: Sob demanda
+    formato: PDF / SHP
+    fonte: BDEP
+    schema:
+      encoding: null
+      separator: null
+      key_columns: []
+    cruzamentos: [fase-exploracao, fase-desenvolvimento-producao]
 
   fase-exploracao:
     page: fase-de-exploracao
     categoria: ep
+    titulo: Fase de Exploração
+    unidade_anp: SDP
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Contratos E&P
+    schema:
+      encoding: latin-1
+      separator: ";"
+      key_columns: [BLOCO]
+    cruzamentos: [rodadas-licitacoes, relacao-concessionarios]
 
   fase-desenvolvimento-producao:
     page: fase-de-desenvolvimento-e-producao
     categoria: ep
+    titulo: Fase de Desenvolvimento e Produção
+    unidade_anp: SDP
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Contratos E&P
+    schema:
+      encoding: misto (utf-8-sig / latin-1)
+      separator: ";"
+      key_columns: [Campo, Ano, Mês/Ano]
+    cruzamentos: [producao-por-estado, producao-por-poco]
 
   blocos-fase-exploratoria-encerrada:
     page: blocos-com-fase-exploratoria-encerrada
     categoria: ep
+    titulo: Blocos com Fase Exploratória Encerrada
+    unidade_anp: SDP
+    periodicidade: Sob demanda
+    formato: PDF
+    fonte: BDEP
+    schema:
+      encoding: null
+      separator: null
+      key_columns: []
+    cruzamentos: [fase-exploracao]
 
   incidentes-ep:
     page: incidentes-de-exploracao-e-producao-de-petroleo-e-gas-natural
     categoria: ep
+    titulo: Incidentes de E&P
+    unidade_anp: SSM
+    periodicidade: Sob demanda
+    formato: CSV
+    fonte: Segurança operacional
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Numero]
+    cruzamentos: [fase-desenvolvimento-producao]
 
   previsao-atividades-investimentos:
     page: previsao-de-atividades-e-investimentos-exploratorios
     categoria: ep
+    titulo: Previsão de Atividades e Investimentos Exploratórios
+    unidade_anp: SDP
+    periodicidade: Anual
+    formato: CSV
+    fonte: PDE / contratos
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Contrato, Ano]
+    cruzamentos: [fase-exploracao, rodadas-licitacoes]
 
   relacao-concessionarios:
     page: relacao-de-concessionarios
     categoria: ep
+    titulo: Relação de Concessionários
+    unidade_anp: SDP
+    periodicidade: Sob demanda
+    formato: CSV
+    fonte: Contratos E&P
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [CNPJ_Operador]
+    cruzamentos: [fase-exploracao, rodadas-licitacoes]
 
   rodadas-licitacoes:
     page: rodadas-de-licitacoes-de-petroleo-e-gas-natural
     categoria: ep
+    titulo: Rodadas de Licitações
+    unidade_anp: SDP
+    periodicidade: Por rodada
+    formato: CSV
+    fonte: Licitações ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Rodada, Bloco]
+    cruzamentos: [fase-exploracao, relacao-concessionarios]
 
-  # --- Gás natural ---
+  # ═══════════════════════════════════════════════════════════════════
+  # Gás natural
+  # ═══════════════════════════════════════════════════════════════════
+
   comercializacao-gas-natural:
     page: comercializacao-de-gas-natural
     categoria: gas
+    titulo: Comercialização de Gás Natural
+    unidade_anp: SIM
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Distribuidoras de gás
+    schema:
+      encoding: utf-16
+      separator: "\t"
+      key_columns: [Mês/Ano, Distribuidora, Segmento]
+    cruzamentos: [movimentacao-gas-gasodutos]
 
   movimentacao-gas-gasodutos:
     page: movimentacao-de-gas-natural-em-gasodutos-de-transporte
     categoria: gas
+    titulo: Movimentação em gasodutos de transporte
+    unidade_anp: SIM
+    periodicidade: Mensal
+    formato: CSV (wide/pivot — 1 col/dia)
+    fonte: Transportadores de gás
+    schema:
+      encoding: latin-1
+      separator: ";"
+      key_columns: [Gasoduto, Ponto, Mês]
+    cruzamentos: [comercializacao-gas-natural]
 
-  # --- Acervo técnico e geociências ---
+  # ═══════════════════════════════════════════════════════════════════
+  # Acervo técnico e geociências
+  # ═══════════════════════════════════════════════════════════════════
+
   acervo-dados-tecnicos:
     page: acervo-de-dados-tecnicos
     categoria: acervo
+    titulo: Acervo de Dados Técnicos
+    unidade_anp: SDP
+    periodicidade: Sob demanda
+    formato: CSV
+    fonte: BDEP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [CODIGO_POCO, BACIA]
+    cruzamentos: [bacias-sedimentares, amostras-rochas-fluidos]
 
   amostras-rochas-fluidos:
     page: amostras-de-rochas-e-fluidos
     categoria: acervo
+    titulo: Amostras de Rochas e Fluidos
+    unidade_anp: SDP
+    periodicidade: Sob demanda
+    formato: ZIP → CSV
+    fonte: BDEP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [POCO, TIPO_AMOSTRA]
+    cruzamentos: [acervo-dados-tecnicos]
 
   aquisicao-processamento-estudo-dados:
     page: aquisicao-processamento-e-estudo-de-dados
     categoria: acervo
+    titulo: Aquisição, Processamento e Estudo de Dados
+    unidade_anp: SDP
+    periodicidade: Mensal
+    formato: CSV (report-style)
+    fonte: BDEP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: []
+    cruzamentos: [bacias-sedimentares]
 
   bacias-sedimentares:
     page: dados-georreferenciados-das-bacias-sedimentares-brasileiras
     categoria: acervo
+    titulo: Bacias Sedimentares Brasileiras
+    unidade_anp: SDP
+    periodicidade: Sob demanda
+    formato: SHP (ZIP)
+    fonte: BDEP / geologia
+    schema:
+      encoding: null
+      separator: null
+      key_columns: [NOME_BACIA]
+    cruzamentos: [acervo-dados-tecnicos, fase-exploracao]
 
-  # --- Regulação, fiscalização e participações ---
+  # ═══════════════════════════════════════════════════════════════════
+  # Regulação, fiscalização e participações
+  # ═══════════════════════════════════════════════════════════════════
+
   aditamento-conteudo-local:
     page: aditamento-de-conteudo-local
     categoria: regulacao
+    titulo: Aditamento de conteúdo local
+    unidade_anp: SDP
+    periodicidade: Por evento
+    formato: CSV
+    fonte: Contratos E&P
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Contrato, Rodada]
+    cruzamentos: [fiscalizacao-conteudo-local, rodadas-licitacoes]
 
   fiscalizacao-conteudo-local:
     page: fiscalizacao-de-conteudo-local
     categoria: regulacao
+    titulo: Fiscalização de Conteúdo Local
+    unidade_anp: SDP
+    periodicidade: Por evento
+    formato: CSV
+    fonte: Fiscalização ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Contrato]
+    cruzamentos: [aditamento-conteudo-local]
 
   multas-2016:
     page: multas-aplicadas-com-vencimento-a-partir-de-2016
     categoria: regulacao
+    titulo: Multas aplicadas com vencimento a partir de 2016
+    unidade_anp: PF
+    periodicidade: Sob demanda
+    formato: CSV (report-style)
+    fonte: Procuradoria Federal / ANP
+    schema:
+      encoding: latin-1
+      separator: ";"
+      key_columns: [Numero_AI]
+    cruzamentos: [fiscalizacao-abastecimento]
 
   participacoes-governamentais:
     page: participacoes-governamentais
     categoria: regulacao
+    titulo: Participações Governamentais
+    unidade_anp: SPG
+    periodicidade: Mensal
+    formato: CSV
+    fonte: Royalties e participações especiais
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [contrato, competencia]
+    cruzamentos: [fase-desenvolvimento-producao, producao-por-estado]
 
   pesquisa-desenvolvimento-inovacao:
     page: pesquisa-desenvolvimento-e-inovacao
     categoria: regulacao
+    titulo: Pesquisa, Desenvolvimento e Inovação
+    unidade_anp: SPD
+    periodicidade: Anual
+    formato: CSV (parcialmente report-style)
+    fonte: Obrigações de P&D
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [Contrato]
+    cruzamentos: [participacoes-governamentais]
 
   prestadores-apoio-administrativo:
     page: prestadores-de-servico-de-apoio-administrativo
     categoria: regulacao
+    titulo: Prestadores de apoio administrativo
+    unidade_anp: SAF
+    periodicidade: Sob demanda
+    formato: CSV
+    fonte: Administrativo ANP
+    schema:
+      encoding: utf-8-sig
+      separator: ";"
+      key_columns: [CNPJ]
+    cruzamentos: []
 
-# --- Conjuntos indisponíveis (sem CSV/XLSX no portal) ---
+# ═══════════════════════════════════════════════════════════════════
+# Conjuntos indisponíveis (sem CSV/XLSX no portal)
+# ═══════════════════════════════════════════════════════════════════
 indisponiveis:
   anuario-estatistico:
     page: anuario-estatistico
     categoria: producao
+    titulo: Anuário Estatístico
     motivo: Sem CSV público — apenas PDF/painel
 
   autorizacoes-gas-natural:
     page: autorizacoes-de-gas-natural
     categoria: gas
+    titulo: Autorizações de gás natural
     motivo: Página removida do portal (404)
 
   resultado-poco:
     page: resultado-de-poco
     categoria: ep
+    titulo: Resultado de poço
     motivo: Apenas metadados (PDF) — CSV via BDEP
