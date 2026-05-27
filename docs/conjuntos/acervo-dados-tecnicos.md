@@ -77,3 +77,17 @@ Relevância indireta. O acervo é insumo para decisões exploratórias que, no l
 | `tabela-levantamentos-geoquimicos.csv` | 70 | CSV | utf-8-sig | `;` | 8 | Levantamentos geoquímicos |
 | `tabela-programas-geofisicos.csv` | 3.811 | CSV | utf-8-sig | `;` | 11 | Programas sísmicos/geofísicos |
 | `metadados-*.pdf` (7 arquivos) | — | PDF | — | — | — | Dicionários de dados por tipo de tabela |
+
+## Qualidade e chaves
+
+- **Chave lógica:** `POCO` + `CADASTRO` (ambos 100% únicos nos poços públicos)
+- **Granularidade:** 1 linha por poço tornado público no ano
+- **Encoding:** utf-8-sig, sep `;`, 58 colunas (schema amplo com muitos campos técnicos)
+- **Arquivos principais:**
+  - `pocos-publicos-20XX.csv` (4 anos) — 107–218 linhas por ano, 58 cols
+  - `tabela-dados-geoquimicos.csv` — 4.667 linhas, 38 cols
+  - `tabela-programas-geofisicos.csv` — 3.811 linhas, 11 cols
+  - `tabela-de-estudos.csv` — 45 linhas, 7 cols
+  - `tabela-levantamentos-geoquimicos.csv` — 70 linhas, 8 cols
+- **Nulls relevantes:** Muitas colunas técnicas 100% nulas (UNIDADE_ESTRATIGRAFICA, AGP, PERFIS_DIGITAIS) — campos opcionais do cadastro
+- **Cobertura:** Poços de 10+ operadores, múltiplas bacias

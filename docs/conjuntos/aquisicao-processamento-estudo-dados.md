@@ -82,3 +82,12 @@ Sem uso direto em análises de abastecimento. Relevante para entender o esforço
 | `2016-2019-autorizacoes-despachos.zip` | — | ZIP | — | — | Dados históricos 2016–2019 |
 | `2004-2015-autorizacoes-despachos.zip` | — | ZIP | — | — | Dados históricos 2004–2015 |
 | `metadados-*.pdf` (4 arquivos) | — | PDF | — | — | Dicionários de dados |
+
+## Qualidade e chaves
+
+- **Chave lógica:** Não estruturada — CSVs são relatórios mensais de avaliação (formato report-style)
+- **Granularidade:** 1 linha por item avaliado/autorizado no mês
+- **Encoding:** misto (latin-1 em 2020, utf-8-sig nos demais), sep `;`
+- **Schema:** 5 colunas (títulos tipo relatório — header = título do documento)
+- **Registros:** 11–19 linhas por mês (baixo volume — dados administrativos)
+- **Observações:** Formato não-padrão (header é título do relatório, não nomes de colunas). Requer pré-processamento para extrair dados tabulares. ZIPs contêm dados sísmicos complementares.
