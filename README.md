@@ -19,79 +19,79 @@ A ideia é servir de base para outros projetos — quem for construir análises,
 
 ## O que cada conjunto traz
 
-Síntese dos **42 conjuntos** da [página de dados abertos](docs/dados-abertos.md) — métrica principal, **variáveis-chave para ligação** (`Data`, `Cnpj`, geo, produto, volume) e conjuntos relacionados. Índice completo com chaves transversais e grafo de cruzamento: **[docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md)** (✓ = confirmado empiricamente · ~ = inferido do portal).
+Síntese dos **42 conjuntos** da [página de dados abertos](docs/dados-abertos.md). Cada linha traz uma descrição do que o dataset representa e as variáveis-chave para cruzamento. Índice completo: **[docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md)** (✓ = confirmado empiricamente · ~ = inferido do portal).
 
 ### Abastecimento, distribuição e mercado downstream
 
-| # | Slug | Métrica | Variáveis-chave | Liga com |
-|---|------|---------|-----------------|----------|
-| 41 | [`tancagem-abastecimento`](docs/conjuntos/tancagem-abastecimento.md) | Capacidade m³ | `Data`, `Cnpj`, `CodInstalacao`, `Uf`, `Municipio`, `GrupoDeProdutos`, `TancagemM3` ✓ | movimentação, cadastros, preços |
-| 21 | [`movimentacao-derivados`](docs/conjuntos/movimentacao-derivados.md) | Volume mil m³ | `Ano`, `Mês`, `Agente Regulado`, `Código do Produto`, UF origem/destino ✓ | tancagem (nome), vendas, cadastros |
-| 12 | [`cadastro-revendas-combustiveis`](docs/conjuntos/cadastro-revendas-combustiveis.md) | Cadastro postos | `Cnpj`, `Uf`, `Municipio`, `Bandeira`, `Situacao` ~ | tancagem, preços, movimentação |
-| 11 | [`cadastro-revendas-glp`](docs/conjuntos/cadastro-revendas-glp.md) | Cadastro GLP | `Cnpj`, `Uf`, `Municipio`, modalidade ~ | movimentação GLP, tancagem |
-| 27 | [`pontos-abastecimento`](docs/conjuntos/pontos-abastecimento.md) | Instalações | `CodInstalacao`, `Cnpj`, `Uf`, `Municipio` ~ | cadastros, fiscalização |
-| 15 | [`distribuidores-combustiveis-liquidos`](docs/conjuntos/distribuidores-combustiveis-liquidos.md) | Atacado | `Cnpj`, `Uf`, contratos ~ | movimentação, terminais |
-| 28 | [`pmqc`](docs/conjuntos/pmqc.md) | Qualidade | `Periodo`, `Produto`, `Uf`, conformidade ~ | fiscalização, cadastros |
-| 29 | [`pml`](docs/conjuntos/pml.md) | Lubrificantes | produto, parâmetros, região ~ | registro lubrificantes, movimentação |
-| 40 | [`serie-historica-precos`](docs/conjuntos/serie-historica-precos.md) | Preço R$/L | `Produto`, geo, semana/mês, `PrecoMedio` ~ | vendas, cadastros, tancagem |
-| 42 | [`vendas-derivados`](docs/conjuntos/vendas-derivados.md) | Volume vendido | `Periodo`, `Produto`, `Uf`, `Municipio`, `Segmento` ~ | movimentação, importações |
-| 2 | [`fiscalizacao-abastecimento`](docs/conjuntos/fiscalizacao-abastecimento.md) | Fiscalização | `DataAcao`, `Cnpj`, `Uf`, `Segmento`, resultado ~ | PMQC, cadastros |
-| 9 | [`capacidade-armazenagem-terminais`](docs/conjuntos/capacidade-armazenagem-terminais.md) | Capacidade terminal | `Terminal`, `Cnpj`, `Uf`, m³ ~ | tancagem, mov. aquaviária |
-| 22 | [`movimentacao-terminais-aquaviarios`](docs/conjuntos/movimentacao-terminais-aquaviarios.md) | Volume terminal | `Terminal`, `Periodo`, `Produto` ~ | capacidade terminais |
-| 37 | [`registro-lubrificantes`](docs/conjuntos/registro-lubrificantes.md) | Catálogo produtos | registro ANP, classe, fabricante ~ | PML, movimentação |
+| # | Slug | Descrição | Variáveis-chave | Liga com |
+|---|------|-----------|-----------------|----------|
+| 41 | [`tancagem-abastecimento`](docs/conjuntos/tancagem-abastecimento.md) | **Capacidade de armazenamento autorizada** (m³) por instalação registrada no SIMP. Uma linha por instalação × unidade (`Tag`) × grupo de produto, publicada mensalmente. Não é estoque físico. | `Data`, `Cnpj`, `CodInstalacao`, `Uf`, `Municipio`, `GrupoDeProdutos`, `TancagemM3` ✓ | movimentação, cadastros, preços |
+| 21 | [`movimentacao-derivados`](docs/conjuntos/movimentacao-derivados.md) | **Fluxo de derivados e biocombustíveis entre agentes** (distribuidores, TRR, terminais), em mil m³, com UF de origem e destino. Permite traçar rotas de distribuição e volumes por produto. | `Ano`, `Mês`, `Agente Regulado`, `Código do Produto`, UF origem/destino ✓ | tancagem, vendas, cadastros |
+| 12 | [`cadastro-revendas-combustiveis`](docs/conjuntos/cadastro-revendas-combustiveis.md) | **Registro de postos e revendedores varejistas** de combustíveis autorizados pela ANP — CNPJ, endereço, bandeira, segmento e situação cadastral. Base de referência para cruzar fiscalização e preços. | `Cnpj`, `Uf`, `Municipio`, `Bandeira`, `Situacao` ~ | tancagem, preços, movimentação |
+| 11 | [`cadastro-revendas-glp`](docs/conjuntos/cadastro-revendas-glp.md) | **Cadastro de revendas de GLP** (botijão/granel), com CNPJ, endereço, modalidade de revenda e situação. Versão específica para o mercado de gás liquefeito. | `Cnpj`, `Uf`, `Municipio`, modalidade ~ | movimentação GLP, tancagem |
+| 27 | [`pontos-abastecimento`](docs/conjuntos/pontos-abastecimento.md) | **Instalações autorizadas** a abastecer aeronaves, embarcações e veículos especiais — aeroportos, portos, frotas. Diferente do cadastro de postos varejistas comuns. | `CodInstalacao`, `Cnpj`, `Uf`, `Municipio` ~ | cadastros, fiscalização |
+| 15 | [`distribuidores-combustiveis-liquidos`](docs/conjuntos/distribuidores-combustiveis-liquidos.md) | **Lista de distribuidores atacadistas** autorizados (combustíveis líquidos), com CNPJ, UF de atuação e status do contrato. Nível atacado — acima dos postos. | `Cnpj`, `Uf`, contratos ~ | movimentação, terminais |
+| 28 | [`pmqc`](docs/conjuntos/pmqc.md) | **Resultados do Programa de Monitoramento da Qualidade dos Combustíveis** — amostras colhidas nos postos, parâmetros analisados e conformidade (aprovado/reprovado). | `Periodo`, `Produto`, `Uf`, conformidade ~ | fiscalização, cadastros |
+| 29 | [`pml`](docs/conjuntos/pml.md) | **Resultados do Programa de Monitoramento de Lubrificantes** — análises laboratoriais de óleos e graxas no mercado, por produto, parâmetro e região. | produto, parâmetros, região ~ | registro lubrificantes, movimentação |
+| 40 | [`serie-historica-precos`](docs/conjuntos/serie-historica-precos.md) | **Preços médios de venda ao consumidor** (R$/litro ou R$/kg) de combustíveis nos postos, levantados semanalmente pela ANP desde 2001. Inclui preço de compra do revendedor e margem. | `Produto`, `Uf`, `Municipio`, semana, `PrecoMedio` ✓ | vendas, cadastros, tancagem |
+| 42 | [`vendas-derivados`](docs/conjuntos/vendas-derivados.md) | **Volume de combustíveis vendidos** por distribuidores ao mercado final (m³), por produto, UF, município e segmento de consumidor (automotivo, industrial, etc.). | `Periodo`, `Produto`, `Uf`, `Municipio`, `Segmento` ~ | movimentação, importações |
+| 2 | [`fiscalizacao-abastecimento`](docs/conjuntos/fiscalizacao-abastecimento.md) | **Registro de ações de fiscalização** do setor de abastecimento (postos, distribuidores) — data, agente fiscalizado, UF, resultado e tipo de infração detectada. | `DataAcao`, `Cnpj`, `Uf`, `Segmento`, resultado ~ | PMQC, cadastros |
+| 9 | [`capacidade-armazenagem-terminais`](docs/conjuntos/capacidade-armazenagem-terminais.md) | **Capacidade de armazenamento dos terminais primários** (portuários e dutoviários), em m³, por produto e tipo de tanque. Complementa a tancagem do SIMP (inclui terminais de petróleo). | `Terminal`, `Cnpj`, `Uf`, m³ ~ | tancagem, mov. aquaviária |
+| 22 | [`movimentacao-terminais-aquaviarios`](docs/conjuntos/movimentacao-terminais-aquaviarios.md) | **Volumes movimentados nos terminais aquaviários** (embarque/desembarque de petróleo e derivados), por terminal, produto e período. Foco no modal marítimo/fluvial. | `Terminal`, `Periodo`, `Produto` ~ | capacidade terminais |
+| 37 | [`registro-lubrificantes`](docs/conjuntos/registro-lubrificantes.md) | **Catálogo dos lubrificantes registrados** na ANP — nome comercial, fabricante/importador, classe SAE, tipo e registro ANP. Base de referência para o PML. | registro ANP, classe, fabricante ~ | PML, movimentação |
 
 ### Produção, refino, comércio exterior e estatística consolidada
 
-| # | Slug | Métrica | Variáveis-chave | Liga com |
-|---|------|---------|-----------------|----------|
-| 32 | [`processamento-petroleo-derivados`](docs/conjuntos/processamento-petroleo-derivados.md) | Refino m³ | refinaria, `Produto`, `Periodo` ~ | vendas, importações |
-| 33 | [`producao-biocombustiveis`](docs/conjuntos/producao-biocombustiveis.md) | Produção bio | `Produto`, `Uf`, volume, mês ~ | vendas, preços etanol |
-| 34 | [`producao-por-estado`](docs/conjuntos/producao-por-estado.md) | E&P por UF | `Uf`, terra/mar, petróleo/gás, mês ~ | anuário, importações |
-| 35 | [`producao-por-poco`](docs/conjuntos/producao-por-poco.md) | E&P por poço | `CodigoPoco`, `Campo`, volumes, mês ~ | produção por estado |
-| 19 | [`importacoes-exportacoes`](docs/conjuntos/importacoes-exportacoes.md) | Imp/exp m³ | `Produto`, `Pais`, mês ~ | vendas, refino |
-| 5 | [`anuario-estatistico`](docs/conjuntos/anuario-estatistico.md) | Multi-tabela | `Ano`, `Produto`, `Volume`, `Uf` (varia) ~ | benchmark de séries mensais |
+| # | Slug | Descrição | Variáveis-chave | Liga com |
+|---|------|-----------|-----------------|----------|
+| 32 | [`processamento-petroleo-derivados`](docs/conjuntos/processamento-petroleo-derivados.md) | **Volumes processados e produzidos nas refinarias** (petróleo → derivados), por refinaria, produto e período. Permite ver eficiência de refino e mix de derivados por planta. | refinaria, `Produto`, `Periodo` ~ | vendas, importações |
+| 33 | [`producao-biocombustiveis`](docs/conjuntos/producao-biocombustiveis.md) | **Produção mensal de biocombustíveis** (etanol, biodiesel, biogás, etc.) por usina, UF e produto. Essencial para análise de mandatos de mistura e sazonalidade do etanol. | `Produto`, `Uf`, volume, mês ~ | vendas, preços etanol |
+| 34 | [`producao-por-estado`](docs/conjuntos/producao-por-estado.md) | **Produção mensal de petróleo e gás natural agregada por UF**, com abertura por localização (terra/mar) e tipo de fluido. Série desde 2000. | `Uf`, terra/mar, petróleo/gás, mês ~ | anuário, importações |
+| 35 | [`producao-por-poco`](docs/conjuntos/producao-por-poco.md) | **Produção mensal de petróleo, gás e água por poço individual** — o menor nível de granularidade disponível. Permite rastrear declínio de poços e campos. | `CodigoPoco`, `Campo`, volumes, mês ~ | produção por estado |
+| 19 | [`importacoes-exportacoes`](docs/conjuntos/importacoes-exportacoes.md) | **Fluxo de comércio exterior** de petróleo, derivados e gás — volumes importados e exportados por produto, país de origem/destino e mês. | `Produto`, `Pais`, mês ~ | vendas, refino |
+| 5 | [`anuario-estatistico`](docs/conjuntos/anuario-estatistico.md) | **Anuário Estatístico da ANP** — coletânea anual com dezenas de tabelas sobre toda a cadeia (E&P, refino, distribuição, preços). Referência para benchmark de séries mensais. | `Ano`, `Produto`, `Volume`, `Uf` (varia) ~ | benchmark de séries mensais |
 
 ### Exploração e produção (E&P)
 
-| # | Slug | Métrica | Variáveis-chave | Liga com |
-|---|------|---------|-----------------|----------|
-| 13 | `dados-ep` | Agregados E&P | `Bloco`, operador, fase ~ | fases, produção |
-| 16 | `fase-exploracao` | Exploração | `Bloco`, `Bacia`, concessionário ~ | rodadas |
-| 17 | `fase-desenvolvimento-producao` | D&P | `Campo`, `Bloco`, operador ~ | produção por poço |
-| 8 | `blocos-fase-exploratoria-encerrada` | Blocos encerrados | `Bloco`, data encerramento ~ | rodadas |
-| 20 | `incidentes-ep` | Incidentes | `Data`, campo, tipo, feridos ~ | produção |
-| 38 | `resultado-poco` | Resultado poço | `CodigoPoco`, `Campo`, `Bacia` ~ | produção por poço, acervo |
-| 31 | `previsao-atividades-investimentos` | Investimentos | `Bloco`, investimento, ano ~ | rodadas |
-| 36 | `relacao-concessionarios` | Concessionários | `Bloco`, `Cnpj`, contrato ~ | rodadas, produção |
-| 39 | `rodadas-licitacoes` | Licitações | `Rodada`, `Bloco`, vencedor ~ | concessionários |
+| # | Slug | Descrição | Variáveis-chave | Liga com |
+|---|------|-----------|-----------------|----------|
+| 13 | [`dados-ep`](docs/conjuntos/dados-ep.md) | **Painel consolidado de E&P** — agregados por bloco, campo e operador (fase exploratória, produção, devolução). Porta de entrada para o universo de contratos de E&P. | `Bloco`, operador, fase ~ | fases, produção |
+| 16 | [`fase-exploracao`](docs/conjuntos/fase-exploracao.md) | **Status dos blocos em fase exploratória** — quem é o concessionário, qual a bacia, prazo de exploração e cumprimento do programa mínimo de trabalho. | `Bloco`, `Bacia`, concessionário ~ | rodadas, produção |
+| 17 | [`fase-desenvolvimento-producao`](docs/conjuntos/fase-desenvolvimento-producao.md) | **Campos em fase de desenvolvimento e produção** — campos declarados comerciais, operadores, campos unitizados e status de aprovação dos planos de desenvolvimento. | `Campo`, `Bloco`, operador ~ | produção por poço |
+| 8 | [`blocos-fase-exploratoria-encerrada`](docs/conjuntos/blocos-fase-exploratoria-encerrada.md) | **Histórico de blocos que tiveram a fase exploratória encerrada** (devolvidos ou convertidos) — data de encerramento, bacia e motivo. Útil para análise de portfólio histórico. | `Bloco`, data encerramento ~ | rodadas |
+| 20 | [`incidentes-ep`](docs/conjuntos/incidentes-ep.md) | **Registro de incidentes de segurança operacional em E&P** (vazamentos, fogo, lesões) — data, campo, tipo de incidente, severidade e consequências. | `Data`, campo, tipo, feridos ~ | produção |
+| 38 | [`resultado-poco`](docs/conjuntos/resultado-poco.md) | **Resultado técnico de cada poço perfurado** — se encontrou petróleo/gás, se foi produtor, seco ou abandonado. Complementa a produção por poço com o histórico de perfuração. | `CodigoPoco`, `Campo`, `Bacia` ~ | produção por poço, acervo |
+| 31 | [`previsao-atividades-investimentos`](docs/conjuntos/previsao-atividades-investimentos.md) | **Previsão declarada de atividades exploratórias e investimentos** pelos concessionários — perfurações previstas, levantamentos sísmicos e valores por bloco e ano. | `Bloco`, investimento, ano ~ | rodadas |
+| 36 | [`relacao-concessionarios`](docs/conjuntos/relacao-concessionarios.md) | **Cadastro dos concessionários** de E&P registrados na ANP — CNPJ, razão social, participações em blocos e campos e status dos contratos. | `Bloco`, `Cnpj`, contrato ~ | rodadas, produção |
+| 39 | [`rodadas-licitacoes`](docs/conjuntos/rodadas-licitacoes.md) | **Resultados das rodadas de licitação de blocos** exploratórios — bloco ofertado, empresa vencedora, bônus de assinatura, conteúdo local proposto e data de assinatura. | `Rodada`, `Bloco`, vencedor ~ | concessionários |
 
 ### Gás natural
 
-| # | Slug | Métrica | Variáveis-chave | Liga com |
-|---|------|---------|-----------------|----------|
-| 7 | `autorizacoes-gas-natural` | Autorizações | `Cnpj`, atividade, `Uf` ~ | comercialização, gasodutos |
-| 10 | `comercializacao-gas-natural` | Vendas gás | vendedor/comprador, volume, mês ~ | gasodutos |
-| 23 | `movimentacao-gas-gasodutos` | Transporte m³ | `Gasoduto`, pontos, mês ~ | comercialização |
+| # | Slug | Descrição | Variáveis-chave | Liga com |
+|---|------|-----------|-----------------|----------|
+| 7 | [`autorizacoes-gas-natural`](docs/conjuntos/autorizacoes-gas-natural.md) | **Autorizações concedidas pela ANP** para atividades com gás natural (importação, exportação, produção independente, comercialização) — CNPJ, atividade e UF. | `Cnpj`, atividade, `Uf` ~ | comercialização, gasodutos |
+| 10 | [`comercializacao-gas-natural`](docs/conjuntos/comercializacao-gas-natural.md) | **Contratos e volumes de compra e venda de gás natural** entre agentes — vendedor, comprador, volume contratado e realizado, por mês. Retrata o mercado atacadista de gás. | vendedor/comprador, volume, mês ~ | gasodutos |
+| 23 | [`movimentacao-gas-gasodutos`](docs/conjuntos/movimentacao-gas-gasodutos.md) | **Volumes transportados nos gasodutos de transporte**, por ponto de entrada/saída e mês. Permite mapear fluxos físicos na malha de gás canalizado. | `Gasoduto`, pontos, mês ~ | comercialização |
 
 ### Acervo técnico e geociências
 
-| # | Slug | Métrica | Variáveis-chave | Liga com |
-|---|------|---------|-----------------|----------|
-| 1 | `acervo-dados-tecnicos` | Poços, sísmica | `CodigoPoco`, tipo, coords ~ | resultado poço, bacias |
-| 4 | `amostras-rochas-fluidos` | Amostras | `CodigoPoco`, código amostra ~ | acervo |
-| 6 | `aquisicao-processamento-estudo-dados` | Surveys | `Bacia`, survey, área ~ | bacias, acervo |
-| 14 | `bacias-sedimentares` | Geometria | `Bacia`, polígonos ~ | blocos, E&P |
+| # | Slug | Descrição | Variáveis-chave | Liga com |
+|---|------|-----------|-----------------|----------|
+| 1 | [`acervo-dados-tecnicos`](docs/conjuntos/acervo-dados-tecnicos.md) | **Catálogo do acervo técnico da ANP** — inventário de poços perfurados, levantamentos sísmicos e outros dados geológicos custodiados. Base para solicitar acesso a dados de subsuperfície. | `CodigoPoco`, tipo, coords ~ | resultado poço, bacias |
+| 4 | [`amostras-rochas-fluidos`](docs/conjuntos/amostras-rochas-fluidos.md) | **Registro de amostras de rochas e fluidos** coletadas em poços — tipo de amostra, profundidade, status de custódia e localização no acervo físico da ANP. | `CodigoPoco`, código amostra ~ | acervo |
+| 6 | [`aquisicao-processamento-estudo-dados`](docs/conjuntos/aquisicao-processamento-estudo-dados.md) | **Levantamentos sísmicos e estudos geológicos** autorizados — bacia, operador, área, tipo de aquisição (2D/3D/PSTM) e status. | `Bacia`, survey, área ~ | bacias, acervo |
+| 14 | [`bacias-sedimentares`](docs/conjuntos/bacias-sedimentares.md) | **Geometria georreferenciada das bacias sedimentares brasileiras** (polígonos SHP/CSV) — base cartográfica para qualquer análise espacial de E&P. | `Bacia`, polígonos ~ | blocos, E&P |
 
 ### Regulação, fiscalização e participações
 
-| # | Slug | Métrica | Variáveis-chave | Liga com |
-|---|------|---------|-----------------|----------|
-| 3 | `aditamento-conteudo-local` | Aditamentos | contrato, `Bloco`, % local ~ | fiscalização conteúdo local |
-| 18 | `fiscalizacao-conteudo-local` | Conteúdo local | `Bloco`, meta/realizado ~ | aditamentos, rodadas |
-| 24 | `multas-2016` | Multas R$ | processo, `Cnpj`, valor ~ | fiscalização |
-| 25 | `participacoes-governamentais` | Participação | `Campo`, preço referência ~ | produção E&P |
-| 26 | `pesquisa-desenvolvimento-inovacao` | PD&I | `Cnpj`, projeto, investimento ~ | — |
-| 30 | `prestadores-apoio-administrativo` | Prestadores | `Cnpj`, tipo serviço ~ | — |
+| # | Slug | Descrição | Variáveis-chave | Liga com |
+|---|------|-----------|-----------------|----------|
+| 3 | [`aditamento-conteudo-local`](docs/conjuntos/aditamento-conteudo-local.md) | **Aditamentos aos contratos de conteúdo local** em E&P — alterações nos compromissos de conteúdo local negociados entre concessionários e ANP (dispensa, repactuação, etc.). | contrato, `Bloco`, % local ~ | fiscalização conteúdo local |
+| 18 | [`fiscalizacao-conteudo-local`](docs/conjuntos/fiscalizacao-conteudo-local.md) | **Resultado da fiscalização de conteúdo local** nos contratos de E&P — meta comprometida vs. realizado por fase (exploração, desenvolvimento, produção) e bloco. | `Bloco`, meta/realizado ~ | aditamentos, rodadas |
+| 24 | [`multas-2016`](docs/conjuntos/multas-2016.md) | **Multas aplicadas pela ANP** com vencimento a partir de 2016 — processo, CNPJ autuado, valor original, status de pagamento e segmento infrator. | processo, `Cnpj`, valor ~ | fiscalização |
+| 25 | [`participacoes-governamentais`](docs/conjuntos/participacoes-governamentais.md) | **Participações governamentais** pagas pelos concessionários (royalties, participação especial, bônus de retenção) — por campo, competência e preço de referência utilizado. | `Campo`, preço referência ~ | produção E&P |
+| 26 | [`pesquisa-desenvolvimento-inovacao`](docs/conjuntos/pesquisa-desenvolvimento-inovacao.md) | **Investimentos em P&D e inovação** realizados pelos concessionários como obrigação contratual — CNPJ, projeto, instituição receptora e valor por ano. | `Cnpj`, projeto, investimento ~ | — |
+| 30 | [`prestadores-apoio-administrativo`](docs/conjuntos/prestadores-apoio-administrativo.md) | **Empresas prestadoras de serviços de apoio administrativo** autorizadas pela ANP para atuar em E&P — CNPJ, tipo de serviço e status da autorização. | `Cnpj`, tipo serviço ~ | — |
 
 Catálogo completo: [docs/dados-abertos.md](docs/dados-abertos.md) · variáveis e chaves: [docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md) · progresso: [TODO.md](TODO.md) · inventário (240 bases): [docs/inventario-dados.md](docs/inventario-dados.md).
 
