@@ -93,7 +93,7 @@ Síntese dos **42 conjuntos** da [página de dados abertos](docs/dados-abertos.m
 | 26 | [`pesquisa-desenvolvimento-inovacao`](docs/conjuntos/pesquisa-desenvolvimento-inovacao.md) | **Investimentos em P&D e inovação** realizados pelos concessionários como obrigação contratual — CNPJ, projeto, instituição receptora e valor por ano. | `Cnpj`, projeto, investimento ~ | — |
 | 30 | [`prestadores-apoio-administrativo`](docs/conjuntos/prestadores-apoio-administrativo.md) | **Empresas prestadoras de serviços de apoio administrativo** autorizadas pela ANP para atuar em E&P — CNPJ, tipo de serviço e status da autorização. | `Cnpj`, tipo serviço ~ | — |
 
-Catálogo completo: [docs/dados-abertos.md](docs/dados-abertos.md) · variáveis e chaves: [docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md) · progresso: [TODO.md](TODO.md) · inventário (236 bases): [docs/inventario-dados.md](docs/inventario-dados.md).
+Catálogo completo: [docs/dados-abertos.md](docs/dados-abertos.md) · variáveis e chaves: [docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md) · progresso: [TODO.md](TODO.md) · inventário (236 bases): [docs/inventario-dados.md](docs/inventario-dados.md) · [glossário ANP](https://www.gov.br/anp/pt-br/acesso-a-informacao/glossario).
 
 ## O que cada repositório guarda
 
@@ -227,7 +227,7 @@ Sem um arquivo `LICENSE`, o padrão legal é “todos os direitos reservados”.
 
 ## Documentação
 
-O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)**. A análise do **Inventário de Dados** (236 bases institucionais) está em **[docs/inventario-dados.md](docs/inventario-dados.md)**.
+O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)**. A análise do **Inventário de Dados** (236 bases institucionais) está em **[docs/inventario-dados.md](docs/inventario-dados.md)**. O **[glossário oficial da ANP](https://www.gov.br/anp/pt-br/acesso-a-informacao/glossario)** define termos usados nos conjuntos e na regulação.
 
 ## Como usar
 

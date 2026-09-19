@@ -2,7 +2,7 @@
 
 | Arquivo | Conteúdo |
 |---------|----------|
-| [dados-abertos.md](dados-abertos.md) | Catálogo dos 42 conjuntos e documentos da página oficial da ANP |
+| [dados-abertos.md](dados-abertos.md) | Catálogo dos 42 conjuntos, PDA, inventário e [glossário ANP](https://www.gov.br/anp/pt-br/acesso-a-informacao/glossario) |
 | [variaveis-conjuntos.md](variaveis-conjuntos.md) | Variáveis-chave, chaves de ligação e cruzamentos entre os 42 conjuntos |
 | [inventario-dados.md](inventario-dados.md) | Inventário institucional (236 bases) — contempla os 42 conjuntos do portal e outros canais de acesso |
 | [anomalias-conhecidas.md](anomalias-conhecidas.md) | Problemas técnicos encontrados nos arquivos (encoding, schemas, nulls, formatos) |

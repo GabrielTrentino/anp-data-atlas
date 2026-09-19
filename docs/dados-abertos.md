@@ -46,6 +46,17 @@ A [página de Dados abertos](https://www.gov.br/anp/pt-br/centrais-de-conteudo/d
 - Portaria nº 8.542/2016
 - Portaria nº 8.927/2017
 
+## Glossário
+
+| Recurso | URL | Uso no atlas |
+|---------|-----|--------------|
+| **Glossário institucional ANP** | [acesso-a-informacao/glossario](https://www.gov.br/anp/pt-br/acesso-a-informacao/glossario) | Definições oficiais (A–Z) de termos da indústria e da regulação |
+| Referências do glossário | [glossario/glossario](https://www.gov.br/anp/pt-br/acesso-a-informacao/glossario/glossario) | Fontes das definições |
+
+Exemplos úteis para combustíveis/abastecimento: *Tanque de Armazenamento*, *Terminal aquaviário*, *Transportador-Revendedor-Retalhista (TRR)*. Não há entrada literal “Tancagem” — a capacidade autorizada do SIMP está no conjunto [tancagem-abastecimento](conjuntos/tancagem-abastecimento.md).
+
+Algumas páginas de conjunto (ex.: [distribuidores](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos-distribuidores-de-combustiveis-liquidos), [autorizações de gás](conjuntos/autorizacoes-gas-natural.md)) trazem ainda um **glossário local** na própria página — complementar ao glossário institucional.
+
 ## Conjuntos disponíveis em formato aberto
 
 Cada linha corresponde a um conjunto listado na página oficial. O **slug** sugere pasta em `data/raw/{slug}/` e arquivo de exploração em `docs/conjuntos/{slug}.md` (a criar conforme for analisando).
