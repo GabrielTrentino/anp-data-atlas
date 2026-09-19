@@ -3,13 +3,13 @@
 Catálogo da página oficial de dados abertos da ANP. Serve como índice para explorações futuras em `docs/` e downloads locais em `data/raw/`.
 
 **Fonte:** [Dados abertos — ANP](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos)  
-**Última atualização no portal:** 20/05/2026 (página publicada em 26/10/2020)
+**Última atualização no portal:** 16/07/2026 (página publicada em 26/10/2020)
 
 A ANP disponibiliza dados em formato aberto para transparência — visualização, estudo e reutilização por cidadãos, academia, imprensa e agentes econômicos. Os conjuntos também podem ser consultados no [Portal Brasileiro de Dados Abertos](https://dados.gov.br/).
 
 ### Inventário vs. estes 42 conjuntos
 
-A [planilha Inventário de Dados](inventario-dados.md) (**240 bases**) é o **catálogo institucional** que **contempla** o que esta página publica: cada conjunto abaixo costuma corresponder a **várias linhas** do inventário (sub-tabelas, séries por produto/ano). O inventário é mais amplo — inclui bases abertas em **outros canais** (dados.gov.br, CGU, painéis no site ANP) que ainda não têm página entre estes 42 e serão explorados depois. Detalhes em [Relação com o portal](inventario-dados.md#relação-com-o-portal-de-dados-abertos).
+A [planilha Inventário de Dados](inventario-dados.md) (**240 bases** na extração 2026-05-24; ver extração atual no inventário) é o **catálogo institucional** que **contempla** o que esta página publica: cada conjunto abaixo costuma corresponder a **várias linhas** do inventário (sub-tabelas, séries por produto/ano). O inventário é mais amplo — inclui bases abertas em **outros canais** (dados.gov.br, CGU, painéis no site ANP) que ainda não têm página entre estes 42 e serão explorados depois. Detalhes em [Relação com o portal](inventario-dados.md#relação-com-o-portal-de-dados-abertos).
 
 ## Página e documentos relacionados
 
@@ -18,9 +18,16 @@ A [página de Dados abertos](https://www.gov.br/anp/pt-br/centrais-de-conteudo/d
 | Documento | Arquivo | Observação |
 |-----------|---------|------------|
 | Página de Dados abertos | [dados-abertos](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/dados-abertos) | Índice dos 42 conjuntos |
-| Plano de Dados Abertos da ANP 2024-2026 | [pda-2024-2026.pdf](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/pda-2024-2026.pdf) | Política e metas de abertura |
-| Inventário de Dados | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) | Atualizado em 5/12/2025 · [análise local](inventario-dados.md) · [extração 2026-05-24](../data/catalogo-anp/inventario-dados/2026-05-24/) |
+| **Plano de Dados Abertos da ANP 2026-2028** (vigente) | [pda-2026-2028.pdf](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/pda-2026-2028.pdf) | Política e metas de abertura atuais; bases a publicar no PDA constam no inventário |
+| Inventário de Dados | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) | Atualizado em 16/7/2026 no portal · [análise local](inventario-dados.md) · [extração 2026-05-24](../data/catalogo-anp/inventario-dados/2026-05-24/) |
 | Execução Orçamentária e Contratos Administrativos | [nota-explicativa-exclusao-bases-dados-abertos-anp.docx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/nota-explicativa-exclusao-bases-dados-abertos-anp.docx) | Nota sobre exclusão de bases dos dados abertos |
+
+### Histórico — Plano de Dados Abertos
+
+| Período | Arquivo | Status |
+|---------|---------|--------|
+| 2026-2028 | [pda-2026-2028.pdf](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/pda-2026-2028.pdf) | **Vigente** (publicado no portal em 2026) |
+| 2024-2026 | [pda-2024-2026.pdf](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/pda-2024-2026.pdf) | Histórico — substituído pelo PDA 2026-2028 |
 
 ### Relatórios Anuais de Dados Abertos
 
