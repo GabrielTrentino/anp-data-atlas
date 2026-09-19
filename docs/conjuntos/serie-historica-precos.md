@@ -1,4 +1,4 @@
-# Série Histórica de Preços de Combustíveis
+# Série Histórica de Preços de Combustíveis e de GLP
 
 | Campo | Valor |
 |-------|-------|
@@ -10,7 +10,7 @@
 | **Formato** | CSV (+ ZIP semestral; XLSX em alguns recortes 2026) |
 | **Fonte operacional** | Levantamento de Preços de Combustíveis (LPC) |
 | **Pasta local** | `data/raw/serie-historica-precos/` |
-| **Inventário ANP** | Série Histórica Preços — Combustíveis automotivos / GLP |
+| **Inventário ANP** | Série Histórica de Preços de Combustíveis e de GLP |
 | **Prioridade fuel-analytics** | Sim — [TODO.md](../../TODO.md) |
 | **Estudo ativo** | [anp-fuel-analytics — serie-historica-precos](https://github.com/GabrielTrentino/anp-fuel-analytics/tree/main/estudos/serie-historica-precos/) |
 
@@ -27,6 +27,8 @@
 | **`dsas/glp/`** | Idem — GLP P13 | Histórico semestral GLP | `glp-2024-02.csv` |
 
 > **Nota:** DSAN, DSAS e QUS são **nomes de diretório** no portal (não constam como glossário no metadados PDF). “Agrupados” = reúne as **coletas semanais** do período, não necessariamente médias pré-calculadas por posto.
+>
+> **Nome no portal (2026):** a vitrine e o inventário usam **“Série Histórica de Preços de Combustíveis e de GLP”**. O slug do atlas permanece `serie-historica-precos`; a pasta `shpc/` no servidor não mudou.
 
 **Famílias de produto (dsan):** `precos-gasolina-etanol`, `precos-diesel-gnv`, `precos-glp` (12 arquivos por ano).
 

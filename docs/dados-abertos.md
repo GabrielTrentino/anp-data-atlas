@@ -91,7 +91,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 | 37 | Registro de Óleos e Graxas Lubrificantes | `registro-lubrificantes` | [doc](conjuntos/registro-lubrificantes.md) |
 | 38 | Resultado de poço | `resultado-poco` | [doc](conjuntos/resultado-poco.md) |
 | 39 | Rodadas de Licitações de Petróleo e Gás Natural | `rodadas-licitacoes` | [doc](conjuntos/rodadas-licitacoes.md) |
-| 40 | Série Histórica de Preços de Combustíveis | `serie-historica-precos` | [doc](conjuntos/serie-historica-precos.md) |
+| 40 | Série Histórica de Preços de Combustíveis e de GLP | `serie-historica-precos` | [doc](conjuntos/serie-historica-precos.md) |
 | 41 | Tancagem do Abastecimento Nacional de Combustíveis | `tancagem-abastecimento` | [doc](conjuntos/tancagem-abastecimento.md) |
 | 42 | Vendas de derivados de petróleo e biocombustíveis | `vendas-derivados` | [doc](conjuntos/vendas-derivados.md) |
 
@@ -99,7 +99,7 @@ Cada linha corresponde a um conjunto listado na página oficial. O **slug** suge
 
 - **Anuário Estatístico** — consolida desempenho da indústria de petróleo, gás e biocombustíveis e do abastecimento nos últimos dez anos; tabelas em CSV.
 - **Movimentação de derivados** — combustíveis líquidos, GLP e lubrificantes.
-- **Série histórica de preços** — no menu do site também aparece como “Preços de Combustíveis e de GLP”.
+- **Série histórica de preços** — no portal: “Série Histórica de Preços de Combustíveis **e de GLP**” (também aparece no menu como “Preços de Combustíveis e de GLP”).
 - **Multas** — autuações em ações de fiscalização com vencimento a partir de 2016.
 
 ## Próximos passos neste atlas
