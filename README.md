@@ -93,7 +93,7 @@ Síntese dos **42 conjuntos** da [página de dados abertos](docs/dados-abertos.m
 | 26 | [`pesquisa-desenvolvimento-inovacao`](docs/conjuntos/pesquisa-desenvolvimento-inovacao.md) | **Investimentos em P&D e inovação** realizados pelos concessionários como obrigação contratual — CNPJ, projeto, instituição receptora e valor por ano. | `Cnpj`, projeto, investimento ~ | — |
 | 30 | [`prestadores-apoio-administrativo`](docs/conjuntos/prestadores-apoio-administrativo.md) | **Empresas prestadoras de serviços de apoio administrativo** autorizadas pela ANP para atuar em E&P — CNPJ, tipo de serviço e status da autorização. | `Cnpj`, tipo serviço ~ | — |
 
-Catálogo completo: [docs/dados-abertos.md](docs/dados-abertos.md) · variáveis e chaves: [docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md) · progresso: [TODO.md](TODO.md) · inventário (240 bases): [docs/inventario-dados.md](docs/inventario-dados.md).
+Catálogo completo: [docs/dados-abertos.md](docs/dados-abertos.md) · variáveis e chaves: [docs/variaveis-conjuntos.md](docs/variaveis-conjuntos.md) · progresso: [TODO.md](TODO.md) · inventário (236 bases): [docs/inventario-dados.md](docs/inventario-dados.md).
 
 ## O que cada repositório guarda
 
@@ -194,7 +194,7 @@ Se falhar em (3) ou (4), mantenha no fuel-analytics até fechar a investigação
 anp-data-atlas/
 ├── docs/
 │   ├── dados-abertos.md        # Catálogo oficial (42 conjuntos)
-│   ├── inventario-dados.md     # Análise do inventário institucional (240 bases)
+│   ├── inventario-dados.md     # Análise do inventário institucional (236 bases)
 │   └── conjuntos/              # Exploração por conjunto
 ├── data/
 │   ├── catalogo-anp/           # Documentos ANP versionados por data de extração
@@ -227,12 +227,12 @@ Sem um arquivo `LICENSE`, o padrão legal é “todos os direitos reservados”.
 
 ## Documentação
 
-O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)**. A análise do **Inventário de Dados** (240 bases institucionais) está em **[docs/inventario-dados.md](docs/inventario-dados.md)**.
+O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/dados-abertos.md](docs/dados-abertos.md)**. A análise do **Inventário de Dados** (236 bases institucionais) está em **[docs/inventario-dados.md](docs/inventario-dados.md)**.
 
 ## Como usar
 
 1. Clone o repositório.
-2. Consulte [docs/dados-abertos.md](docs/dados-abertos.md) (42 conjuntos) ou [docs/inventario-dados.md](docs/inventario-dados.md) (240 bases).
+2. Consulte [docs/dados-abertos.md](docs/dados-abertos.md) (42 conjuntos) ou [docs/inventario-dados.md](docs/inventario-dados.md) (236 bases).
 3. Execute os pipelines em `pipelines/` para baixar dados brutos em `data/raw/{slug}/`.
 4. Leia ou escreva a exploração em `docs/conjuntos/`.
 
@@ -240,30 +240,35 @@ O catálogo dos **42 conjuntos** publicados na página da ANP está em **[docs/d
 
 ## Inventário de Dados ANP
 
-Planilha oficial que cataloga **240 bases** mantidas pela ANP. **Contempla** o que a [página de 42 conjuntos](docs/dados-abertos.md) publica (agregando várias linhas por conjunto) e **outros canais de acesso** ainda não mapeados neste atlas — ver [Relação com o portal](docs/inventario-dados.md#relação-com-o-portal-de-dados-abertos).
+Planilha oficial que cataloga **236 bases** mantidas pela ANP (extração 2026-09-19). **Contempla** o que a [página de 42 conjuntos](docs/dados-abertos.md) publica (agregando várias linhas por conjunto) e **outros canais de acesso** ainda não mapeados neste atlas — ver [Relação com o portal](docs/inventario-dados.md#relação-com-o-portal-de-dados-abertos).
 
 | Item | Valor |
 |------|-------|
 | **Documentação** | [docs/inventario-dados.md](docs/inventario-dados.md) — análise completa |
-| **Extração atual** | [data/catalogo-anp/inventario-dados/2026-05-24/](data/catalogo-anp/inventario-dados/2026-05-24/) |
+| **Extração atual** | [data/catalogo-anp/inventario-dados/2026-09-19/](data/catalogo-anp/inventario-dados/2026-09-19/) |
 | **Arquivo** | `inventario-dados.xlsx` + `extracao.md` (manifesto) |
 | **URL oficial** | [inventario-dados.xlsx](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/inventario-dados.xlsx) |
-| **Atualização no portal** | 5/12/2025 |
+| **Atualização no portal** | 16/7/2026 |
+| **PDA vigente** | [2026-2028](https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/home/pda-2026-2028.pdf) |
 
 ### O que há neste inventário
 
 A planilha `Dados ANP` registra, para cada base:
 
-1. **Nome e descrição** — título institucional e escopo da base.
-2. **Unidade responsável** — sigla da área ANP (SDC, SDT, SDL, SIM, SDP, etc.).
-3. **Disponibilidade no dados.gov.br** — Sim (182) · Sim/CGU (17) · Não (38).
-4. **Periodicidade** — mensal (87), anual (65), diária (28), semestral, conforme demanda, etc.
-5. **Política pública** — vínculo ao PPA quando aplicável.
-6. **Sigilo** — 38 bases com conteúdo sigiloso; 202 sem.
+1. **Conjunto e nome da base** — agrupamento temático + título institucional.
+2. **Descrição** — escopo da base.
+3. **Unidade responsável** — sigla da área ANP (SDC, SDT, SDL, SIM, SDP, etc.).
+4. **Disponibilidade no dados.gov.br** — Sim (198) · Não (38).
+5. **Periodicidade** — mensal (92), anual (69), diária (24), semestral, conforme demanda, etc.
+6. **Política pública** — vínculo ao PPA quando aplicável.
+7. **Sigilo** — 28 bases com conteúdo sigiloso; 208 sem.
+8. **PDA 2026–2028** — flag de bases a publicar no plano vigente (10 linhas).
 
-**Temas cobertos:** exploração e produção · acervo técnico · refino e derivados · biocombustíveis · movimentação SIMP · cadastro de revendas/postos · tancagem e terminais · preços (LPC) · vendas · qualidade (PMQC) · fiscalização · licitações · PD&I.
+**Temas cobertos:** exploração e produção · acervo técnico · refino e derivados · biocombustíveis · movimentação SIMP · cadastro de revendas/postos · tancagem e terminais · preços (LPC) · vendas · qualidade (PMQC) · fiscalização · licitações · PD&I · autorizações de gás (pipeline PDA).
 
-**Relacionadas a combustíveis/abastecimento:** ~98 entradas (filtro por palavras-chave na análise) — detalhes e tabelas em [docs/inventario-dados.md](docs/inventario-dados.md).
+**Relacionadas a combustíveis/abastecimento:** ~68 entradas (filtro por palavras-chave na análise) — detalhes e tabelas em [docs/inventario-dados.md](docs/inventario-dados.md).
+
+**Nomes removidos da planilha:** registrados (não apagados) na seção de diff do inventário — muitos são renomes/consolidações.
 
 **Nova extração:** criar `data/catalogo-anp/inventario-dados/{AAAA-MM-DD}/`, registrar em `extracao.md` e atualizar a documentação (passo a passo no manifesto).
 
