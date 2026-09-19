@@ -24,8 +24,8 @@ Rastreio de exploração e integração por conjunto. Catálogo oficial: [docs/d
 | Raw ✓ (dados baixados) | 38 |
 | Emp. ✓ (inventário no doc) | 38 |
 | Fuel ◐ (pipeline fuel-analytics) | 20 |
-| **Total conjuntos ativos** | **39** |
-| Indisponíveis (seção separada) | 3 |
+| **Total conjuntos ativos** | **40** |
+| Indisponíveis (seção separada) | 2 |
 
 ---
 
@@ -83,6 +83,7 @@ Prioridade alinhada ao foco de combustíveis do monorepo.
 
 | # | Slug | Conjunto | Doc | Raw | Emp. | Fuel | Int. |
 |---|------|----------|:---:|:---:|:----:|:----:|:----:|
+| 7 | `autorizacoes-gas-natural` | Autorizações de Gás Natural | ✓ | — | — | — | — |
 | 10 | `comercializacao-gas-natural` | Comercialização de Gás Natural | ✓ | ✓ | ✓ | — | — |
 | 23 | `movimentacao-gas-gasodutos` | Movimentação em gasodutos de transporte | ✓ | ✓ | ✓ | — | — |
 
@@ -119,8 +120,9 @@ Removidos das tabelas de acompanhamento — doc existe mas não há CSV/XLSX exp
 | # | Slug | Categoria original | Motivo |
 |---|------|-------------------|--------|
 | 5 | `anuario-estatistico` | Produção | Sem CSV público — apenas PDF/painel. Dados cobertos pelas séries individuais. |
-| 7 | `autorizacoes-gas-natural` | Gás natural | Página removida do portal (404). Possível reestruturação. |
 | 38 | `resultado-poco` | E&P | Apenas metadados (PDF). CSV possivelmente acessível via BDEP. |
+
+> **Atualização 2026-09-19:** `autorizacoes-gas-natural` saiu desta lista — a página voltou a publicar CSV/XLSX em `dados-abertos-autorizacoes-gas-natural` (ver doc do conjunto). Raw/Emp. ainda pendentes.
 
 ---
 
