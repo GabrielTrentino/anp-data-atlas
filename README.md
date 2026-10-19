@@ -115,6 +115,20 @@ Divisão de responsabilidades entre este atlas e o [anp-fuel-analytics](https://
 
 No atlas, cada conjunto tem um `.md` em `docs/conjuntos/` com seções como: estrutura oficial, inventário empírico, qualidade/chaves e link para a exploração ativa nos notebooks — sem duplicar o notebook inteiro.
 
+## Repositório central e repositórios de análise
+
+O atlas é o **repositório central**: catálogo (`config/datasets.yaml`), documentação por conjunto e anomalias conhecidas. Cada área de análise tem um repositório próprio que consome o atlas e devolve o que descobrir:
+
+| Repositório | Escopo |
+|-------------|--------|
+| **anp-data-atlas** (este) | Catálogo e documentação dos 42 conjuntos |
+| [anp-fuel-analytics](https://github.com/GabrielTrentino/anp-fuel-analytics) | Combustíveis: abastecimento, distribuição, preços, qualidade, refino e biocombustíveis |
+| _futuro_ (ex.: E&P, gás natural) | Demais áreas, seguindo o mesmo padrão |
+
+Todos os repositórios de análise seguem o mesmo padrão: `config/*.yaml` declarativo (download, etapas, testes de qualidade), pipeline raw → trusted → refined em DuckDB, `pytest` + CI no GitHub Actions. Achados estáveis voltam para `docs/conjuntos/{slug}.md` e `docs/anomalias-conhecidas.md`.
+
+**CI deste repositório:** [`ci.yml`](.github/workflows/ci.yml) roda `ruff` e `scripts/validate_docs.py` a cada push/PR; [`links.yml`](.github/workflows/links.yml) verifica toda semana os links do portal citados nos docs.
+
 ## Fluxo de processamento
 
 Visão geral de como os dados circulam entre portal, repositórios e documentação:
