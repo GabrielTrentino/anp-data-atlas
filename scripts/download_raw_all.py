@@ -116,7 +116,7 @@ def main() -> None:
 
     print(f"\n{'='*60}")
     print(f"RESUMO: {total_ok} arquivos baixados, {total_fail} falhas")
-    print(f"\nPor dataset:")
+    print("\nPor dataset:")
     for slug, (ok, fail) in results.items():
         status = "OK" if ok > 0 else ("VAZIO" if fail == 0 else "ERRO")
         print(f"  {slug:45s} {ok:3d} ok  {fail:2d} fail  [{status}]")

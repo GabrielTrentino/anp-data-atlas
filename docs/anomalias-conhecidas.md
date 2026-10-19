@@ -75,3 +75,19 @@ Ao encontrar nova anomalia durante exploração ou pipeline:
 1. Adicionar linha na tabela relevante acima
 2. Referenciar o conjunto e o impacto prático
 3. Se resolvido (ex: fix no pipeline), mover para seção "Resolvidas" (criar quando necessário)
+
+## Encontradas pelos testes de qualidade do anp-fuel-analytics (out/2026)
+
+Detectadas pelas regras do bloco `quality` em `config/monorepo.yaml` do fuel-analytics, sobre os brutos baixados até set/2026.
+
+| Conjunto | Anomalia | Tratamento no trusted |
+|----------|----------|-----------------------|
+| `pmqc` | Cada ensaio (`IdNumeric` + `Ensaio`) aparece uma vez por coordenada geocodificada do posto: em jan/2024, 111.351 linhas viram 59.026 ensaios. No total, 1,8 milhão de linhas repetidas em 8,4 milhões. | Junta as linhas iguais exceto lat/long (média das coordenadas, coluna `n_coordenadas`). ~10 mil pares ainda divergem em distribuidora ou resultado. |
+| `vendas-derivados` (anuais por município) | 23.312 linhas idênticas repetidas nos CSVs de gasolina, diesel e etanol (ex.: 1990, IBGE 1100015, óleo diesel). | `SELECT DISTINCT`. |
+| `producao-biocombustiveis` (biodiesel) | O arquivo 2005-2023 é por produtor e UF com mês abreviado (`JAN`); o de 2024-2026 é só por grande região com mês por extenso (`Janeiro`). | Mantém `uf`/`produtor`, coluna `nivel` (produtor/regiao) e `mes` 1-12. |
+| `tancagem-abastecimento` | Arquivos de 2023-2024 com períodos sobrepostos repetem a mesma `Data` para a chave `Data + CodInstalacao + Tag + GrupoDeProdutos` (41.454 linhas). | Ainda não tratado (aviso). |
+| `movimentacao-terminais-aquaviarios` | 6.070 linhas idênticas. | Aviso. |
+| `registro-lubrificantes` | 407 linhas idênticas. | Aviso. |
+| `serie-historica-precos` | 12 coletas repetidas (`cnpj + produto + data_coleta`) no LPC. | Aviso. |
+| `cadastro-revendas-glp` | 3 CNPJs repetidos. | Aviso. |
+| `pml` | 29 amostras repetidas. | Aviso. |

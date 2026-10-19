@@ -1,0 +1,22 @@
+name: Links do portal
+
+# Verifica toda semana os links externos dos docs (o portal da ANP muda URLs com frequência).
+# Quando um link quebra, o job falha e o GitHub avisa por e-mail.
+on:
+  schedule:
+    - cron: "0 9 * * 1"  # segundas, 06:00 em Brasília
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress --max-concurrency 4 --retry-wait-time 10 --max-retries 3
+            --accept 200,206,429
+            --user-agent "Mozilla/5.0 (anp-data-atlas; research)"
+            "README.md" "TODO.md" "docs/**/*.md"
+          fail: true
